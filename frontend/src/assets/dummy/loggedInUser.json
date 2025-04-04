@@ -1,0 +1,27 @@
+{
+	"user": {
+		"firstName": "Test",
+		"lastName": "User",
+		"dateOfBirth": "2025-02-26",
+		"gender": "OTHER"
+	},
+	"access": {
+		"role": ["ADMIN"],
+		"permissionsRequested": ["DATA_UPLOAD", "DATA_VIEW", "DATA_EXPORT", "DATA_REVIEW", "ONTOLOGY_UPLOAD", "ONTOLOGY_VIEW", "ONTOLOGY_REVIEW"],
+		"permissionsGranted": [
+			"DATA_UPLOAD",
+			"DATA_VIEW",
+			"DATA_EXPORT",
+			"DATA_REVIEW",
+			"ONTOLOGY_UPLOAD",
+			"ONTOLOGY_VIEW",
+			"ONTOLOGY_REVIEW",
+			"ADMIN"
+		]
+	},
+	"credentials": {
+		"email": "test.user@reutlingen-university.de",
+		"token": "dbb39489-da3b-4b4f-aa08-d0e0b411e42b",
+		"expiration": "2026-01-01T00:00:00"
+	}
+}

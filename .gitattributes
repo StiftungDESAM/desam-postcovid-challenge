@@ -1,0 +1,7 @@
+* text=auto
+*.sh text eol=lf
+*.conf text eol=lf
+
+# * text=auto: Handle line endings automatically, based on the platform you're using. This means that when you check out files, Git will convert line endings to the system's standard (CRLF on Windows, LF on Unix systems). When you commit those files back to the repository, Git will convert them back to LF.
+# *.sh text eol=lf: Always use LF
+# *.conf text eol=lf: Always use LF

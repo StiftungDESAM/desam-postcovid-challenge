@@ -1,0 +1,226 @@
+@prefix pro: <property#> .
+@prefix nod: <node#> .
+@prefix rel: <relationship#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+nod:6 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 nod:7;
+  rel:8 nod:8 .
+  
+
+nod:7 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 nod:9;
+  rel:10 nod:10;
+  rel:11 nod:11;
+  rel:12 nod:12;
+  rel:13 nod:13;
+  rel:14 nod:14;
+  rel:15 nod:15;
+  rel:16 nod:16;
+  rel:17 nod:17;
+  rel:18 nod:18 .
+
+nod:14 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean .
+
+nod:13 a pro:Auswahlmöglichkeiten;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Auswahlmöglichkeiten";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:tag "261"^^xsd:long .
+
+nod:12 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean .
+
+nod:11 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean .
+
+nod:10 a pro:Sektionsüberschrift;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "258"^^xsd:long;
+  pro:name "Sektionsüberschrift";
+  pro:is_stakeholder "false"^^xsd:boolean .
+
+nod:9 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long .
+
+nod:15 a pro:Einheit;
+  pro:name "Einheit";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "263"^^xsd:long .
+
+nod:16 a pro:Minimum;
+  pro:name "Minimum";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "264"^^xsd:long .
+
+nod:17 a pro:Maximum;
+  pro:name "Maximum";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "265"^^xsd:long .
+
+nod:18 a pro:Verzweigung;
+  pro:name "Verzweigung";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "266"^^xsd:long .
+
+
+# Relationships
+
+rel:7 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1006"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:8 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1007"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:9 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1009"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:10 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1010"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:11 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1011"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:12 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1012"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:13 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1013"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:14 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1014"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:15 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1015"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:16 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1016"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:17 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1017"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:18 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1018"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+

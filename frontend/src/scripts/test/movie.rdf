@@ -1,0 +1,972 @@
+@prefix n4sch: 
+<neo4j://graph.schema#> .
+@prefix n4ind: 
+  <neo4j://graph.individuals#> .
+
+n4ind:0 a n4sch:Movie;
+  n4sch:tagline "Welcome to the Real World";
+  n4sch:title "The Matrix";
+  n4sch:released "1999"^^
+    <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:154 a n4sch:Movie;
+  n4sch:released "2003"^^
+      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Something's Gotta Give" .
+
+n4ind:1 a n4sch:Person;
+  n4sch:born "1964"^^
+        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:154, n4ind:87, n4ind:100, n4ind:11, n4ind:10, n4ind:9, n4ind:0;
+  n4sch:name "Keanu Reeves" .
+
+n4ind:87 a n4sch:Movie;
+  n4sch:tagline "Pain heals, Chicks dig scars... Glory lasts forever";
+  n4sch:title "The Replacements";
+  n4sch:released "2000"^^
+          <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:100 a n4sch:Movie;
+  n4sch:title "Johnny Mnemonic";
+  n4sch:released "1995"^^
+            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "The hottest data on earth. In the coolest head in town" .
+
+n4ind:11 a n4sch:Movie;
+  n4sch:title "The Devil's Advocate";
+  n4sch:tagline "Evil has its winning ways";
+  n4sch:released "1997"^^
+              <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:10 a n4sch:Movie;
+  n4sch:tagline "Everything that has a beginning has an end";
+  n4sch:released "2003"^^
+                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "The Matrix Revolutions" .
+
+n4ind:9 a n4sch:Movie;
+  n4sch:released "2003"^^
+                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "Free your mind";
+  n4sch:title "The Matrix Reloaded" .
+
+n4ind:2 a n4sch:Person;
+  n4sch:born "1967"^^
+                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Carrie-Anne Moss";
+  n4sch:ACTED_IN n4ind:10, n4ind:9, n4ind:0 .
+
+n4ind:3 a n4sch:Person;
+  n4sch:born "1961"^^
+                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Laurence Fishburne";
+  n4sch:ACTED_IN n4ind:10, n4ind:9, n4ind:0 .
+
+n4ind:105 a n4sch:Movie;
+  n4sch:tagline "Everything is connected";
+  n4sch:title "Cloud Atlas";
+  n4sch:released "2012"^^
+                        <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:4 a n4sch:Person;
+  n4sch:born "1960"^^
+                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:105, n4ind:116, n4ind:10, n4ind:9, n4ind:0;
+  n4sch:name "Hugo Weaving" .
+
+n4ind:116 a n4sch:Movie;
+  n4sch:tagline "Freedom! Forever!";
+  n4sch:released "2006"^^
+                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "V for Vendetta" .
+
+n4ind:5 a n4sch:Person;
+  n4sch:name "Lilly Wachowski";
+  n4sch:DIRECTED n4ind:121, n4ind:105, n4ind:10, n4ind:9, n4ind:0;
+  n4sch:born "1967"^^
+                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:PRODUCED n4ind:116, n4ind:128;
+  n4sch:WROTE n4ind:121, n4ind:116 .
+
+n4ind:121 a n4sch:Movie;
+  n4sch:released "2008"^^
+                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "Speed has no limits";
+  n4sch:title "Speed Racer" .
+
+n4ind:128 a n4sch:Movie;
+  n4sch:tagline "Prepare to enter a secret world of assassins";
+  n4sch:released "2009"^^
+                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Ninja Assassin" .
+
+n4ind:6 a n4sch:Person;
+  n4sch:name "Lana Wachowski";
+  n4sch:DIRECTED n4ind:121, n4ind:105, n4ind:10, n4ind:9, n4ind:0;
+  n4sch:born "1965"^^
+                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:PRODUCED n4ind:116, n4ind:128;
+  n4sch:WROTE n4ind:116, n4ind:121 .
+
+n4ind:7 a n4sch:Person;
+  n4sch:name "Joel Silver";
+  n4sch:born "1952"^^
+                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:PRODUCED n4ind:121, n4ind:116, n4ind:128, n4ind:10, n4ind:9, n4ind:0 .
+
+n4ind:8 a n4sch:Person;
+  n4sch:name "Emil Eifrem";
+  n4sch:born "1978"^^
+                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:0 .
+
+n4ind:85 a n4sch:Movie;
+  n4sch:title "That Thing You Do";
+  n4sch:tagline "In every life there comes a time when that thing you dream becomes that thing you do";
+  n4sch:released "1996"^^
+                                          <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:12 a n4sch:Person;
+  n4sch:born "1975"^^
+                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:85, n4ind:11;
+  n4sch:name "Charlize Theron" .
+
+n4ind:13 a n4sch:Person;
+  n4sch:name "Al Pacino";
+  n4sch:born "1940"^^
+                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:11 .
+
+n4ind:14 a n4sch:Person;
+  n4sch:name "Taylor Hackford";
+  n4sch:born "1944"^^
+                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:11 .
+
+n4ind:15 a n4sch:Movie;
+  n4sch:tagline "In the heart of the nation's capital, in a courthouse of the U.S. government, one man will stop at nothing to keep his honor, and one will stop at nothing to find the truth.";
+  n4sch:released "1992"^^
+                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "A Few Good Men" .
+
+n4ind:16 a n4sch:Person;
+  n4sch:born "1962"^^
+                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Tom Cruise";
+  n4sch:ACTED_IN n4ind:37, n4ind:29, n4ind:15 .
+
+n4ind:37 a n4sch:Movie;
+  n4sch:tagline "The rest of his life begins now.";
+  n4sch:released "2000"^^
+                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Jerry Maguire" .
+
+n4ind:29 a n4sch:Movie;
+  n4sch:released "1986"^^
+                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "I feel the need, the need for speed.";
+  n4sch:title "Top Gun" .
+
+n4ind:52 a n4sch:Movie;
+  n4sch:tagline "A comedy from the heart that goes for the throat.";
+  n4sch:title "As Good as It Gets";
+  n4sch:released "1997"^^
+                                                          <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:17 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:52, n4ind:152, n4ind:154, n4ind:141, n4ind:15;
+  n4sch:name "Jack Nicholson";
+  n4sch:born "1937"^^
+                                                            <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:152 a n4sch:Movie;
+  n4sch:released "1975"^^
+                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "If he's crazy, what does that make you?";
+  n4sch:title "One Flew Over the Cuckoo's Nest" .
+
+n4ind:141 a n4sch:Movie;
+  n4sch:title "Hoffa";
+  n4sch:tagline "He didn't want law. He wanted justice.";
+  n4sch:released "1992"^^
+                                                                <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:18 a n4sch:Person;
+  n4sch:born "1962"^^
+                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Demi Moore";
+  n4sch:ACTED_IN n4ind:15 .
+
+n4ind:144 a n4sch:Movie;
+  n4sch:tagline "Houston, we have a problem.";
+  n4sch:title "Apollo 13";
+  n4sch:released "1995"^^
+                                                                    <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:19 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:144, n4ind:137, n4ind:15;
+  n4sch:name "Kevin Bacon";
+  n4sch:born "1958"^^
+                                                                      <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:137 a n4sch:Movie;
+  n4sch:tagline "400 million people were waiting for the truth.";
+  n4sch:title "Frost/Nixon";
+  n4sch:released "2008"^^
+                                                                        <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:46 a n4sch:Movie;
+  n4sch:tagline "For some, it's the last real taste of innocence, and the first real taste of life. But for everyone, it's the time that memories are made of.";
+  n4sch:released "1986"^^
+                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Stand By Me" .
+
+n4ind:20 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:46, n4ind:15;
+  n4sch:name "Kiefer Sutherland";
+  n4sch:born "1966"^^
+                                                                            <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:21 a n4sch:Person;
+  n4sch:name "Noah Wyle";
+  n4sch:born "1971"^^
+                                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:15 .
+
+n4ind:22 a n4sch:Person;
+  n4sch:name "Cuba Gooding Jr.";
+  n4sch:ACTED_IN n4ind:56, n4ind:37, n4ind:52, n4ind:15;
+  n4sch:born "1968"^^
+                                                                                <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:56 a n4sch:Movie;
+  n4sch:title "What Dreams May Come";
+  n4sch:released "1998"^^
+                                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "After life there is more. The end is just the beginning." .
+
+n4ind:23 a n4sch:Person;
+  n4sch:name "Kevin Pollak";
+  n4sch:ACTED_IN n4ind:15;
+  n4sch:born "1957"^^
+                                                                                    <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:24 a n4sch:Person;
+  n4sch:born "1943"^^
+                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "J.T. Walsh";
+  n4sch:ACTED_IN n4ind:141, n4ind:15 .
+
+n4ind:25 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:15;
+  n4sch:name "James Marshall";
+  n4sch:born "1967"^^
+                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:128, n4ind:116 .
+
+n4ind:26 a n4sch:Person;
+  n4sch:name "Christopher Guest";
+  n4sch:ACTED_IN n4ind:15;
+  n4sch:born "1948"^^
+                                                                                          <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:27 a n4sch:Person;
+  n4sch:name "Rob Reiner";
+  n4sch:DIRECTED n4ind:46, n4ind:81, n4ind:15;
+  n4sch:born "1947"^^
+                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:PRODUCED n4ind:81 .
+
+n4ind:81 a n4sch:Movie;
+  n4sch:released "1998"^^
+                                                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "When Harry Met Sally";
+  n4sch:tagline "Can two friends sleep together and still love each other in the morning?" .
+
+n4ind:28 a n4sch:Person;
+  n4sch:born "1961"^^
+                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:15;
+  n4sch:name "Aaron Sorkin";
+  n4sch:WROTE n4ind:15 .
+
+n4ind:30 a n4sch:Person;
+  n4sch:name "Kelly McGillis";
+  n4sch:born "1957"^^
+                                                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:29 .
+
+n4ind:31 a n4sch:Person;
+  n4sch:name "Val Kilmer";
+  n4sch:born "1959"^^
+                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:29 .
+
+n4ind:32 a n4sch:Person;
+  n4sch:born "1962"^^
+                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Anthony Edwards";
+  n4sch:ACTED_IN n4ind:29 .
+
+n4ind:33 a n4sch:Person;
+  n4sch:name "Tom Skerritt";
+  n4sch:born "1933"^^
+                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:29 .
+
+n4ind:34 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:73, n4ind:67, n4ind:29, n4ind:81, n4ind:78;
+  n4sch:born "1961"^^
+                                                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Meg Ryan" .
+
+n4ind:73 a n4sch:Movie;
+  n4sch:tagline "What if someone you never met, someone you never saw, someone you never knew was the only someone for you?";
+  n4sch:released "1993"^^
+                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Sleepless in Seattle" .
+
+n4ind:67 a n4sch:Movie;
+  n4sch:title "You've Got Mail";
+  n4sch:tagline "At odds in life... in love on-line.";
+  n4sch:released "1998"^^
+                                                                                                              <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:78 a n4sch:Movie;
+  n4sch:tagline "A story of love, lava and burning desire.";
+  n4sch:released "1990"^^
+                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Joe Versus the Volcano" .
+
+n4ind:35 a n4sch:Person;
+  n4sch:DIRECTED n4ind:29;
+  n4sch:name "Tony Scott";
+  n4sch:born "1944"^^
+                                                                                                                  <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:36 a n4sch:Person;
+  n4sch:WROTE n4ind:29;
+  n4sch:born "1941"^^
+                                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Jim Cash" .
+
+n4ind:38 a n4sch:Person;
+  n4sch:born "1969"^^
+                                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Renee Zellweger";
+  n4sch:ACTED_IN n4ind:37 .
+
+n4ind:39 a n4sch:Person;
+  n4sch:born "1962"^^
+                                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Kelly Preston";
+  n4sch:ACTED_IN n4ind:37 .
+
+n4ind:40 a n4sch:Person;
+  n4sch:born "1974"^^
+                                                                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Jerry O'Connell";
+  n4sch:ACTED_IN n4ind:37, n4ind:46 .
+
+n4ind:41 a n4sch:Person;
+  n4sch:born "1970"^^
+                                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:37;
+  n4sch:name "Jay Mohr" .
+
+n4ind:130 a n4sch:Movie;
+  n4sch:title "The Green Mile";
+  n4sch:tagline "Walk a mile you'll never forget.";
+  n4sch:released "1999"^^
+                                                                                                                              <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:42 a n4sch:Person;
+  n4sch:born "1961"^^
+                                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Bonnie Hunt";
+  n4sch:ACTED_IN n4ind:130, n4ind:37 .
+
+n4ind:43 a n4sch:Person;
+  n4sch:name "Regina King";
+  n4sch:born "1971"^^
+                                                                                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:37 .
+
+n4ind:44 a n4sch:Person;
+  n4sch:name "Jonathan Lipnicki";
+  n4sch:ACTED_IN n4ind:37;
+  n4sch:born "1996"^^
+                                                                                                                                    <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:45 a n4sch:Person;
+  n4sch:PRODUCED n4ind:37;
+  n4sch:name "Cameron Crowe";
+  n4sch:born "1957"^^
+                                                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:37;
+  n4sch:WROTE n4ind:37 .
+
+n4ind:47 a n4sch:Person;
+  n4sch:name "River Phoenix";
+  n4sch:born "1970"^^
+                                                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:46 .
+
+n4ind:48 a n4sch:Person;
+  n4sch:born "1971"^^
+                                                                                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Corey Feldman";
+  n4sch:ACTED_IN n4ind:46 .
+
+n4ind:49 a n4sch:Person;
+  n4sch:name "Wil Wheaton";
+  n4sch:born "1972"^^
+                                                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:46 .
+
+n4ind:50 a n4sch:Person;
+  n4sch:born "1966"^^
+                                                                                                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:46;
+  n4sch:name "John Cusack" .
+
+n4ind:51 a n4sch:Person;
+  n4sch:born "1942"^^
+                                                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:46, n4ind:92;
+  n4sch:name "Marshall Bell" .
+
+n4ind:92 a n4sch:Movie;
+  n4sch:tagline "Based on the extraordinary true story of one man's fight for freedom";
+  n4sch:released "2006"^^
+                                                                                                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "RescueDawn" .
+
+n4ind:53 a n4sch:Person;
+  n4sch:born "1963"^^
+                                                                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Helen Hunt";
+  n4sch:ACTED_IN n4ind:52, n4ind:150, n4ind:147 .
+
+n4ind:150 a n4sch:Movie;
+  n4sch:released "2000"^^
+                                                                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Cast Away";
+  n4sch:tagline "At the edge of the world, his journey begins." .
+
+n4ind:147 a n4sch:Movie;
+  n4sch:tagline "Don't Breathe. Don't Look Back.";
+  n4sch:released "1996"^^
+                                                                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Twister" .
+
+n4ind:54 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:67, n4ind:52;
+  n4sch:name "Greg Kinnear";
+  n4sch:born "1963"^^
+                                                                                                                                                          <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:55 a n4sch:Person;
+  n4sch:name "James L. Brooks";
+  n4sch:born "1940"^^
+                                                                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:52 .
+
+n4ind:57 a n4sch:Person;
+  n4sch:name "Annabella Sciorra";
+  n4sch:ACTED_IN n4ind:56;
+  n4sch:born "1960"^^
+                                                                                                                                                              <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:58 a n4sch:Person;
+  n4sch:born "1929"^^
+                                                                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Max von Sydow";
+  n4sch:ACTED_IN n4ind:56, n4ind:62 .
+
+n4ind:62 a n4sch:Movie;
+  n4sch:title "Snow Falling on Cedars";
+  n4sch:tagline "First loves last. Forever.";
+  n4sch:released "1999"^^
+                                                                                                                                                                  <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:59 a n4sch:Person;
+  n4sch:DIRECTED n4ind:92;
+  n4sch:name "Werner Herzog";
+  n4sch:born "1942"^^
+                                                                                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:56 .
+
+n4ind:60 a n4sch:Person;
+  n4sch:name "Robin Williams";
+  n4sch:ACTED_IN n4ind:56, n4ind:157, n4ind:95;
+  n4sch:born "1951"^^
+                                                                                                                                                                      <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:157 a n4sch:Movie;
+  n4sch:title "Bicentennial Man";
+  n4sch:tagline "One robot's 200 year journey to become an ordinary man.";
+  n4sch:released "1999"^^
+                                                                                                                                                                        <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:95 a n4sch:Movie;
+  n4sch:title "The Birdcage";
+  n4sch:released "1996"^^
+                                                                                                                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "Come as you are" .
+
+n4ind:61 a n4sch:Person;
+  n4sch:born "1956"^^
+                                                                                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Vincent Ward";
+  n4sch:DIRECTED n4ind:56 .
+
+n4ind:63 a n4sch:Person;
+  n4sch:born "1970"^^
+                                                                                                                                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:62;
+  n4sch:name "Ethan Hawke" .
+
+n4ind:64 a n4sch:Person;
+  n4sch:born "1971"^^
+                                                                                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Rick Yune";
+  n4sch:ACTED_IN n4ind:128, n4ind:62 .
+
+n4ind:65 a n4sch:Person;
+  n4sch:born "1940"^^
+                                                                                                                                                                                  <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:130, n4ind:62;
+  n4sch:name "James Cromwell" .
+
+n4ind:66 a n4sch:Person;
+  n4sch:name "Scott Hicks";
+  n4sch:born "1953"^^
+                                                                                                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:62 .
+
+n4ind:68 a n4sch:Person;
+  n4sch:name "Parker Posey";
+  n4sch:born "1968"^^
+                                                                                                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:67 .
+
+n4ind:69 a n4sch:Person;
+  n4sch:name "Dave Chappelle";
+  n4sch:born "1973"^^
+                                                                                                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:67 .
+
+n4ind:70 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:92, n4ind:67;
+  n4sch:born "1967"^^
+                                                                                                                                                                                          <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Steve Zahn" .
+
+n4ind:71 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:144, n4ind:67, n4ind:162, n4ind:78, n4ind:85, n4ind:111, n4ind:105,
+    n4ind:150, n4ind:130, n4ind:73, n4ind:161, n4ind:159;
+  n4sch:name "Tom Hanks";
+  n4sch:born "1956"^^
+                                                                                                                                                                                            <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:85 .
+
+n4ind:162 a n4sch:Movie;
+  n4sch:released "1992"^^
+                                                                                                                                                                                              <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "Once in a lifetime you get a chance to do something different.";
+  n4sch:title "A League of Their Own" .
+
+n4ind:111 a n4sch:Movie;
+  n4sch:released "2006"^^
+                                                                                                                                                                                                <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:tagline "Break The Codes";
+  n4sch:title "The Da Vinci Code" .
+
+n4ind:161 a n4sch:Movie;
+  n4sch:title "The Polar Express";
+  n4sch:tagline "This Holiday Season... Believe";
+  n4sch:released "2004"^^
+                                                                                                                                                                                                  <http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:159 a n4sch:Movie;
+  n4sch:tagline "A stiff drink. A little mascara. A lot of nerve. Who said they couldn't bring down the Soviet empire.";
+  n4sch:released "2007"^^
+                                                                                                                                                                                                    <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Charlie Wilson's War" .
+
+n4ind:72 a n4sch:Person;
+  n4sch:name "Nora Ephron";
+  n4sch:DIRECTED n4ind:67, n4ind:73;
+  n4sch:born "1941"^^
+                                                                                                                                                                                                      <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:PRODUCED n4ind:81;
+  n4sch:WROTE n4ind:81 .
+
+n4ind:74 a n4sch:Person;
+  n4sch:name "Rita Wilson";
+  n4sch:born "1956"^^
+                                                                                                                                                                                                        <http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:73 .
+
+n4ind:75 a n4sch:Person;
+  n4sch:born "1953"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:73;
+  n4sch:name "Bill Pullman" .
+
+n4ind:76 a n4sch:Person;
+  n4sch:name "Victor Garber";
+  n4sch:ACTED_IN n4ind:73;
+  n4sch:born "1949"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:77 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:162, n4ind:73;
+  n4sch:name "Rosie O'Donnell";
+  n4sch:born "1962"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:79 a n4sch:Person;
+  n4sch:name "John Patrick Stanley";
+  n4sch:DIRECTED n4ind:78;
+  n4sch:born "1950"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:80 a n4sch:Person;
+  n4sch:name "Nathan Lane";
+  n4sch:born "1956"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:78, n4ind:95 .
+
+n4ind:82 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:81;
+  n4sch:born "1948"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Billy Crystal" .
+
+n4ind:83 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:81;
+  n4sch:born "1956"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Carrie Fisher" .
+
+n4ind:84 a n4sch:Person;
+  n4sch:born "1949"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:81;
+  n4sch:name "Bruno Kirby" .
+
+n4ind:86 a n4sch:Person;
+  n4sch:born "1977"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:85;
+  n4sch:name "Liv Tyler" .
+
+n4ind:88 a n4sch:Person;
+  n4sch:born "1970"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Brooke Langton";
+  n4sch:ACTED_IN n4ind:87 .
+
+n4ind:97 a n4sch:Movie;
+  n4sch:tagline "It's a hell of a thing, killing a man";
+  n4sch:released "1992"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:title "Unforgiven" .
+
+n4ind:89 a n4sch:Person;
+  n4sch:born "1930"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Gene Hackman";
+  n4sch:ACTED_IN n4ind:97, n4ind:95, n4ind:87 .
+
+n4ind:90 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:87;
+  n4sch:name "Orlando Jones";
+  n4sch:born "1968"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:91 a n4sch:Person;
+  n4sch:born "1950"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Howard Deutch";
+  n4sch:DIRECTED n4ind:87 .
+
+n4ind:93 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:92;
+  n4sch:name "Christian Bale";
+  n4sch:born "1974"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:94 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:92, n4ind:147;
+  n4sch:born "1954"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Zach Grenier" .
+
+n4ind:96 a n4sch:Person;
+  n4sch:name "Mike Nichols";
+  n4sch:DIRECTED n4ind:95, n4ind:159;
+  n4sch:born "1931"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:98 a n4sch:Person;
+  n4sch:name "Richard Harris";
+  n4sch:born "1930"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:97 .
+
+n4ind:99 a n4sch:Person;
+  n4sch:born "1930"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Clint Eastwood";
+  n4sch:ACTED_IN n4ind:97;
+  n4sch:DIRECTED n4ind:97 .
+
+n4ind:101 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:100;
+  n4sch:born "1947"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Takeshi Kitano" .
+
+n4ind:102 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:100;
+  n4sch:born "1968"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Dina Meyer" .
+
+n4ind:103 a n4sch:Person;
+  n4sch:born "1958"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Ice-T";
+  n4sch:ACTED_IN n4ind:100 .
+
+n4ind:104 a n4sch:Person;
+  n4sch:DIRECTED n4ind:100;
+  n4sch:born "1953"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Robert Longo" .
+
+n4ind:106 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:105;
+  n4sch:born "1966"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Halle Berry" .
+
+n4ind:107 a n4sch:Person;
+  n4sch:born "1949"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:105;
+  n4sch:name "Jim Broadbent" .
+
+n4ind:108 a n4sch:Person;
+  n4sch:name "Tom Tykwer";
+  n4sch:born "1965"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:105 .
+
+n4ind:109 a n4sch:Person;
+  n4sch:born "1969"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "David Mitchell";
+  n4sch:WROTE n4ind:105 .
+
+n4ind:110 a n4sch:Person;
+  n4sch:PRODUCED n4ind:105;
+  n4sch:born "1961"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Stefan Arndt" .
+
+n4ind:112 a n4sch:Person;
+  n4sch:born "1939"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:111;
+  n4sch:name "Ian McKellen" .
+
+n4ind:113 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:111;
+  n4sch:born "1976"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Audrey Tautou" .
+
+n4ind:114 a n4sch:Person;
+  n4sch:born "1971"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Paul Bettany";
+  n4sch:ACTED_IN n4ind:111 .
+
+n4ind:115 a n4sch:Person;
+  n4sch:name "Ron Howard";
+  n4sch:DIRECTED n4ind:144, n4ind:137, n4ind:111;
+  n4sch:born "1954"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:117 a n4sch:Person;
+  n4sch:born "1981"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:116;
+  n4sch:name "Natalie Portman" .
+
+n4ind:118 a n4sch:Person;
+  n4sch:born "1946"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:116;
+  n4sch:name "Stephen Rea" .
+
+n4ind:119 a n4sch:Person;
+  n4sch:name "John Hurt";
+  n4sch:ACTED_IN n4ind:116;
+  n4sch:born "1940"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:120 a n4sch:Person;
+  n4sch:born "1967"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Ben Miles";
+  n4sch:ACTED_IN n4ind:121, n4ind:128, n4ind:116 .
+
+n4ind:122 a n4sch:Person;
+  n4sch:born "1985"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Emile Hirsch";
+  n4sch:ACTED_IN n4ind:121 .
+
+n4ind:123 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:121;
+  n4sch:born "1960"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "John Goodman" .
+
+n4ind:124 a n4sch:Person;
+  n4sch:born "1946"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Susan Sarandon";
+  n4sch:ACTED_IN n4ind:121 .
+
+n4ind:125 a n4sch:Person;
+  n4sch:born "1966"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Matthew Fox";
+  n4sch:ACTED_IN n4ind:121 .
+
+n4ind:126 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:121;
+  n4sch:name "Christina Ricci";
+  n4sch:born "1980"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:127 a n4sch:Person;
+  n4sch:born "1982"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:121, n4ind:128;
+  n4sch:name "Rain" .
+
+n4ind:129 a n4sch:Person;
+  n4sch:name "Naomie Harris";
+  n4sch:ACTED_IN n4ind:128 .
+
+n4ind:131 a n4sch:Person;
+  n4sch:name "Michael Clarke Duncan";
+  n4sch:born "1957"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:130 .
+
+n4ind:132 a n4sch:Person;
+  n4sch:born "1953"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "David Morse";
+  n4sch:ACTED_IN n4ind:130 .
+
+n4ind:133 a n4sch:Person;
+  n4sch:born "1968"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Sam Rockwell";
+  n4sch:ACTED_IN n4ind:130, n4ind:137 .
+
+n4ind:134 a n4sch:Person;
+  n4sch:born "1955"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Gary Sinise";
+  n4sch:ACTED_IN n4ind:144, n4ind:130 .
+
+n4ind:135 a n4sch:Person;
+  n4sch:name "Patricia Clarkson";
+  n4sch:born "1959"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:130 .
+
+n4ind:136 a n4sch:Person;
+  n4sch:DIRECTED n4ind:130;
+  n4sch:born "1959"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Frank Darabont" .
+
+n4ind:138 a n4sch:Person;
+  n4sch:name "Frank Langella";
+  n4sch:ACTED_IN n4ind:137;
+  n4sch:born "1938"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:139 a n4sch:Person;
+  n4sch:name "Michael Sheen";
+  n4sch:ACTED_IN n4ind:137;
+  n4sch:born "1969"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:140 a n4sch:Person;
+  n4sch:born "1960"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Oliver Platt";
+  n4sch:ACTED_IN n4ind:137, n4ind:157 .
+
+n4ind:142 a n4sch:Person;
+  n4sch:DIRECTED n4ind:141;
+  n4sch:born "1944"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Danny DeVito";
+  n4sch:ACTED_IN n4ind:141, n4ind:152 .
+
+n4ind:143 a n4sch:Person;
+  n4sch:name "John C. Reilly";
+  n4sch:born "1965"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:141 .
+
+n4ind:145 a n4sch:Person;
+  n4sch:born "1950"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:144;
+  n4sch:name "Ed Harris" .
+
+n4ind:146 a n4sch:Person;
+  n4sch:born "1955"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:147, n4ind:162, n4ind:144;
+  n4sch:name "Bill Paxton" .
+
+n4ind:148 a n4sch:Person;
+  n4sch:name "Philip Seymour Hoffman";
+  n4sch:ACTED_IN n4ind:147, n4ind:159;
+  n4sch:born "1967"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:149 a n4sch:Person;
+  n4sch:DIRECTED n4ind:147;
+  n4sch:born "1943"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Jan de Bont" .
+
+n4ind:151 a n4sch:Person;
+  n4sch:born "1951"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Robert Zemeckis";
+  n4sch:DIRECTED n4ind:150, n4ind:161 .
+
+n4ind:153 a n4sch:Person;
+  n4sch:name "Milos Forman";
+  n4sch:DIRECTED n4ind:152;
+  n4sch:born "1932"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:155 a n4sch:Person;
+  n4sch:name "Diane Keaton";
+  n4sch:ACTED_IN n4ind:154;
+  n4sch:born "1946"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:156 a n4sch:Person;
+  n4sch:born "1949"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Nancy Meyers";
+  n4sch:WROTE n4ind:154;
+  n4sch:DIRECTED n4ind:154;
+  n4sch:PRODUCED n4ind:154 .
+
+n4ind:158 a n4sch:Person;
+  n4sch:name "Chris Columbus";
+  n4sch:born "1958"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:DIRECTED n4ind:157 .
+
+n4ind:160 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:159;
+  n4sch:born "1967"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Julia Roberts" .
+
+n4ind:163 a n4sch:Person;
+  n4sch:name "Madonna";
+  n4sch:born "1954"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:162 .
+
+n4ind:164 a n4sch:Person;
+  n4sch:name "Geena Davis";
+  n4sch:born "1956"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:ACTED_IN n4ind:162 .
+
+n4ind:165 a n4sch:Person;
+  n4sch:ACTED_IN n4ind:162;
+  n4sch:name "Lori Petty";
+  n4sch:born "1963"^^<http://www.w3.org/2001/XMLSchema#long> .
+
+n4ind:166 a n4sch:Person;
+  n4sch:DIRECTED n4ind:162;
+  n4sch:born "1943"^^<http://www.w3.org/2001/XMLSchema#long>;
+  n4sch:name "Penny Marshall" .
+
+n4ind:168 a n4sch:Person;
+  n4sch:name "Angela Scope";
+  n4sch:REVIEWED n4ind:87;
+  n4sch:FOLLOWS n4ind:169 .
+
+n4ind:167 a n4sch:Person;
+  n4sch:FOLLOWS n4ind:168;
+  n4sch:name "Paul Blythe" .
+
+n4ind:169 a n4sch:Person;
+  n4sch:name "Jessica Thompson";
+  n4sch:REVIEWED n4ind:111, n4ind:87, n4ind:37, n4ind:105, n4ind:95, n4ind:97 .
+
+n4ind:170 a n4sch:Person;
+  n4sch:name "James Thompson";
+  n4sch:REVIEWED n4ind:87, n4ind:111;
+  n4sch:FOLLOWS n4ind:169 .

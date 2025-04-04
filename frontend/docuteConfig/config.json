@@ -1,0 +1,19 @@
+{
+	"layout": "wide",
+	"theme": "dark",
+	"nav": [
+		{
+			"title": "Home",
+			"link": "/start.md"
+		},
+		{
+			"title": "Frontend",
+			"link": "https://postcovid-datamodel.reutlingen-university.de/page/"
+		},
+		{
+			"title": "GitLab",
+			"link": "https://gitlab-forschung.reutlingen-university.de/artemis/postcovid-challenge/-/tree/dev/frontend?ref_type=heads"
+		}
+	],
+	"highlight": ["javascript", "html", "css"]
+}

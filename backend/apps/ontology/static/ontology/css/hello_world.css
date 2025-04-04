@@ -1,0 +1,31 @@
+body.rainbow {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg,rgb(21, 250, 82),rgb(77, 88, 250),rgb(255, 7, 44),rgb(0, 0, 0));
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+h1.rainbow {
+    font-size: 3rem;
+    color: #fff;
+    animation: textPop 5s infinite;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    color: transparent;
+    background-clip: text;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes textPop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}

@@ -1,0 +1,18 @@
+site_name: DESAM Post-Covid Challenge
+site_url: https://postcovid-datamodel.reutlingen-university.de/docs
+nav:
+    - Home: index.md
+    - Infrastructure:
+          - Overview: Infrastructure.md
+          - Setup: chapters/infrastructure/Setup.md
+    - Frontend:
+          - Overview: Frontend.md
+    - Backend:
+          - Overview: Backend.md
+          - API: chapters/backend/API.md
+          - Graph database: chapters/backend/GraphDatabase.md
+          - Django: chapters/backend/Django.md
+theme: readthedocs
+plugins:
+    - include-markdown
+extra_css: [extra.css]

@@ -1,0 +1,91 @@
+{
+	"id": 1,
+	"submitter": {
+		"firstName": "Laura",
+		"lastName": "Schmidt",
+		"role": ["MAINTAINER"]
+	},
+	"submissionDate": "2025-03-19T17:25:00",
+	"reviewer": null,
+	"submissionStatus": "OPEN",
+	"submissionDetails": {
+		"studyInfo": null,
+		"modifiedOntology": null,
+		"migrationOperations": [
+			{
+				"id": 0,
+				"operation": {
+					"main": "ADDITION",
+					"sub": "CREATION"
+				},
+				"elementType": "LEAF",
+				"name": "Einheit",
+				"tag": 263
+			},
+			{
+				"id": 1,
+				"operation": {
+					"main": "ADDITION",
+					"sub": "LINKING"
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "hat",
+				"tag": 1015
+			},
+			{
+				"id": 2,
+				"operation": {
+					"main": "ATTRIBUTE_MODIFICATION",
+					"sub": null
+				},
+				"elementType": "NODE",
+				"name": "Sektion",
+				"tag": 257
+			},
+			{
+				"id": 3,
+				"operation": {
+					"main": "DELETION_LEAF",
+					"sub": "UNLINKING"
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "hat",
+				"tag": 1009
+			},
+			{
+				"id": 4,
+				"operation": {
+					"main": "DELETION_LEAF",
+					"sub": "DELETION"
+				},
+				"elementType": "NODE",
+				"name": "Feldname",
+				"tag": 258
+			},
+			{
+				"id": 5,
+				"operation": {
+					"main": "ATTRIBUTE_MODIFICATION",
+					"sub": null
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "besteht aus",
+				"tag": 1006
+			},
+			{
+				"id": 6,
+				"operation": {
+					"main": "UNLINKING",
+					"sub": null
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "gibt",
+				"tag": 1008
+			}
+		]
+	},
+	"review": {
+		"status": null,
+		"comment": ""
+	}
+}

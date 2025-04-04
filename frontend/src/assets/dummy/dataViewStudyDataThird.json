@@ -1,0 +1,623 @@
+{
+	"id": 3,
+	"submissionDetails": {
+		"studyInfo": {
+			"name": "PreVitaCov",
+			"purpose": "DATA_COLLECTION",
+			"dateStart": "2022-02-01",
+			"dateEnd": "2025-01-30",
+			"description": "Die PreVitaCov-Studie untersucht die Auswirkungen von Präventionsmaßnahmen und Impfstrategien auf die Verbreitung von Covid-19 in verschiedenen Bevölkerungsgruppen. Ziel ist es, die Wirksamkeit von Impfungen und anderen Präventionsstrategien im realen Umfeld zu evaluieren, um zukünftige Gesundheitsstrategien zu optimieren.",
+			"drksID": 7892
+		},
+		"codeBooks": [
+			{
+				"id": 0,
+				"name": "PreVitaCov_firstSet",
+				"dataQualityCheckConfig": { "checkConfig": { "VALUE_TYPE": "Feldtyp", "VALUE_RANGE_MIN": "Minimum", "VALUE_RANGE_MAX": "Maximum", "VALUE_MAPPING": "Auswahlmöglichkeiten", "VALUE_REQUIRED": "Benötigt", "EMPTY_VALUES": true, "EMPTY_ROWS": true, "EMPTY_COLUMNS": true }, "mappingSeparator": "BAR", "answerSeparator": "COMMA" },
+				"dataItems": [
+					{
+						"id": 0,
+						"answers": [120, 45, 0, 60, 10, 250, 30, 90, 5, 100],
+						"itemMeta": {
+							"Feldname": "teila_1_1",
+							"Frage": "≤ 4 Jahre (GOP 03001/04001)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "1000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 1,
+						"answers": [350, 200, 50, 150, 80, 600, 400, 500, 100, 700],
+						"itemMeta": {
+							"Feldname": "teila_1_2",
+							"Frage": "5 bis 18 Jahre (GOP 03002/04002)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "2000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 2,
+						"answers": [800, 1200, 3500, 2000, 1800, 3200, 1500, 4200, 2300, 3800],
+						"itemMeta": {
+							"Feldname": "teila_1_3",
+							"Frage": "19 bis 54 Jahre (GOP 03003/04003)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "5000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 3,
+						"answers": [1400, 1300, 1500, 1000, 2300, 2100, 2700, 1800, 2300, 2200],
+						"itemMeta": {
+							"Feldname": "teila_1_4",
+							"Frage": "55 bis 75 Jahre (GOP 03004/04004)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "5000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 4,
+						"answers": [200, 300, 100, 50, 400, 350, 100, 600, 50, 450],
+						"itemMeta": {
+							"Feldname": "teila_1_5",
+							"Frage": ">75 Jahre (GOP 03005/04005)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "5000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 5,
+						"answers": [1400, 1500, 2200, 1500, 2000, 3000, 2200, 3500, 2300, 3000],
+						"itemMeta": {
+							"Feldname": "teila_2_1",
+							"Frage": "Männlich",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 6,
+						"answers": [1300, 1200, 2200, 1500, 1700, 2900, 2400, 3200, 1700, 3800],
+						"itemMeta": {
+							"Feldname": "teila_2_2",
+							"Frage": "Weiblich",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 7,
+						"answers": [170, 345, 750, 260, 890, 600, 130, 490, 890, 450],
+						"itemMeta": {
+							"Feldname": "teila_2_3",
+							"Frage": "Divers",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 8,
+						"answers": [1000, 1200, 1400, 800, 950, 1100, 1200, 1500, 950, 1150],
+						"itemMeta": {
+							"Feldname": "teila_3_1",
+							"Frage": "Impfung 1 (Grundimmunisierung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 9,
+						"answers": [950, 1100, 1300, 500, 900, 800, 850, 1400, 900, 1050],
+						"itemMeta": {
+							"Feldname": "teila_3_2",
+							"Frage": "Impfung 2 (Grundimmunisierung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 10,
+						"answers": [800, 750, 1100, 600, 700, 650, 1000, 1200, 700, 900],
+						"itemMeta": {
+							"Feldname": "teila_3_3",
+							"Frage": "Impfung 3 (Auffrischimpfung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 11,
+						"answers": [600, 750, 900, 500, 600, 300, 850, 1000, 600, 700],
+						"itemMeta": {
+							"Feldname": "teila_3_4",
+							"Frage": "Impfung 4 (Auffrischimpfung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 12,
+						"answers": [200, 300, 400, 100, 250, 300, 400, 500, 250, 350],
+						"itemMeta": {
+							"Feldname": "teila_3_5",
+							"Frage": "Impfung 5 (Auffrischimpfung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 13,
+						"answers": [50, 150, 250, 50, 100, 200, 300, 350, 100, 200],
+						"itemMeta": {
+							"Feldname": "teila_3_6",
+							"Frage": "Impfung 5 (Auffrischimpfung)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "10000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 14,
+						"answers": [3600, 4400, 5350, 2800, 3500, 4050, 5050, 5950, 3550, 4350],
+						"itemMeta": {
+							"Feldname": "teila_3_7",
+							"Frage": "Anzahl Impfungen gesamt",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "15000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 15,
+						"answers": [1174, 1772, 466, 1482, 1444, 1919, 1685, 1391, 1485, 1433],
+						"itemMeta": {
+							"Feldname": "teila_4_1",
+							"Frage": "BioNTech/Pfizer (GOP 88331A)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "2000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 16,
+						"answers": [348, 20, 1426, 87, 35, 130, 769, 1515, 37, 1215],
+						"itemMeta": {
+							"Feldname": "teila_4_2",
+							"Frage": "Moderna (GOP 88332A)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "2000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 17,
+						"answers": [78, 608, 458, 1231, 21, 1001, 1596, 1044, 28, 702],
+						"itemMeta": {
+							"Feldname": "teila_4_3",
+							"Frage": "AstraZeneca (GOP 88333A)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "2000",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 18,
+						"answers": [320, 300, 310, 305, 325, 315, 330, 340, 325, 322],
+						"itemMeta": {
+							"Feldname": "teila_5_1",
+							"Frage": "ICD U09.9 Post-COVID-19-Zustand",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 19,
+						"answers": [45, 50, 48, 46, 47, 44, 49, 42, 43, 41],
+						"itemMeta": {
+							"Feldname": "teila_5_2",
+							"Frage": "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 20,
+						"answers": [180, 200, 190, 185, 195, 170, 205, 210, 175, 180],
+						"itemMeta": {
+							"Feldname": "teila_5_3",
+							"Frage": "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 21,
+						"answers": [75, 70, 80, 78, 76, 72, 74, 73, 122, 79],
+						"itemMeta": {
+							"Feldname": "teila_5_4",
+							"Frage": "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 22,
+						"answers": [120, 85, 110, 115, 125, 118, 130, 135, 91, 119],
+						"itemMeta": {
+							"Feldname": "teila_5_5",
+							"Frage": "ICD T88.1 Sonstige Komplikationen nach Impfung",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 23,
+						"answers": [90, 85, 88, 92, 89, 86, 87, 93, 91, 84],
+						"itemMeta": {
+							"Feldname": "teila_5_6",
+							"Frage": "Sonstige ICD-Codierung (in Bezug auf Post-COVID)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 24,
+						"answers": [298, 310, 305, 325, 315, 330, 320, 340, 335, 302],
+						"itemMeta": {
+							"Feldname": "teila_6_1",
+							"Frage": "ICD U09.9 Post-COVID-19-Zustand",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 25,
+						"answers": [52, 56, 49, 54, 47, 50, 58, 53, 51, 55],
+						"itemMeta": {
+							"Feldname": "teila_6_2",
+							"Frage": "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 26,
+						"answers": [170, 195, 180, 200, 185, 205, 190, 210, 175, 180],
+						"itemMeta": {
+							"Feldname": "teila_6_3",
+							"Frage": "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 27,
+						"answers": [80, 75, 85, 79, 82, 78, 84, 77, 83, 81],
+						"itemMeta": {
+							"Feldname": "teila_6_4",
+							"Frage": "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 28,
+						"answers": [140, 125, 110, 135, 120, 145, 130, 150, 128, 115],
+						"itemMeta": {
+							"Feldname": "teila_6_5",
+							"Frage": "ICD T88.1 Sonstige Komplikationen nach Impfung",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 29,
+						"answers": [98, 90, 95, 87, 92, 89, 91, 93, 86, 88],
+						"itemMeta": {
+							"Feldname": "teila_6_6",
+							"Frage": "Sonstige ICD-Codierung (in Bezug auf Post-COVID)",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Maximum": "500",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 30,
+						"answers": ["Ja", "Nein", "Nein", "Ja", "Nein", "Ja", "Nein", "Nein", "Ja", "Nein"],
+						"itemMeta": {
+							"Feldname": "teila_7",
+							"Frage": "Wurden Patient*innen mit Post-Covid im Quartal 2024 von Ihnen immer mit ICD U09.9 bzw. ICD U10.9 bzw. ICD G93.3 codiert",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "Ja|Nein",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 31,
+						"answers": ["", "J12.82", "R53.83", "", "M35.81", "", "Z86.16", "F45.41", "", "R09.2"],
+						"itemMeta": {
+							"Feldname": "teila_7_code",
+							"Frage": "Wenn nein, welche Codierung(en) wurden (auch) verwendet",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 32,
+						"answers": ["4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden", "2 - eher nicht", "1 - gar nicht", "3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden"],
+						"itemMeta": {
+							"Feldname": "teila_8_1",
+							"Frage": "Die vorhandene Impfungen stellen einen wirksamen Schutz vor COVID-19 dar.",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz",
+							"Benötigt": "ja"
+						}
+					},
+					{
+						"id": 33,
+						"answers": ["3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "1 - gar nicht", "5 - voll und ganz", "4 - eher ja", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "4 - eher ja"],
+						"itemMeta": {
+							"Feldname": "teila_8_2",
+							"Frage": "Ich fühle mich kompetent in der Diagnostik von Patient*innen mit Post-COVID19-Zustand.",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz",
+							"Benötigt": "ja"
+						}
+					},
+					{
+						"id": 34,
+						"answers": ["5 - voll und ganz", "2 - eher nicht", "2 - eher nicht", "3 - bin unentschieden", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "5 - voll und ganz", "5 - voll und ganz", "5 - voll und ganz"],
+						"itemMeta": {
+							"Feldname": "teila_8_3",
+							"Frage": "Ich fühle mich kompetent in der Therapie von Patient*innen mit Post-COVID19-Zustand.",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz",
+							"Benötigt": "ja"
+						}
+					},
+					{
+						"id": 35,
+						"answers": ["1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "2 - Ich bin mir unsicher"],
+						"itemMeta": {
+							"Feldname": "teila_9",
+							"Frage": "Gibt es Ihrer Meinung nach Patientengruppen, die anfälliger für Post-COVID sind?",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Ja|0 - Nein|2 - Ich bin mir unsicher",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 36,
+						"answers": ["Ältere Patienten mit Vorerkrankungen", "Chronisches Fatigue-Syndrom", "Autoimmunerkrankungen", "Patienten mit bestehenden Atemwegserkrankungen", "Herz-Kreislauf-Erkrankungen", "Immungeschwächte Patienten", "Psychische Störungen", "Neurologische Erkrankungen", "Personen mit Adipositas", "Fibromyalgie"],
+						"itemMeta": {
+							"Feldname": "teila_9_pat",
+							"Frage": "Wenn ja, welche Patientengruppen?",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 37,
+						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
+						"itemMeta": {
+							"Feldname": "teila_10",
+							"Frage": "Stellt Post-COVID Ihrer Meinung nach eine eigene Krankheitsentität dar?",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Ja|0 - Nein|2 - Ich bin mir unsicher",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 38,
+						"answers": ["", "", "", "", "", "Geruchs-/ Geschmackstörungen", "Psychologische Symptome", "", "", ""],
+						"itemMeta": {
+							"Feldname": "teila_10_pat",
+							"Frage": "Wenn nein, welche anderen Krankheiten lassen sich die Symptome zuordnen?",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 39,
+						"answers": ["", "", "Fibromyalgie", "", "", "", "", "", "", ""],
+						"itemMeta": {
+							"Feldname": "teila_10_pat_2",
+							"Frage": "Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 40,
+						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
+						"itemMeta": {
+							"Feldname": "teila_11",
+							"Frage": "Was sind die Beratungsanlässe von Patient*innen mit Post-Covid in Ihrer Praxis? Bitte kreuzen Sie an (Mehrfachnennung möglich)",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_11_sonst}",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 41,
+						"answers": ["Husten", "Übelkeit", "Schwindel", "Durchfall", "Müdigkeit", "Juckreiz", "Krämpfe", "Unruhe", "Herzklopfen", "Atemnot"],
+						"itemMeta": {
+							"Feldname": "teila_11_sonst",
+							"Frage": "Sonstiges",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 42,
+						"answers": ["1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "0 - Nein"],
+						"itemMeta": {
+							"Feldname": "teila_12",
+							"Frage": "Stellt Post-VAC Ihrer Meinung nach eine eigene Krankheitsentität dar?",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Ja|0 - Nein|2 - Ich bin mir unsicher",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 43,
+						"answers": ["", "Chronisches Erschöpfungssyndrom (CFS)", "", "Chronische Müdigkeit", "Langzeit-Durchfall", "", "Angststörung", "", "Schlafapnoe", "Migräne"],
+						"itemMeta": {
+							"Feldname": "teila_12_andere",
+							"Frage": "Wenn nein, welchen anderen Krankheiten lassen sich die Symptome zuordnen?",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 44,
+						"answers": ["", "", "Chronische Müdigkeit", "", "", "", "", "", "", ""],
+						"itemMeta": {
+							"Feldname": "teila_12_andere_2",
+							"Frage": "Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen?",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 45,
+						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "1 - Ja"],
+						"itemMeta": {
+							"Feldname": "teila_13",
+							"Frage": "Gab es bereits Patient*innen in Ihrer Praxis, die von sich aus den Verdacht geäußert haben, dass ihre Beschwerden Nebenwirkungen der Covid-19-Impfung waren. (Post-VAC-Syndrom)",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Ja|0 - Nein|2 - Ich bin mir unsicher",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 46,
+						"answers": [120, 45, "", 60, 10, 250, "", "", 5, 100],
+						"itemMeta": {
+							"Feldname": "teila_13_pat",
+							"Frage": "Wenn ja, wie viele ungefähr",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Benötigt": "Nein"
+						}
+					},
+					{
+						"id": 47,
+						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "", "", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
+						"itemMeta": {
+							"Feldname": "teila_13_anlass",
+							"Frage": "Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennungen möglich)",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_13_sonst}",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 48,
+						"answers": ["Schlafstörungen", "Schlafapnoe", "Unruhe", "Muskelschwäche", "Schwäche", "Schlafapnoe", "Schwäche", "Depression", "Muskelschwäche", "Muskelschwäche"],
+						"itemMeta": {
+							"Feldname": "teila_13_sonst",
+							"Frage": "Sonstige",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 49,
+						"answers": ["1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
+						"itemMeta": {
+							"Feldname": "teila_14",
+							"Frage": "Gab es bereits Patient*innen in Ihrer Praxis bei denen Sie den Verdacht auf ein Post-VAC Syndrom (seltene unterwünschte Reaktionenen auf Impfung) hatten?",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Ja|0 - Nein|2 - Ich bin mir unsicher",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 50,
+						"answers": [84, "", 30, "", "", "", "", 90, 5, 44],
+						"itemMeta": {
+							"Feldname": "teila_14_pat",
+							"Frage": "Wenn ja, wie viele ungefähr?",
+							"Feldtyp": "number",
+							"Minimum": "0",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 51,
+						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "", "", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen"],
+						"itemMeta": {
+							"Feldname": "teila_14_anlass",
+							"Frage": "Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennung möglich)",
+							"Feldtyp": "text",
+							"Auswahlmöglichkeiten": "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_14_sonst}",
+							"Benötigt": "nein"
+						}
+					},
+					{
+						"id": 52,
+						"answers": ["Chronische Müdigkeit", "Chronisches Erschöpfungssyndrom (CFS)", "Fibromyalgie", "Chronische Müdigkeit", "Langzeit-Durchfall", "Langzeit-Hautausschlag", "Angststörung", "Depression", "Schlafapnoe", "Migräne"],
+						"itemMeta": {
+							"Feldname": "teila_14_sonst",
+							"Frage": "Sonstige",
+							"Feldtyp": "text",
+							"Benötigt": "nein"
+						}
+					}
+				]
+			}
+		]
+	}
+}

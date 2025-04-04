@@ -1,0 +1,52 @@
+[
+	{
+		"rowID": 1,
+		"assignedItems": []
+	},
+	{
+		"rowID": 2,
+		"assignedItems": [
+			{
+				"id": "1",
+				"Frage": "Sonstige Anmerkungen",
+				"Feldtyp": "Text",
+				"Feldname": "sonstige_anmerkungen",
+				"Benötigt": "ja",
+				"Mapping": "mapping_1",
+				"Sektionsüberschrift": "Allgemeine Informationen"
+			}
+		]
+	},
+	{
+		"rowID": 3,
+		"assignedItems": [
+			{
+				"id": "7",
+				"Frage": "Sonstige Anmerkungen",
+				"Feldtyp": "Text",
+				"Feldname": "sonstige_anmerkungen",
+				"Benötigt": "ja",
+				"Mapping": "mapping_1",
+				"Sektionsüberschrift": "Allgemeine Informationen"
+			},
+			{
+				"id": "9",
+				"Frage": "Sonstiges",
+				"Feldtyp": "Checkbox",
+				"Feldname": "sonstiges",
+				"Benötigt": "nein",
+				"Mapping": "mapping_2",
+				"Sektionsüberschrift": "Spezielle Daten"
+			},
+			{
+				"id": "12",
+				"Frage": "Sonstige Krankheiten",
+				"Feldtyp": "Text",
+				"Feldname": "sonstige_krankheiten",
+				"Benötigt": "ja",
+				"Mapping": "mapping_3",
+				"Sektionsüberschrift": "Medizinische Historie"
+			}
+		]
+	}
+]

@@ -1,0 +1,1420 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="nod" IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="pro" IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/property#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rel" IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Benötigt"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Feldname"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Studie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Fragebogen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Feldtyp"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Teilnehmer"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Antwort"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:stakeholder_id"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:HAT"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Sektionsüberschrift"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Forschung"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Frage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Datenerhebung"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Item"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:ERSTELLT"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Mapping"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:GIBT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Metadaten"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:IST"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="pro:Leistungserbringer"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+    </Declaration>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Forschung"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Leistungserbringer"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Sektionsüberschrift"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Feldtyp"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Frage"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Mapping"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Benötigt"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Studie"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Teilnehmer"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Datenerhebung"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Fragebogen"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Item"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Metadaten"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Antwort"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:Feldname"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:ERSTELLT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:IST"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:GIBT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="pro:HAT"/>
+        <NamedIndividual IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9"/>
+    </ClassAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal>Forschung</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:stakeholder_id"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">101</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#0</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal>Leistungserbringer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:stakeholder_id"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">102</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#1</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal>Sektionsüberschrift</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">258</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal>Feldtyp</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">259</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal>Frage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">260</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal>Mapping</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">261</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal>Benötigt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">262</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal>Studie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">250</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#2</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal>Teilnehmer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">251</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#3</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal>Datenerhebung</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">252</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#4</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal>Fragebogen</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">253</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#5</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal>Item</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">254</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#6</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal>Metadaten</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">255</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#10</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#11</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#12</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#13</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#14</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#7</IRI>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal>Antwort</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">256</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_leaf"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_stakeholder"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal>Feldname</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/node#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">257</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal>erstellt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#0</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1001</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#1</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1002</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#10</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1010</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#11</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1011</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#12</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1012</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#13</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1013</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#14</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">114</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#2</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1003</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal>ist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#3</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1000</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal>gibt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#4</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1008</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#5</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1004</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#6</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1005</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal>1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#7</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1006</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal>n</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#8</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1007</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:cardinality"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal>0-1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:created"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:is_verified"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:last_updated"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T10:32:39.194Z</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:name"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal>hat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="pro:tag"/>
+        <IRI>file:/C:/Users/storzp/Desktop/Projekte/PostCovid/postcovid-challenge/frontend/src/scripts/test/relationship#9</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#long">1009</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

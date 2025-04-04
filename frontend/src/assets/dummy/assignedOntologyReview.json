@@ -1,0 +1,102 @@
+{
+	"id": 2,
+	"submitter": {
+		"firstName": "Paul",
+		"lastName": "Richter",
+		"role": ["PRACTITIONER"]
+	},
+	"submissionDate": "2025-03-19T17:25:00",
+	"reviewer": {
+		"firstName": "Test",
+		"lastName": "User",
+		"email": "test.user@reutlingen-university.de"
+	},
+	"submissionStatus": "ASSIGNED",
+	"submissionDetails": {
+		"studyInfo": {
+			"name": "Überregionalen Studie der Initiative DESAM-ForNet Covid_ShortForm_GP",
+			"purpose": "DATA_COLLECTION",
+			"dateStart": "2023-01-10",
+			"dateEnd": "2024-01-10",
+			"description": "Mit der überregionalen Studie Covid_ShortForm_GP werden\n• Inzidenzen von Long-/Post-Covid in der Hausarztpraxis realitätsnah retrospektiv erfasst\n• Versorgungsmerkmale von Patient:innen mit Long-/Post-Covid aus der Perspektive der versorgenden\nHausärzt:innen beschrieben\nDie Studie dient der Machbarkeitsprüfung, um das\ngewählte Studiendesign (Erhebung von\nVersorgungs-merkmalen auf Basis von Abrechnungs- und Versorgungsdaten aus den Praxisverwaltungssystemen) für weitere überregionale\nStudien mit Hausarztpraxen zu optimieren.",
+			"drksID": 123
+		},
+		"modifiedOntology": "",
+		"migrationOperations": [
+			{
+				"id": 0,
+				"operation": {
+					"main": "ADDITION",
+					"sub": "CREATION"
+				},
+				"elementType": "LEAF",
+				"name": "Einheit",
+				"tag": 263
+			},
+			{
+				"id": 1,
+				"operation": {
+					"main": "ADDITION",
+					"sub": "LINKING"
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "hat",
+				"tag": 1015
+			},
+			{
+				"id": 2,
+				"operation": {
+					"main": "ATTRIBUTE_MODIFICATION",
+					"sub": null
+				},
+				"elementType": "NODE",
+				"name": "Sektion",
+				"tag": 257
+			},
+			{
+				"id": 3,
+				"operation": {
+					"main": "DELETION_LEAF",
+					"sub": "UNLINKING"
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "hat",
+				"tag": 1009
+			},
+			{
+				"id": 4,
+				"operation": {
+					"main": "DELETION_LEAF",
+					"sub": "DELETION"
+				},
+				"elementType": "NODE",
+				"name": "Feldname",
+				"tag": 258
+			},
+			{
+				"id": 5,
+				"operation": {
+					"main": "ATTRIBUTE_MODIFICATION",
+					"sub": null
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "besteht aus",
+				"tag": 1006
+			},
+			{
+				"id": 6,
+				"operation": {
+					"main": "UNLINKING",
+					"sub": null
+				},
+				"elementType": "RELATIONSHIP",
+				"name": "gibt",
+				"tag": 1008
+			}
+		]
+	},
+	"review": {
+		"status": null,
+		"comment": "Änderungen scheinen zu passen, weitere Prüfung notwendig"
+	}
+}

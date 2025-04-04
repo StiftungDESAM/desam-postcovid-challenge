@@ -1,0 +1,62 @@
+[
+	{
+		"id": 0,
+		"name": "Überregionalen Studie der Initiative DESAM-ForNet Covid_ShortForm_GP",
+		"purpose": "DATA_ANALYSIS",
+		"dateStart": "2024-05-01",
+		"dateEnd": "2025-01-01",
+		"submissionDate": "2025-03-19T17:25:00",
+		"amountCodeBooks": 2,
+		"uploadTyp": "UPLOAD_ONTOLOGY",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	},
+	{
+		"id": 1,
+		"name": "Überregionalen Studie der Initiative DESAM-ForNet Covid_ShortForm_GP",
+		"purpose": "DATA_COLLECTION",
+		"dateStart": "2023-01-10",
+		"dateEnd": "2024-01-10",
+		"submissionDate": "2025-03-19T17:25:00",
+		"amountCodeBooks": 2,
+		"uploadTyp": "UPLOAD_DATA",
+		"reviewer": {
+			"firstName": "Mia",
+			"lastName": "Schuster",
+			"email": "mia.schuster@example.com"
+		},
+		"submissionStatus": "ACCEPTED"
+	},
+	{
+		"id": 2,
+		"name": "NAPKON",
+		"purpose": "DATA_COLLECTION",
+		"dateStart": "2020-11-01",
+		"dateEnd": "2024-12-31",
+		"submissionDate": "2025-03-14T14:20:00",
+		"amountCodeBooks": 2,
+		"uploadTyp": "UPLOAD_ONTOLOGY",
+		"reviewer": {
+			"firstName": "Julia",
+			"lastName": "Bauer",
+			"email": "julia.bauer@example.com"
+		},
+		"submissionStatus": "MODIFICATION_NEEDED"
+	},
+	{
+		"id": 3,
+		"name": "PreVitaCOV",
+		"purpose": "DATA_COLLECTION",
+		"dateStart": "2022-02-01",
+		"dateEnd": "2025-01-30",
+		"submissionDate": "2025-03-17T17:25:00",
+		"amountCodeBooks": 3,
+		"uploadTyp": "UPLOAD_ONTOLOGY",
+		"reviewer": {
+			"firstName": "Hannah",
+			"lastName": "Fischer",
+			"email": "hannah.fischer@example.com"
+		},
+		"submissionStatus": "DECLINED"
+	}
+]

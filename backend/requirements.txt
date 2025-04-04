@@ -1,0 +1,7 @@
+django==5.1.5           # Main web framework
+gunicorn==23.0.0        # HTTP production server for Django
+django-ninja==1.3.0     # REST-framework for the API
+neomodel==5.4.2         # Mapper for accessing Neo4j from Django
+psycopg2-binary==2.9.10 # Adapter for PostgreSQL
+
+pytest-django==4.8.0    # Unit tests

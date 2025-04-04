@@ -1,0 +1,23 @@
+ARG WorkingDirectory=/usr/src/frontend
+
+# --- Development Stage ---
+FROM node:lts-alpine
+
+# WORKDIR $WorkingDirectory
+WORKDIR /usr/src/frontend
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN rm -rf node_modules package-lock.json
+RUN npm install
+
+# Copy project files
+COPY . .
+
+# Expose the port used by Vite
+EXPOSE 5173
+
+# Command to start the development server
+CMD ["npm", "run", "dev", "--", "--host"]

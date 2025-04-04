@@ -1,0 +1,1088 @@
+[
+	{
+		"id": 0,
+		"amountAnswers": 59,
+		"itemMeta": {
+			"Feldname": "alter",
+			"Feldtyp": "number",
+			"Frage": "Wie alt sind Sie?",
+			"Benötigt": "ja",
+			"Minimum": "0",
+			"Maximum": "120",
+			"Einheit": "Jahre"
+		}
+	},
+	{
+		"id": 1,
+		"amountAnswers": 84,
+		"itemMeta": {
+			"Feldname": "geschlecht",
+			"Feldtyp": "text",
+			"Frage": "Welches Geschlecht haben Sie?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Männlich|Weiblich|Divers"
+		}
+	},
+	{
+		"id": 2,
+		"amountAnswers": 42,
+		"itemMeta": {
+			"Feldname": "covid_infektion",
+			"Feldtyp": "text",
+			"Frage": "Waren Sie bereits mit COVID-19 infiziert?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Ja|Nein|Unsicher"
+		}
+	},
+	{
+		"id": 3,
+		"amountAnswers": 27,
+		"itemMeta": {
+			"Feldname": "infektionsjahr",
+			"Feldtyp": "number",
+			"Frage": "In welchem Jahr waren Sie infiziert?",
+			"Minimum": "2019",
+			"Maximum": "2025",
+			"Einheit": "Jahr",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 4,
+		"amountAnswers": 38,
+		"itemMeta": {
+			"Feldname": "langzeitfolgen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion Langzeitfolgen bemerkt?",
+			"Auswahlmöglichkeiten": "Atemprobleme|Müdigkeit|Konzentrationsprobleme|Geruchs-/Geschmacksverlust|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 5,
+		"amountAnswers": 82,
+		"itemMeta": {
+			"Feldname": "impfstatus",
+			"Feldtyp": "text",
+			"Frage": "Sind Sie gegen COVID-19 geimpft?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Ja, vollständig|Ja, teilweise|Nein"
+		}
+	},
+	{
+		"id": 6,
+		"amountAnswers": 78,
+		"itemMeta": {
+			"Feldname": "impfreaktion",
+			"Feldtyp": "text",
+			"Frage": "Hatten Sie Nebenwirkungen nach der Impfung?",
+			"Auswahlmöglichkeiten": "Fieber|Schmerzen an der Einstichstelle|Müdigkeit|Kopfschmerzen|Keine",
+			"Verzweigung": "impfstatus=Ja, vollständig"
+		}
+	},
+	{
+		"id": 7,
+		"amountAnswers": 72,
+		"itemMeta": {
+			"Feldname": "psychische_gesundheit",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihre psychische Gesundheit seit der Pandemie verändert?",
+			"Auswahlmöglichkeiten": "Ja, verschlechtert|Ja, verbessert|Nein, gleich geblieben"
+		}
+	},
+	{
+		"id": 8,
+		"amountAnswers": 3,
+		"itemMeta": {
+			"Feldname": "arbeitsstatus",
+			"Feldtyp": "text",
+			"Frage": "Wie hat sich Ihre berufliche Situation durch die Pandemie verändert?",
+			"Auswahlmöglichkeiten": "Unverändert|Job verloren|Job gewechselt|Mehr Homeoffice|Geringere Arbeitszeit"
+		}
+	},
+	{
+		"id": 9,
+		"amountAnswers": 53,
+		"itemMeta": {
+			"Feldname": "hat_auto",
+			"Feldtyp": "text",
+			"Frage": "Besitzen Sie ein Auto?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "alter=18"
+		}
+	},
+	{
+		"id": 10,
+		"amountAnswers": 50,
+		"itemMeta": {
+			"Feldname": "zusätzliche_kommentare",
+			"Feldtyp": "text",
+			"Sektionsüberschrift": "Weitere Anmerkungen",
+			"Frage": "Möchten Sie noch etwas hinzufügen?",
+			"Benötigt": "nein"
+		}
+	},
+	{
+		"id": 11,
+		"amountAnswers": 12,
+		"itemMeta": {
+			"Feldname": "kontakt_mit_kranken",
+			"Feldtyp": "text",
+			"Frage": "Hatten Sie während der Pandemie engen Kontakt zu jemandem, der COVID-19 hatte?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 12,
+		"amountAnswers": 40,
+		"itemMeta": {
+			"Feldname": "quarantäne_zeitraum",
+			"Feldtyp": "number",
+			"Frage": "Wie lange mussten Sie sich während der Pandemie in Quarantäne begeben?",
+			"Minimum": "0",
+			"Maximum": "60",
+			"Einheit": "Tage",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 13,
+		"amountAnswers": 57,
+		"itemMeta": {
+			"Feldname": "impfstoff",
+			"Feldtyp": "text",
+			"Frage": "Welchen Impfstoff haben Sie erhalten?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Biontech|Moderna|AstraZeneca|Johnson & Johnson|Andere"
+		}
+	},
+	{
+		"id": 14,
+		"amountAnswers": 67,
+		"itemMeta": {
+			"Feldname": "home_office",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie während der Pandemie im Homeoffice gearbeitet?",
+			"Benötigt": "ja",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 15,
+		"amountAnswers": 45,
+		"itemMeta": {
+			"Feldname": "worklife_balance",
+			"Feldtyp": "text",
+			"Frage": "Wie hat sich Ihre Work-Life-Balance durch die Pandemie verändert?",
+			"Auswahlmöglichkeiten": "Hat sich verbessert|Hat sich verschlechtert|Keine Veränderung"
+		}
+	},
+	{
+		"id": 16,
+		"amountAnswers": 30,
+		"itemMeta": {
+			"Feldname": "behandlungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie während oder nach Ihrer COVID-19-Infektion medizinische Behandlungen erhalten?",
+			"Auswahlmöglichkeiten": "Krankenhausaufenthalt|Sauerstoffbehandlung|Medikamentöse Behandlung|Physiotherapie|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 17,
+		"amountAnswers": 62,
+		"itemMeta": {
+			"Feldname": "körperliche_aktivität",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihre körperliche Aktivität während der Pandemie verändert?",
+			"Auswahlmöglichkeiten": "Hat sich erhöht|Hat sich verringert|Bleibt gleich"
+		}
+	},
+	{
+		"id": 18,
+		"amountAnswers": 70,
+		"itemMeta": {
+			"Feldname": "soziale_kontakte",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie während der Pandemie Ihre sozialen Kontakte eingeschränkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 19,
+		"amountAnswers": 51,
+		"itemMeta": {
+			"Feldname": "finanzielle_situation",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihre finanzielle Situation durch die Pandemie verschlechtert?",
+			"Auswahlmöglichkeiten": "Ja|Nein|Unverändert"
+		}
+	},
+	{
+		"id": 20,
+		"amountAnswers": 47,
+		"itemMeta": {
+			"Feldname": "reiseschrecken",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Pandemie Angst, zu reisen?",
+			"Auswahlmöglichkeiten": "Ja|Nein|Manchmal"
+		}
+	},
+	{
+		"id": 21,
+		"amountAnswers": 33,
+		"itemMeta": {
+			"Feldname": "atemprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion Atemprobleme?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 22,
+		"amountAnswers": 29,
+		"itemMeta": {
+			"Feldname": "müdigkeit",
+			"Feldtyp": "text",
+			"Frage": "Leiden Sie nach Ihrer COVID-19-Infektion an ständiger Müdigkeit?",
+			"Auswahlmöglichkeiten": "Ja, häufig|Ja, gelegentlich|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 23,
+		"amountAnswers": 18,
+		"itemMeta": {
+			"Feldname": "herzprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion Herzprobleme bemerkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 24,
+		"amountAnswers": 39,
+		"itemMeta": {
+			"Feldname": "geruchsverlust",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion einen Verlust des Geruchs- oder Geschmackssinns erlebt?",
+			"Auswahlmöglichkeiten": "Ja, dauerhaft|Ja, vorübergehend|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 25,
+		"amountAnswers": 31,
+		"itemMeta": {
+			"Feldname": "kognitive_beschwerden",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion kognitive Beeinträchtigungen wie Gedächtnisprobleme oder Konzentrationsstörungen festgestellt?",
+			"Auswahlmöglichkeiten": "Gedächtnisprobleme|Konzentrationsstörungen|Verwirrtheit|Keines der oben genannten",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 26,
+		"amountAnswers": 26,
+		"itemMeta": {
+			"Feldname": "muskel_und_gelenkschmerzen",
+			"Feldtyp": "text",
+			"Frage": "Leiden Sie nach Ihrer COVID-19-Infektion an Muskel- oder Gelenkschmerzen?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 27,
+		"amountAnswers": 36,
+		"itemMeta": {
+			"Feldname": "schlafstörungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion Schlafstörungen oder Schlafprobleme?",
+			"Auswahlmöglichkeiten": "Ja, häufig|Ja, gelegentlich|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 28,
+		"amountAnswers": 40,
+		"itemMeta": {
+			"Feldname": "psychische_symptome",
+			"Feldtyp": "text",
+			"Frage": "Leiden Sie nach Ihrer COVID-19-Infektion unter psychischen Symptomen wie Angstzuständen oder Depressionen?",
+			"Auswahlmöglichkeiten": "Angstzustände|Depressionen|Stress|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 29,
+		"amountAnswers": 27,
+		"itemMeta": {
+			"Feldname": "lange_rehabilitationszeit",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion eine längere Zeit für die Rehabilitation benötigt?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 30,
+		"amountAnswers": 35,
+		"itemMeta": {
+			"Feldname": "langzeitfolgen_impact",
+			"Feldtyp": "text",
+			"Frage": "Haben die Langzeitfolgen Ihrer COVID-19-Infektion Ihre Lebensqualität beeinträchtigt?",
+			"Auswahlmöglichkeiten": "Ja, stark|Ja, leicht|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 31,
+		"amountAnswers": 20,
+		"itemMeta": {
+			"Feldname": "lungenfunktion",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion eine Verschlechterung Ihrer Lungenfunktion festgestellt?",
+			"Auswahlmöglichkeiten": "Ja|Nein|Unsicher",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 32,
+		"amountAnswers": 56,
+		"itemMeta": {
+			"Feldname": "chronische_erschöpfung",
+			"Feldtyp": "text",
+			"Frage": "Leiden Sie an chronischer Erschöpfung (Fatigue) seit Ihrer COVID-19-Infektion?",
+			"Auswahlmöglichkeiten": "Ja, stark|Ja, leicht|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 33,
+		"amountAnswers": 87,
+		"itemMeta": {
+			"Feldname": "haarausfall",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion vermehrten Haarausfall bemerkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 34,
+		"amountAnswers": 21,
+		"itemMeta": {
+			"Feldname": "nervenprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion Probleme mit Ihrem Nervensystem?",
+			"Auswahlmöglichkeiten": "Kribbeln|Taubheitsgefühle|Schwindel|Kopfschmerzen|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 35,
+		"amountAnswers": 13,
+		"itemMeta": {
+			"Feldname": "blutdruckveränderung",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion Veränderungen Ihres Blutdrucks festgestellt?",
+			"Auswahlmöglichkeiten": "Ja, höher|Ja, niedriger|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 36,
+		"amountAnswers": 76,
+		"itemMeta": {
+			"Feldname": "verdauungsprobleme",
+			"Feldtyp": "text",
+			"Frage": "Leiden Sie nach Ihrer COVID-19-Infektion unter Verdauungsproblemen?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 37,
+		"amountAnswers": 98,
+		"itemMeta": {
+			"Feldname": "menstruationsveränderungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion Veränderungen in Ihrem Menstruationszyklus festgestellt?",
+			"Auswahlmöglichkeiten": "Ja|Nein|Nicht zutreffend",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 38,
+		"amountAnswers": 67,
+		"itemMeta": {
+			"Feldname": "geschwollene_lymphknoten",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion geschwollene Lymphknoten bemerkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 39,
+		"amountAnswers": 17,
+		"itemMeta": {
+			"Feldname": "hautprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion Hautprobleme festgestellt?",
+			"Auswahlmöglichkeiten": "Ausschlag|Trockene Haut|Juckreiz|Verfärbungen|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 40,
+		"amountAnswers": 47,
+		"itemMeta": {
+			"Feldname": "medikamentöse_behandlung",
+			"Feldtyp": "text",
+			"Frage": "Müssen Sie aufgrund von Post-COVID-Symptomen regelmäßig Medikamente einnehmen?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 41,
+		"amountAnswers": 89,
+		"itemMeta": {
+			"Feldname": "zeitpunkt_erkrankung",
+			"Feldtyp": "text",
+			"Frage": "Wann genau hatten Sie Ihre COVID-19-Infektion?",
+			"Benötigt": "ja"
+		}
+	},
+	{
+		"id": 42,
+		"amountAnswers": 72,
+		"itemMeta": {
+			"Feldname": "anzahl_infektionen",
+			"Feldtyp": "number",
+			"Frage": "Wie oft waren Sie insgesamt mit COVID-19 infiziert?",
+			"Minimum": "0",
+			"Maximum": "10",
+			"Einheit": "Mal"
+		}
+	},
+	{
+		"id": 43,
+		"amountAnswers": 23,
+		"itemMeta": {
+			"Feldname": "dauer_symptome",
+			"Feldtyp": "number",
+			"Frage": "Wie lange hielten Ihre COVID-19-Symptome an?",
+			"Minimum": "0",
+			"Maximum": "365",
+			"Einheit": "Tage"
+		}
+	},
+	{
+		"id": 44,
+		"amountAnswers": 45,
+		"itemMeta": {
+			"Feldname": "symptome_beschreibung",
+			"Feldtyp": "text",
+			"Frage": "Welche Symptome haben Sie während oder nach der Infektion erlebt? Beschreiben Sie diese bitte."
+		}
+	},
+	{
+		"id": 45,
+		"amountAnswers": 54,
+		"itemMeta": {
+			"Feldname": "arztbesuche",
+			"Feldtyp": "number",
+			"Frage": "Wie oft haben Sie nach der Infektion einen Arzt oder eine Ärztin wegen Langzeitfolgen aufgesucht?",
+			"Minimum": "0",
+			"Maximum": "50",
+			"Einheit": "Besuche",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 46,
+		"amountAnswers": 68,
+		"itemMeta": {
+			"Feldname": "medikamente_postcovid",
+			"Feldtyp": "text",
+			"Frage": "Welche Medikamente nehmen Sie aktuell aufgrund von Post-COVID-Beschwerden ein?"
+		}
+	},
+	{
+		"id": 47,
+		"amountAnswers": 78,
+		"itemMeta": {
+			"Feldname": "lungenfunktion_test",
+			"Feldtyp": "text",
+			"Frage": "Wurde Ihre Lungenfunktion nach der Infektion getestet?",
+			"Auswahlmöglichkeiten": "Ja, mit Auffälligkeiten|Ja, ohne Auffälligkeiten|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 48,
+		"amountAnswers": 83,
+		"itemMeta": {
+			"Feldname": "ruhepuls_veränderung",
+			"Feldtyp": "number",
+			"Frage": "Hat sich Ihr Ruhepuls nach der COVID-19-Infektion verändert? Falls ja, um wie viele Schläge pro Minute?",
+			"Minimum": "-50",
+			"Maximum": "50",
+			"Einheit": "BPM",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 49,
+		"amountAnswers": 54,
+		"itemMeta": {
+			"Feldname": "behandlung_reha",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie eine Reha oder spezielle Behandlung zur Linderung von Post-COVID-Symptomen gemacht?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 50,
+		"amountAnswers": 65,
+		"itemMeta": {
+			"Feldname": "subjektive_gesundheit",
+			"Feldtyp": "scale",
+			"Frage": "Wie würden Sie Ihre allgemeine Gesundheit nach der COVID-19-Infektion auf einer Skala von 1 (sehr schlecht) bis 10 (sehr gut) bewerten?",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 51,
+		"amountAnswers": 85,
+		"itemMeta": {
+			"Feldname": "erste_symptome",
+			"Feldtyp": "text",
+			"Frage": "Welche waren die ersten Symptome, die Sie während Ihrer COVID-19-Infektion bemerkt haben?"
+		}
+	},
+	{
+		"id": 52,
+		"amountAnswers": 4,
+		"itemMeta": {
+			"Feldname": "stationäre_aufnahme",
+			"Feldtyp": "text",
+			"Frage": "Wurden Sie aufgrund Ihrer COVID-19-Infektion im Krankenhaus aufgenommen?",
+			"Auswahlmöglichkeiten": "Ja, auf Normalstation|Ja, auf Intensivstation|Nein"
+		}
+	},
+	{
+		"id": 53,
+		"amountAnswers": 65,
+		"itemMeta": {
+			"Feldname": "dauer_krankenhausaufenthalt",
+			"Feldtyp": "number",
+			"Frage": "Falls Sie im Krankenhaus waren, wie lange dauerte Ihr Aufenthalt?",
+			"Minimum": "0",
+			"Maximum": "180",
+			"Einheit": "Tage",
+			"Verzweigung": "stationäre_aufnahme=Ja, auf Normalstation"
+		}
+	},
+	{
+		"id": 54,
+		"amountAnswers": 80,
+		"itemMeta": {
+			"Feldname": "beatmung",
+			"Feldtyp": "text",
+			"Frage": "Mussten Sie während Ihrer COVID-19-Infektion künstlich beatmet werden?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "stationäre_aufnahme=Ja, auf Intensivstation"
+		}
+	},
+	{
+		"id": 55,
+		"amountAnswers": 34,
+		"itemMeta": {
+			"Feldname": "sportfähigkeit",
+			"Feldtyp": "scale",
+			"Frage": "Wie sehr hat sich Ihre sportliche Leistungsfähigkeit nach der Infektion verändert? (1 = stark verschlechtert, 10 = unverändert)",
+			"Minimum": "1",
+			"Maximum": "10",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 56,
+		"amountAnswers": 55,
+		"itemMeta": {
+			"Feldname": "gewichtsveränderung",
+			"Feldtyp": "number",
+			"Frage": "Haben Sie nach der COVID-19-Infektion eine Gewichtsveränderung festgestellt? Falls ja, um wie viele Kilogramm?",
+			"Minimum": "-30",
+			"Maximum": "30",
+			"Einheit": "kg",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 57,
+		"amountAnswers": 32,
+		"itemMeta": {
+			"Feldname": "hautveränderungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit Ihrer COVID-19-Infektion Hautveränderungen festgestellt? Falls ja, bitte beschreiben."
+		}
+	},
+	{
+		"id": 58,
+		"amountAnswers": 41,
+		"itemMeta": {
+			"Feldname": "geruchssinn_rückkehr",
+			"Feldtyp": "text",
+			"Frage": "Falls Sie Ihren Geruchssinn verloren hatten, ist dieser wieder vollständig zurückgekehrt?",
+			"Auswahlmöglichkeiten": "Ja|Nein, nur teilweise|Nein, gar nicht",
+			"Verzweigung": "geruchsverlust=Ja"
+		}
+	},
+	{
+		"id": 59,
+		"amountAnswers": 63,
+		"itemMeta": {
+			"Feldname": "tagesmüdigkeit",
+			"Feldtyp": "scale",
+			"Frage": "Wie stark fühlen Sie sich tagsüber müde oder erschöpft? (1 = gar nicht, 10 = extrem)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 60,
+		"amountAnswers": 85,
+		"itemMeta": {
+			"Feldname": "medikamenten_nebenwirkungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie Nebenwirkungen von Medikamenten bemerkt, die Sie aufgrund von Post-COVID einnehmen?"
+		}
+	},
+	{
+		"id": 61,
+		"amountAnswers": 96,
+		"itemMeta": {
+			"Feldname": "atemwegsinfektionen_häufigkeit",
+			"Feldtyp": "number",
+			"Frage": "Wie oft hatten Sie seit Ihrer COVID-19-Infektion Atemwegsinfektionen?",
+			"Minimum": "0",
+			"Maximum": "20",
+			"Einheit": "Mal"
+		}
+	},
+	{
+		"id": 62,
+		"amountAnswers": 94,
+		"itemMeta": {
+			"Feldname": "angstzustände",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie seit der COVID-19-Infektion vermehrt Angstzustände oder Panikattacken?",
+			"Auswahlmöglichkeiten": "Ja|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 63,
+		"amountAnswers": 63,
+		"itemMeta": {
+			"Feldname": "wahrnehmung_veränderung",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie Veränderungen in Ihrer Wahrnehmung festgestellt?",
+			"Auswahlmöglichkeiten": "Lichtempfindlichkeit|Geräuschempfindlichkeit|Probleme mit räumlicher Orientierung|Keine",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 64,
+		"amountAnswers": 35,
+		"itemMeta": {
+			"Feldname": "schlafqualität",
+			"Feldtyp": "scale",
+			"Frage": "Wie bewerten Sie Ihre Schlafqualität nach der Infektion? (1 = sehr schlecht, 10 = sehr gut)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 65,
+		"amountAnswers": 54,
+		"itemMeta": {
+			"Feldname": "spätfolgen_ahnen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie schon während der Infektion geahnt, dass Sie langfristige Beschwerden haben könnten?",
+			"Auswahlmöglichkeiten": "Ja|Nein|Unsicher"
+		}
+	},
+	{
+		"id": 66,
+		"amountAnswers": 25,
+		"itemMeta": {
+			"Feldname": "beeinträchtigung_arbeit",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihre Arbeitsfähigkeit aufgrund von Post-COVID-Symptomen verschlechtert?",
+			"Auswahlmöglichkeiten": "Ja, stark|Ja, leicht|Nein"
+		}
+	},
+	{
+		"id": 67,
+		"amountAnswers": 27,
+		"itemMeta": {
+			"Feldname": "sozialleben_veränderung",
+			"Feldtyp": "text",
+			"Frage": "Wie hat sich Ihr Sozialleben durch Post-COVID verändert? Bitte beschreiben Sie Ihre Erfahrungen."
+		}
+	},
+	{
+		"amountAnswers": 56,
+		"itemMeta": {
+			"id": 68,
+			"Feldname": "hilfe_von_fachärzten",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie wegen Post-COVID bereits einen Facharzt oder eine Fachärztin konsultiert?",
+			"Auswahlmöglichkeiten": "Ja, mehrfach|Ja, einmal|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"amountAnswers": 68,
+		"itemMeta": {
+			"id": 69,
+			"Feldname": "subjektive_erholung",
+			"Feldtyp": "scale",
+			"Frage": "Wie weit fühlen Sie sich insgesamt von Ihrer COVID-19-Infektion erholt? (1 = gar nicht, 10 = vollständig)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"amountAnswers": 23,
+		"id": 70,
+		"itemMeta": {
+			"Feldname": "krankenhaus_aufenthalt_grund",
+			"Feldtyp": "text",
+			"Frage": "Falls Sie im Krankenhaus waren, was war der Hauptgrund für die Aufnahme?",
+			"Verzweigung": "stationäre_aufnahme=Ja"
+		}
+	},
+	{
+		"amountAnswers": 11,
+		"itemMeta": {
+			"Feldname": "dauer_fieber",
+			"id": 71,
+			"Feldtyp": "number",
+			"Frage": "Wie viele Tage hatten Sie während Ihrer COVID-19-Infektion Fieber?",
+			"Minimum": "0",
+			"Maximum": "30",
+			"Einheit": "Tage"
+		}
+	},
+	{
+		"amountAnswers": 44,
+		"itemMeta": {
+			"id": 72,
+			"Feldname": "geschmackssinn_rückkehr",
+			"Feldtyp": "text",
+			"Frage": "Falls Sie Ihren Geschmackssinn verloren hatten, ist dieser wieder vollständig zurückgekehrt?",
+			"Auswahlmöglichkeiten": "Ja|Nein, nur teilweise|Nein, gar nicht",
+			"Verzweigung": "geschmacksverlust=Ja"
+		}
+	},
+	{
+		"amountAnswers": 23,
+		"itemMeta": {
+			"id": 73,
+			"Feldname": "muskelkraft_verlust",
+			"Feldtyp": "scale",
+			"Frage": "Haben Sie nach der COVID-19-Infektion einen Verlust an Muskelkraft festgestellt? (1 = kein Unterschied, 10 = sehr starker Verlust)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"amountAnswers": 32,
+		"itemMeta": {
+			"id": 74,
+			"Feldname": "blutdruck_veränderung",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihr Blutdruck nach der Infektion verändert?",
+			"Auswahlmöglichkeiten": "Ja, höher|Ja, niedriger|Nein",
+			"Verzweigung": "covid_infektion=Ja"
+		}
+	},
+	{
+		"id": 75,
+		"amountAnswers": 34,
+		"itemMeta": {
+			"Feldname": "nachwirkungen_impfung",
+			"Feldtyp": "text",
+			"Frage": "Falls Sie nach der Infektion geimpft wurden, haben Sie Veränderungen oder Verbesserungen Ihrer Symptome festgestellt?"
+		}
+	},
+	{
+		"amountAnswers": 43,
+		"id": 76,
+		"itemMeta": {
+			"Feldname": "herzstolpern",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der COVID-19-Infektion vermehrt Herzstolpern oder unregelmäßigen Herzschlag bemerkt?",
+			"Auswahlmöglichkeiten": "Ja, häufig|Ja, gelegentlich|Nein"
+		}
+	},
+	{
+		"id": 77,
+		"amountAnswers": 45,
+		"itemMeta": {
+			"Feldname": "häufigkeit_kopfschmerzen",
+			"Feldtyp": "scale",
+			"Frage": "Wie oft haben Sie seit der Infektion Kopfschmerzen? (1 = nie, 10 = täglich)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 78,
+		"amountAnswers": 54,
+		"itemMeta": {
+			"Feldname": "verdauungsprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach Ihrer COVID-19-Infektion vermehrt Verdauungsprobleme?",
+			"Auswahlmöglichkeiten": "Ja, regelmäßig|Ja, gelegentlich|Nein"
+		}
+	},
+	{
+		"id": 79,
+		"amountAnswers": 56,
+		"itemMeta": {
+			"Feldname": "schlafverhalten_veränderung",
+			"Feldtyp": "text",
+			"Frage": "Wie hat sich Ihr Schlafverhalten verändert?",
+			"Auswahlmöglichkeiten": "Schlaflosigkeit|Früheres Erwachen|Vermehrte Müdigkeit|Kein Unterschied"
+		}
+	},
+	{
+		"id": 80,
+		"amountAnswers": 65,
+		"itemMeta": {
+			"Feldname": "arbeitsunfähigkeit",
+			"Feldtyp": "number",
+			"Frage": "Wie viele Tage waren Sie nach der Infektion krankgeschrieben?",
+			"Minimum": "0",
+			"Maximum": "365",
+			"Einheit": "Tage"
+		}
+	},
+	{
+		"id": 81,
+		"amountAnswers": 67,
+		"itemMeta": {
+			"Feldname": "belastbarkeit_veränderung",
+			"Feldtyp": "scale",
+			"Frage": "Wie sehr hat sich Ihre körperliche Belastbarkeit nach der Infektion verändert? (1 = stark verschlechtert, 10 = unverändert)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 82,
+		"amountAnswers": 76,
+		"itemMeta": {
+			"Feldname": "tinnitus",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Infektion Tinnitus oder andere Ohrgeräusche bemerkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 83,
+		"amountAnswers": 78,
+		"itemMeta": {
+			"Feldname": "wetterfühligkeit",
+			"Feldtyp": "text",
+			"Frage": "Sind Sie seit der Infektion empfindlicher gegenüber Wetterveränderungen?",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 84,
+		"amountAnswers": 87,
+		"itemMeta": {
+			"Feldname": "nebenwirkungen_medikamente",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie Nebenwirkungen durch Medikamente, die Sie wegen Post-COVID einnehmen?"
+		}
+	},
+	{
+		"id": 85,
+		"amountAnswers": 89,
+		"itemMeta": {
+			"Feldname": "bluttests_veränderung",
+			"Feldtyp": "text",
+			"Frage": "Gab es auffällige Werte in Bluttests nach der Infektion?"
+		}
+	},
+	{
+		"id": 86,
+		"amountAnswers": 98,
+		"itemMeta": {
+			"Feldname": "atmungsprobleme_nachts",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nachts Atemprobleme oder plötzliche Atemaussetzer bemerkt?",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 87,
+		"amountAnswers": 90,
+		"itemMeta": {
+			"Feldname": "langzeitgeruchsverlust",
+			"Feldtyp": "text",
+			"Frage": "Hat sich Ihr Geruchssinn langfristig verändert?",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 88,
+		"amountAnswers": 9,
+		"itemMeta": {
+			"Feldname": "hautempfindlichkeit",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Infektion eine erhöhte Empfindlichkeit der Haut festgestellt?",
+			"Auswahlmöglichkeiten": "Ja|Nein"
+		}
+	},
+	{
+		"id": 89,
+		"amountAnswers": 45,
+		"itemMeta": {
+			"Feldname": "kreislaufprobleme",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Infektion häufiger Kreislaufprobleme oder Schwindel?",
+			"Auswahlmöglichkeiten": "Ja, häufig|Ja, gelegentlich|Nein"
+		}
+	},
+	{
+		"id": 90,
+		"amountAnswers": 73,
+		"itemMeta": {
+			"Feldname": "dauer_husten",
+			"Feldtyp": "number",
+			"Frage": "Wie viele Wochen hatten Sie nach der Infektion Husten?",
+			"Minimum": "0",
+			"Maximum": "52",
+			"Einheit": "Wochen"
+		}
+	},
+	{
+		"id": 91,
+		"amountAnswers": 0,
+		"itemMeta": {
+			"Feldname": "chronische_erschöpfung",
+			"Feldtyp": "scale",
+			"Frage": "Wie stark leiden Sie an anhaltender Erschöpfung? (1 = gar nicht, 10 = extrem)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 92,
+		"amountAnswers": 42,
+		"itemMeta": {
+			"Feldname": "atemwegsmedikamente",
+			"Feldtyp": "text",
+			"Frage": "Falls Sie Medikamente gegen Atemwegssymptome einnehmen, welche sind das?"
+		}
+	},
+	{
+		"id": 93,
+		"amountAnswers": 75,
+		"itemMeta": {
+			"Feldname": "sportliche_anpassungen",
+			"Feldtyp": "text",
+			"Frage": "Mussten Sie Ihre sportlichen Aktivitäten nach der Infektion anpassen? Falls ja, wie?"
+		}
+	},
+	{
+		"id": 94,
+		"amountAnswers": 52,
+		"itemMeta": {
+			"Feldname": "langzeitschäden",
+			"Feldtyp": "text",
+			"Frage": "Wurde bei Ihnen eine langfristige gesundheitliche Schädigung diagnostiziert?"
+		}
+	},
+	{
+		"id": 95,
+		"amountAnswers": 32,
+		"itemMeta": {
+			"Feldname": "stimmungsschwankungen",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Infektion vermehrt Stimmungsschwankungen bemerkt?",
+			"Auswahlmöglichkeiten": "Ja, häufig|Ja, gelegentlich|Nein"
+		}
+	},
+	{
+		"id": 96,
+		"amountAnswers": 51,
+		"itemMeta": {
+			"Feldname": "körperliche_tagesform",
+			"Feldtyp": "scale",
+			"Frage": "Wie stark schwankt Ihre körperliche Verfassung von Tag zu Tag? (1 = kaum, 10 = sehr stark)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 97,
+		"amountAnswers": 52,
+		"itemMeta": {
+			"Feldname": "subjektive_besserung",
+			"Feldtyp": "scale",
+			"Frage": "Wie sehr haben sich Ihre Symptome im Laufe der Zeit verbessert? (1 = gar nicht, 10 = vollständig)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 98,
+		"amountAnswers": 72,
+		"itemMeta": {
+			"Feldname": "mentale_konzentration",
+			"Feldtyp": "scale",
+			"Frage": "Wie stark hat sich Ihre mentale Konzentrationsfähigkeit nach der Infektion verändert? (1 = stark verschlechtert, 10 = unverändert)",
+			"Minimum": "1",
+			"Maximum": "10"
+		}
+	},
+	{
+		"id": 99,
+		"amountAnswers": 84,
+		"itemMeta": {
+			"Feldname": "atemnot_bewegung",
+			"Feldtyp": "text",
+			"Frage": "Haben Sie nach der Infektion Atemnot bei körperlicher Anstrengung?",
+			"Auswahlmöglichkeiten": "Ja, stark|Ja, leicht|Nein"
+		}
+	},
+	{
+		"id": 100,
+		"amountAnswers": 81,
+		"itemMeta": {
+			"Feldname": "neurologische_symptome",
+			"Feldtyp": "text",
+			"Frage": "Welche neurologischen Symptome haben Sie nach der Infektion festgestellt?",
+			"Auswahlmöglichkeiten": "Gedächtnisprobleme|Konzentrationsstörungen|Schwindel|Kribbeln in den Gliedmaßen|Keine"
+		}
+	}
+]

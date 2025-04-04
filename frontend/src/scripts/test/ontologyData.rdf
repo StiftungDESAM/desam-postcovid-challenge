@@ -1,0 +1,1449 @@
+@prefix pro: <property#> .
+@prefix node: <node#> .
+@prefix rel: <relationship#> .
+@prefix data: <data#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#### Nodes ####
+
+node:0 a pro:Forschung;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:tag "101"^^xsd:long;
+  pro:stakeholder_id "1"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  pro:name "Forschung";
+  rel:0 node:11 .
+
+node:1 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:12 .
+
+node:2 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:13 .
+
+node:3 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:14 .
+
+node:4 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:15 .
+
+node:5 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:16 .
+
+node:6 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:17 .
+
+node:7 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:18 .
+
+node:8 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:19 .
+
+node:9 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:20 .
+
+node:10 a pro:Leistungserbringer;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "102"^^xsd:long;
+  pro:stakeholder_id "2"^^xsd:long;
+  pro:name "Leistungserbringer";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "true"^^xsd:boolean;
+  rel:1 node:21 .
+
+node:11 a pro:Studie;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Studie";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "250"^^xsd:long;
+  rel:2 node:22;
+  rel:3 node:12;
+  rel:3 node:13;
+  rel:3 node:14;
+  rel:3 node:15;
+  rel:3 node:16;
+  rel:3 node:17;
+  rel:3 node:18;
+  rel:3 node:19;
+  rel:3 node:20;
+  rel:3 node:21 .
+
+node:12 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:35;
+  rel:4 node:41;
+  rel:4 node:47 .
+
+node:13 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:36;
+  rel:4 node:42;
+  rel:4 node:48 .
+
+node:14 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:37;
+  rel:4 node:43;
+  rel:4 node:49 .
+
+node:15 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:38;
+  rel:4 node:44;
+  rel:4 node:50 .
+
+node:16 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:39;
+  rel:4 node:45;
+  rel:4 node:51 .
+
+node:17 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:40;
+  rel:4 node:46;
+  rel:4 node:52 .
+
+node:18 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:53;
+  rel:4 node:57 .
+
+node:19 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:54;
+  rel:4 node:58 .
+
+node:20 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:55;
+  rel:4 node:59 .
+
+node:21 a pro:Teilnehmer;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Teilnehmer";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "251"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:4 node:56;
+  rel:4 node:60 .
+
+node:22 a pro:Datenerhebung;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "252"^^xsd:long;
+  pro:name "Datenerhebung";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:5 node:23;
+  rel:5 node:24 .
+
+node:23 a pro:Fragebogen;
+  pro:name "Fragebogen";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "253"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:6 node:25;
+  rel:6 node:26;
+  rel:6 node:27 .
+
+node:24 a pro:Fragebogen;
+  pro:name "Fragebogen";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "253"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:6 node:28;
+  rel:6 node:29 .
+
+node:25 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 node:30;
+  rel:8 node:35;
+  rel:8 node:36;
+  rel:8 node:37;
+  rel:8 node:38;
+  rel:8 node:39;
+  rel:8 node:40 .
+  
+node:26 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 node:31;
+  rel:8 node:41;
+  rel:8 node:42;
+  rel:8 node:43;
+  rel:8 node:44;
+  rel:8 node:45;
+  rel:8 node:46 .
+
+node:27 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 node:32;
+  rel:8 node:47;
+  rel:8 node:48;
+  rel:8 node:49;
+  rel:8 node:50;
+  rel:8 node:51;
+  rel:8 node:52 .
+
+node:28 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 node:33;
+  rel:8 node:53;
+  rel:8 node:54;
+  rel:8 node:55;
+  rel:8 node:56 .
+
+node:29 a pro:Item;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "254"^^xsd:long;
+  pro:name "Item";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:7 node:34;
+  rel:8 node:57;
+  rel:8 node:58;
+  rel:8 node:59;
+  rel:8 node:60 .
+
+node:30 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 node:61;
+  rel:10 node:62;
+  rel:11 node:63;
+  rel:12 node:64;
+  rel:13 node:65;
+  rel:14 node:66 .
+
+node:31 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 node:67;
+  rel:10 node:68;
+  rel:11 node:69;
+  rel:12 node:70;
+  rel:13 node:71;
+  rel:14 node:72 .
+
+node:32 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 node:73;
+  rel:10 node:74;
+  rel:11 node:75;
+  rel:12 node:76;
+  rel:13 node:77;
+  rel:14 node:78 .
+
+node:33 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 node:79;
+  rel:15 node:80;
+  rel:11 node:81;
+  rel:12 node:82;
+  rel:14 node:83 .
+
+node:34 a pro:Metadaten;
+  pro:is_leaf "false"^^xsd:boolean;
+  pro:tag "255"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Metadaten";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:9 node:84;
+  rel:15 node:85;
+  rel:11 node:86;
+  rel:12 node:87;
+  rel:14 node:88 .
+
+# Antworten von Teilnehmer node:12
+
+node:35 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:117 .
+
+node:36 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:118 .
+
+node:37 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:119 .
+
+# Antworten von Teilnehmer node:13
+
+node:38 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:120 .
+
+node:39 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:121 .
+
+node:40 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:122 .
+
+# Antworten von Teilnehmer node:14
+
+node:41 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:123 .
+
+node:42 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:124 .
+
+node:43 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:125 .
+
+# Antworten von Teilnehmer node:15
+
+node:44 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:126 .
+
+node:45 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:127 .
+
+node:46 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:128 .
+
+# Antworten von Teilnehmer node:16
+
+node:47 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:129 .
+
+node:48 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:130 .
+
+node:49 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:131 .
+
+# Antworten von Teilnehmer node:17
+
+node:50 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:132 .
+
+node:51 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:133 .
+
+node:52 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:134 .
+
+# Antworten von Teilnehmer node:18
+
+node:53 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:135 .
+
+node:54 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:136 .
+
+# Antworten von Teilnehmer node:19
+
+node:55 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:137 .
+
+node:56 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:138 .
+
+# Antworten von Teilnehmer node:20
+
+node:57 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:139 .
+
+node:58 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:140 .
+
+# Antworten von Teilnehmer node:21
+
+node:59 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:141 .
+
+node:60 a pro:Antwort;
+  pro:name "Antwort";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "256"^^xsd:long;
+  rel:16 data:142 .
+
+node:61 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:89 .
+
+node:62 a pro:Mapping;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Mapping";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:tag "261"^^xsd:long;
+  rel:17 data:90 .
+
+node:63 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean;
+  rel:17 data:91 .
+
+node:64 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:92 .
+
+node:65 a pro:Sektionsüberschrift;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "258"^^xsd:long;
+  pro:name "Sektionsüberschrift";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:93 .
+
+node:66 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long;
+  rel:17 data:94 .
+
+node:67 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:95 .
+
+node:68 a pro:Mapping;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Mapping";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:tag "261"^^xsd:long;
+  rel:17 data:96 .
+
+node:69 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean;
+  rel:17 data:97 .
+
+node:70 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:98 .
+
+node:71 a pro:Sektionsüberschrift;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "258"^^xsd:long;
+  pro:name "Sektionsüberschrift";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:99 .
+
+node:72 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long;
+  rel:17 data:100 .
+
+node:73 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:101 .
+
+node:74 a pro:Mapping;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Mapping";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:tag "261"^^xsd:long;
+  rel:17 data:102 .
+
+node:75 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean;
+  rel:17 data:103 .
+
+node:76 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:104 .
+
+node:77 a pro:Sektionsüberschrift;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:tag "258"^^xsd:long;
+  pro:name "Sektionsüberschrift";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:105 .
+
+node:78 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long;
+  rel:17 data:106 .
+
+node:79 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:107 .
+
+node:80 a pro:Einheit;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Einheit";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "263"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:108 .
+
+node:81 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean;
+  rel:17 data:109 .
+
+node:82 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:110 .
+
+node:83 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long;
+  rel:17 data:111 .
+
+node:84 a pro:Benötigt;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Benötigt";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "262"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:112 .
+
+node:85 a pro:Einheit;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:name "Einheit";
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:tag "263"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  rel:17 data:113 .
+
+node:86 a pro:Frage;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Frage";
+  pro:tag "260"^^xsd:long;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:is_leaf "true"^^xsd:boolean;
+  rel:17 data:114 .
+
+node:87 a pro:Feldtyp;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:name "Feldtyp";
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:tag "259"^^xsd:long;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  rel:17 data:115 .
+
+node:88 a pro:Feldname;
+  pro:is_leaf "true"^^xsd:boolean;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:is_stakeholder "false"^^xsd:boolean;
+  pro:name "Feldname";
+  pro:tag "257"^^xsd:long;
+  rel:17 data:116 .
+
+
+#### Data ####
+
+data:89 a pro:Data;
+  pro:value "y";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:90 a pro:Data;
+  pro:value "1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:91 a pro:Data;
+  pro:value "Die vorhandenen Impfungen stellen einen  wirksamen Schutz vor COVID-19 dar.";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:92 a pro:Data;
+  pro:value "radio";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:93 a pro:Data;
+  pro:value "8. Inwieweit stimmen Sie den folgenden Aussagen zu:";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:94 a pro:Data;
+  pro:value "teila_8_1";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:95 a pro:Data;
+  pro:value "y";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:96 a pro:Data;
+  pro:value "1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:97 a pro:Data;
+  pro:value "Ich fühle mich kompetent in der Diagnostik von  Patient*innen mit Post-COVID19-Zustand.";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:98 a pro:Data;
+  pro:value "radio";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:99 a pro:Data;
+  pro:value "";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:100 a pro:Data;
+  pro:value "teila_8_2";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:101 a pro:Data;
+  pro:value "y";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:102 a pro:Data;
+  pro:value "1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:103 a pro:Data;
+  pro:value "Ich fühle mich kompetent in der Therapie von  Patient*innen mit Post-COVID19-Zustand.";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:104 a pro:Data;
+  pro:value "radio";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:105 a pro:Data;
+  pro:value "";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:106 a pro:Data;
+  pro:value "teila_8_3";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:107 a pro:Data;
+  pro:value "n";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:108 a pro:Data;
+  pro:value "Patienten";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:109 a pro:Data;
+  pro:value "Wieviele Patienten unter 18 Jahren haben Sie dieses Jahr behandelt?";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:110 a pro:Data;
+  pro:value "text";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:111 a pro:Data;
+  pro:value "teilb_2_1";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:112 a pro:Data;
+  pro:value "n";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:113 a pro:Data;
+  pro:value "Patienten";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:114 a pro:Data;
+  pro:value "Wieviele Patienten über 18 Jahren haben Sie dieses Jahr behandelt?";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:115 a pro:Data;
+  pro:value "text";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:116 a pro:Data;
+  pro:value "teilb_2_1";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+
+# Teilnehmer node:12 Item node:25, node:26, node:27
+
+data:117 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:118 a pro:Data;
+  pro:value "5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:119 a pro:Data;
+  pro:value "3, bin unentschieden";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+
+# Teilnehmer node:13 Item node:25, node:26, node:27
+
+data:120 a pro:Data;
+  pro:value "3, bin unentschieden";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:121 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:122 a pro:Data;
+  pro:value "1, gar nicht";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:14 Item node:25, node:26, node:27
+
+data:123 a pro:Data;
+  pro:value "1, gar nicht";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:124 a pro:Data;
+  pro:value "2, eher nicht";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:125 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:15 Item node:25, node:26, node:27
+
+data:126 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:127 a pro:Data;
+  pro:value "2, eher nicht";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:128 a pro:Data;
+  pro:value "3, bin unentschieden";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:16 Item node:25, node:26, node:27
+
+data:129 a pro:Data;
+  pro:value "3, bin unentschieden";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:130 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:131 a pro:Data;
+  pro:value "3, bin unentschieden";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:17 Item node:25, node:26, node:27
+
+data:132 a pro:Data;
+  pro:value "4, eher ja";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:133 a pro:Data;
+  pro:value "5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:134 a pro:Data;
+  pro:value "5, voll und ganz";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+
+# Teilnehmer node:18 Item node:28, node:29
+
+data:135 a pro:Data;
+  pro:value "1234";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:136 a pro:Data;
+  pro:value "54321";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:19 Item node:28, node:29
+
+data:137 a pro:Data;
+  pro:value "4321";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:138 a pro:Data;
+  pro:value "12345";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:20 Item node:28, node:29
+
+data:139 a pro:Data;
+  pro:value "6543";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:140 a pro:Data;
+  pro:value "34567";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+# Teilnehmer node:21 Item node:28, node:29
+
+data:141 a pro:Data;
+  pro:value "987";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+data:142 a pro:Data;
+  pro:value "6789";
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+
+#### Relationships ####
+
+rel:0 a pro:ERSTELLT;
+  pro:name "erstellt";
+  pro:tag "1001"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:1 a pro:IST;
+  pro:name "ist";
+  pro:tag "1000"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:2 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1002"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:3 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1003"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:4 a pro:GIBT;
+  pro:name "gibt";
+  pro:tag "1008"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:5 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1004"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:6 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1005"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:7 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1006"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:8 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1007"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "n";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:9 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1009"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:10 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1010"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:11 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1011"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:12 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1012"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:13 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1013"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:14 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1014"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:15 a pro:HAT;
+  pro:name "hat";
+  pro:tag "1015"^^xsd:long;
+  pro:is_verified "true"^^xsd:boolean;
+  pro:cardinality "0-1";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:16 a pro:IN_ÜBERPRÜFUNG;
+  pro:name "in Überprüfung";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:17 a pro:AKTUELL;
+  pro:name "aktuell";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.
+
+rel:18 a pro:VERALTET;
+  pro:name "veraltet";
+  pro:last_updated "2025-03-01T10:32:39.194Z"^^xsd:dateTime;
+  pro:created "2025-03-01T10:32:39.194Z"^^xsd:dateTime.

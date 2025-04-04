@@ -1,0 +1,92 @@
+{
+	"Feldname": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Feldname",
+		"is_stakeholder": false,
+		"tag": 257,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Feldtyp": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Feldtyp",
+		"is_stakeholder": false,
+		"tag": 259,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Sektionsüberschrift": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Sektionsüberschrift",
+		"is_stakeholder": false,
+		"tag": 258,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Frage": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Frage",
+		"is_stakeholder": false,
+		"tag": 260,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Benötigt": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Benötigt",
+		"is_stakeholder": false,
+		"tag": 262,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Minimum": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Minimum",
+		"is_stakeholder": false,
+		"tag": 264,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Maximum": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Maximum",
+		"is_stakeholder": false,
+		"tag": 265,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Einheit": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Einheit",
+		"is_stakeholder": false,
+		"tag": 263,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Verzweigung": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Verzweigung",
+		"is_stakeholder": false,
+		"tag": 266,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	},
+	"Auswahlmöglichkeiten": {
+		"created": "2025-03-01T10:32:39.194Z",
+		"name": "Auswahlmöglichkeiten",
+		"is_stakeholder": false,
+		"tag": 261,
+		"last_updated": "2025-03-01T10:32:39.194Z",
+		"is_leaf": true,
+		"is_verified": true
+	}
+}

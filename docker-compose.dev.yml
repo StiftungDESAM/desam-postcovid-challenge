@@ -1,0 +1,95 @@
+services:
+    nginx:
+        build:
+            dockerfile: Dockerfile.prod
+            context: ./frontend
+        container_name: postcovid_nginx
+        environment:
+            - APP_BASE_PATH=/page
+        # ports:
+        #     - '${IP_GATEWAY}:${PORT_GATEWAY}:80'
+        ports:
+            - ${PORT_GATEWAY}:80
+        depends_on:
+            - backend
+        volumes:
+            - ./nginx/:/etc/nginx/conf.d
+            - backend_static_files:/backend-files/
+        restart: always
+        networks:
+            - postcovid_network
+
+    frontend-dev:
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile.dev
+        container_name: postcovid_vue
+        ports:
+            - '5173:5173'
+        volumes:
+            - ./frontend:/usr/src/frontend
+            - /usr/src/frontend/node_modules
+        environment:
+            - CHOKIDAR_USEPOLLING=true # Ensures hot-reloading works properly in WSL2
+            - DOCKER_ENV=true
+        networks:
+            - postcovid_network
+
+    backend:
+        build: ./backend
+        container_name: postcovid_backend
+        env_file:
+            - ./.env
+        volumes:
+            # NOTE: The following line syncs the development folder with the container, it shouldn't be used in production.
+            - ./backend/:/usr/src/backend/
+            - backend_static_files:/usr/src/backend/static/
+            - ./backend/logs/:/usr/src/backend/logs/
+        expose:
+            - '8080'
+        depends_on:
+            - postgres
+            - neo4j
+        networks:
+            - postcovid_network
+
+    postgres:
+        image: postgres:17.2-alpine
+        container_name: postcovid_postgres
+        environment:
+            - POSTGRES_DB=${SQL_DATABASE}
+            - POSTGRES_USER=${SQL_USER}
+            - POSTGRES_PASSWORD=${SQL_PASSWORD}
+        volumes:
+            - postgres_data:/var/lib/postgresql/data/
+        restart: always
+        networks:
+            - postcovid_network
+
+    neo4j:
+        image: neo4j:5.26-bullseye
+        container_name: postcovid_neo4j
+        environment:
+            - NEO4J_AUTH=${NEO4J_AUTH}
+        volumes:
+            - neo4j_data:/data
+        ports:
+            - '7474:7474'
+            - '7687:7687'
+        restart: always
+        networks:
+            - postcovid_network
+
+volumes:
+    backend_static_files:
+    postgres_data:
+    neo4j_data:
+
+networks:
+    postcovid_network:
+        driver: 'bridge'
+        ipam:
+            driver: default
+            config:
+                - subnet: ${SUBNET}
+                  gateway: ${IP_GATEWAY}

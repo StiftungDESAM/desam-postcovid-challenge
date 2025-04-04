@@ -1,0 +1,25 @@
+{
+	"tabWidth": 4,
+	"useTabs": true,
+	"printWidth": 150,
+	"singleQuote": true,
+	"trailingComma": "es5",
+	"semi": true,
+	"overrides": [
+		{
+			"files": [
+				"detailedStudy.json",
+				"openDataReview.json",
+				"assignedDataReview.json",
+				"closedDataReview.json",
+				"jsonExportData.json",
+				"dataViewStudyDataFirst.json",
+				"dataViewStudyDataSecond.json",
+				"dataViewStudyDataThird.json"
+			],
+			"options": {
+				"printWidth": 9999999
+			}
+		}
+	]
+}

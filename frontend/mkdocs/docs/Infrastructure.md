@@ -1,0 +1,1 @@
+TODO: Here we can add a diagram of the IT-infrastructure, an explanation of the Docker environment and so forth.

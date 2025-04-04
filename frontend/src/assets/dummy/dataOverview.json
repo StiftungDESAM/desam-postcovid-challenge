@@ -1,0 +1,40 @@
+[
+	{
+		"id": 1,
+		"name": "Überregionalen Studie der Initiative DESAM-ForNet Covid_ShortForm_GP",
+		"submitter": {
+			"firstName": "Paul",
+			"lastName": "Richter",
+			"role": ["PRACTITIONER"]
+		},
+		"submissionDate": "2025-03-19T17:25:00",
+		"amountQuestionnaire": 3,
+		"amountData": 435
+	},
+	{
+		"id": 2,
+		"name": "NAPKON",
+		"submitter": {
+			"firstName": "Laura",
+			"lastName": "Schmidt",
+			"role": ["RESEARCHER"]
+		},
+		"submissionDate": "2025-03-14T14:20:00",
+		"amountQuestionnaire": 3,
+		"amountData": 8435
+	},
+	{
+		"id": 3,
+		"name": "PreVitaCov",
+		"purpose": "DATA_COLLECTION",
+		"submitter": {
+			"firstName": "Maximilian",
+			"lastName": "Schwarz",
+			"role": ["PRACTITIONER"]
+		},
+		"submissionDate": "2025-03-17T17:25:00",
+		"amountCodeBooks": 3,
+		"amountQuestionnaire": 3,
+		"amountData": 623
+	}
+]

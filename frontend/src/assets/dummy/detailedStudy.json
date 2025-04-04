@@ -1,0 +1,462 @@
+{
+	"id": 0,
+	"name": "Überregionalen Studie der Initiative DESAM-ForNet Covid_ShortForm_GP",
+	"purpose": "DATA_COLLECTION",
+	"dateStart": "2024-05-01",
+	"dateEnd": "2025-01-01",
+	"description": "Mit der überregionalen Studie Covid_ShortForm_GP werden\n• Inzidenzen von Long-/Post-Covid in der Hausarztpraxis realitätsnah retrospektiv erfasst\n• Versorgungsmerkmale von Patient:innen mit Long-/Post-Covid aus der Perspektive der versorgenden\nHausärzt:innen beschrieben\nDie Studie dient der Machbarkeitsprüfung, um das\ngewählte Studiendesign (Erhebung von\nVersorgungs-merkmalen auf Basis von Abrechnungs- und Versorgungsdaten aus den Praxisverwaltungssystemen) für weitere überregionale\nStudien mit Hausarztpraxen zu optimieren.",
+	"drksID": 123,
+	"submitter": {
+		"firstName": "Paul",
+		"lastName": "Richter",
+		"role": ["PRACTITIONER"]
+	},
+	"submissionDate": "2025-03-19T17:25:00",
+	"codeBooks": [
+		{
+			"id": 0,
+			"name": "instrument.csv",
+			"mappingColumn": 0,
+			"translationColumn": 4,
+			"data": [
+				{
+					"id": 0,
+					"name": "Variable / Field Name",
+					"rows": ["teila_1_1", "teila_1_2", "teila_1_3", "teila_1_4", "teila_1_5", "teila_2_1", "teila_2_2", "teila_2_3", "teila_3_1", "teila_3_2", "teila_3_3", "teila_3_4", "teila_3_5", "teila_3_6", "teila_3_7", "teila_4_1", "teila_4_2", "teila_4_3", "teila_5_1", "teila_5_2", "teila_5_3", "teila_5_4", "teila_5_5", "teila_5_6", "teila_6_1", "teila_6_2", "teila_6_3", "teila_6_4", "teila_6_5", "teila_6_6", "teila_7", "teila_7_code", "teila_8_1", "teila_8_2", "teila_8_3", "teila_9", "teila_9_pat", "teila_10", "teila_10_pat", "teila_10_pat_2", "teila_11", "teila_11_sonst", "teila_12", "teila_12_andere", "teila_12_andere_2", "teila_13", "teila_13_pat", "teila_13_anlass", "teila_13_sonst", "teila_14", "teila_14_pat", "teila_14_anlass", "teila_14_sonst"],
+					"assignedMetaField": {
+						"id": 0,
+						"tag": "257",
+						"name": "Feldname",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 1,
+					"name": "Form Name",
+					"rows": ["datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen", "datenerhebungsbogen"],
+					"assignedMetaField": null
+				},
+				{
+					"id": 2,
+					"name": "Section Header",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "8.Inwieweit stimmen Sie den folgenden Aussagen zu:", "", "", "", "", "", "", "", "", "", "<div class=\"\"rich-text-field-label\"\"><h4>Erhebung von Informationen und Daten zu Post-VAC</h4></div>", "", "", "", "", "", "", "", "", "", ""],
+					"assignedMetaField": {
+						"id": 1,
+						"tag": "258",
+						"name": "Sektionsüberschrift",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 3,
+					"name": "Field Type",
+					"rows": ["text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "yesno", "text", "radio", "radio", "radio", "radio", "text", "radio", "text", "text", "checkbox", "text", "radio", "text", "text", "radio", "text", "checkbox", "text", "radio", "text", "checkbox", "text"],
+					"assignedMetaField": {
+						"id": 2,
+						"tag": "259",
+						"name": "Feldtyp",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 4,
+					"name": "Field Label",
+					"rows": ["≤ 4 Jahre (GOP 03001/04001) ", "5 bis 18 Jahre (GOP 03002/04002)", "19 bis 54 Jahre (GOP 03003/04003)", "55 bis 75 Jahre (GOP 03004/04004)", ">75 Jahre (GOP 03005/ 04005)", "männlich", "weiblich", "divers", "Impfung 1 (Grundimmunisierung)", "Impfung 2 (Grundimmunisierung)", "Impfung 3 (Auffrischimpfung)", "Impfung 4 (Auffrischimpfung)", "Impfung 5 (Auffrischimpfung)", "Impfung 6 (Auffrischimpfung)", "Anzahl Impfungen gesamt", "BioNTech/Pfizer (GOP 88331A)", "Moderna (GOP 88332A)", "AstraZeneca (GOP 88333A)", "ICD U09.9 Post-COVID-19-Zustand", "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19 ", "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome) ", "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet ", "ICD T88.1 Sonstige Komplikationen nach Impfung", "Sonstige ICD-Codierung (in Bezug auf Post-COVID) ", "ICD U09.9 Post-COVID-19-Zustand", "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19 ", "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome) ", "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet ", "ICD T88.1 Sonstige Komplikationen nach Impfung", "Sonstige ICD-Codierung (in Bezug auf Post-COVID)", "<div class=\"\"rich-text-field-label\"\"><p>7.1 Wurden Patient*innen mit Post-Covid im <span style=\"\"text-decoration: underline; background-color: #bfedd2;\"\">1. Quartal 2024</span> von Ihnen immer mit ICD U09.9 bzw. ICD U10.9 bzw. ICD G93.3 codiert?</p> <p> </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>7.2 Wenn nein, welche Codierung(en) wurden (auch) verwendet: </p></div>", "Die vorhandenen Impfungen stellen einen  wirksamen Schutz vor COVID-19 dar.", "Ich fühle mich kompetent in der Diagnostik von  Patient*innen mit Post-COVID19-Zustand.", "Ich fühle mich kompetent in der Therapie von  Patient*innen mit Post-COVID19-Zustand.", "<div class=\"\"rich-text-field-label\"\"><p>9.1 Gibt es Ihrer Meinung nach Patientengruppen, die anfälliger für Post-COVID sind?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>9.2 Wenn ja, welche Patientengruppen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.1 Stellt Post-COVID Ihrer Meinung nach eine eigene Krankheitsentität dar?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.2 Wenn nein, welchen anderen Krankheiten lassen sich die Symptome zuordnen?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.2 Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen?</p></div>", "11. Was sind die Beratungsanlässe von Patient*innen mit Post-COVID in Ihrer Praxis? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>12.1 Stellt Post-VAC Ihrer Meinung nach eine eigene Krankheitsentität dar? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p> 12.2 Wenn nein, welchen anderen Krankheiten lassen sich die Symptome zuordnen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p> 12.2 Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>13.1 Gab es bereits Patient*innen in Ihrer Praxis<span style=\"\"background-color: #ffffff;\"\">, <span style=\"\"color: #ba372a;\"\">die von sich aus den Verdacht geäußert haben</span></span>, dass ihre Beschwerden Nebenwirkungen der Covid-19-Impfung waren. (Post-VAC-Syndrom)</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>13.2 Wenn ja, wie viele ungefähr? </p></div>", "13.3 Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>14.1 Gab es bereits Patient*innen in Ihrer Praxis,<span style=\"\"color: #ba372a;\"\"> bei denen Sie den Verdacht</span> auf ein Post-VAC Syndrom (seltene unerwünschte Reaktionen auf Impfung) hatten?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>14.2 Wenn ja, wie viele ungefähr? </p></div>", "14.3 Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>"],
+					"assignedMetaField": {
+						"id": 3,
+						"tag": "260",
+						"name": "Frage",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 5,
+					"name": "Choices, Calculations, OR Slider Labels",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_11_sonst}", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_13_sonst}", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_14_sonst}", ""],
+					"assignedMetaField": {
+						"id": 4,
+						"tag": "261",
+						"name": "Mapping",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 7,
+					"name": "Text Validation Type OR Show Slider Number",
+					"rows": ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "number", "", "", "", "number", "", ""],
+					"assignedMetaField": {
+						"id": 5,
+						"tag": "271",
+						"name": "Datentyp",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 8,
+					"name": "Text Validation Min",
+					"rows": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 0, "", "", "", 0, "", ""],
+					"assignedMetaField": {
+						"id": 6,
+						"tag": "268",
+						"name": "Minimum",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 9,
+					"name": "Text Validation Max",
+					"rows": [1000, 2000, 5000, 5000, 5000, "", "", "", 10000, 10000, 10000, 10000, 10000, 10000, 15000, 2000, 2000, 2000, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+					"assignedMetaField": {
+						"id": 7,
+						"tag": "269",
+						"name": "Maximum",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 11,
+					"name": "Branching Logic (Show field only if...)",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[teila_7] = '0'", "", "", "", "", "[teila_9] = '1'", "", "[teila_10] = '0'", "[teila_10] = '2'", "", "[teila_11(12)] = '1'", "", "[teila_12] = '0'", "[teila_12] = '2'", "", "[teila_13] = '1'", "[teila_13] = '1'", "[teila_13_anlass(12)] = '1'", "", "[teila_14] = '1'", "[teila_14] = '1'", "[teila_14_anlass(12)] = '1'"],
+					"assignedMetaField": {
+						"id": 8,
+						"tag": "270",
+						"name": "Verzweigung",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 12,
+					"name": "Required Field?",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "y", "y", "y", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+					"assignedMetaField": {
+						"id": 9,
+						"tag": "262",
+						"name": "Benötigt",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				}
+			],
+			"linkedData": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				{
+					"id": 97,
+					"Feldname": "icd10_others",
+					"Feldtyp": "Textfeld",
+					"Frage": "Wieviele Patienten haben Sie mit anderen ICD-10 Codes diagnostiziert?",
+					"Datentyp": "number",
+					"Minimum": 0,
+					"Maximum": 500
+				},
+				{
+					"id": 98,
+					"Feldname": "icd10_post_covid",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Haben Sie Patienten mit ICD U09.9 bzw. ICD U10.9 bzw. ICD G93.3 diagonstiziert?",
+					"Datentyp": "text",
+					"Mapping": "Ja, Nein"
+				},
+				{
+					"id": 99,
+					"Feldname": "icd10_post_covid_others",
+					"Feldtyp": "Textfeld",
+					"Frage": "Welche andere Codierungen würden Sie Patienten mit Post-Covid vergeben?",
+					"Verzweigung": "icd10_post_covid=Nein"
+				},
+				{
+					"id": 100,
+					"Feldname": "cov19_vaccination",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Die vorhandenen COVID-19 Impfstoffe bieten meiner Meinung nach einen wirksamen Schutz.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				{
+					"id": 101,
+					"Feldname": "cov19_diagnose",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Ich kann Patienten aufgrund meiner Kenntnisse mit dem Post-COVID-19-Zustand diagnostizieren.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				{
+					"id": 102,
+					"Feldname": "cov19_therapy",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Ich kann Patienten aufgrund meiner Kenntnisse von dem Post-COVID-19-Zustand therapieren.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			]
+		},
+		{
+			"id": 1,
+			"name": "instrument2.csv",
+			"mappingColumn": 0,
+			"translationColumn": null,
+			"data": [
+				{
+					"id": 0,
+					"name": "Variable / Field Name",
+					"rows": ["teila_2_1", "teila_2_2", "teila_2_3", "teila_3_1", "teila_3_2", "teila_3_3", "teila_3_4", "teila_3_5", "teila_3_6", "teila_3_7", "teila_4_1", "teila_4_2", "teila_4_3", "teila_5_1", "teila_5_2", "teila_5_3", "teila_5_4", "teila_5_5", "teila_5_6", "teila_6_1", "teila_6_2", "teila_6_3", "teila_6_4", "teila_6_5", "teila_6_6", "teila_7", "teila_7_code", "teila_8_1", "teila_8_2", "teila_8_3", "teila_9", "teila_9_pat", "teila_10", "teila_10_pat", "teila_10_pat_2", "teila_11", "teila_11_sonst", "teila_12", "teila_12_andere", "teila_12_andere_2", "teila_13", "teila_13_pat", "teila_13_anlass", "teila_13_sonst", "teila_14", "teila_14_pat", "teila_14_anlass", "teila_14_sonst"],
+					"assignedMetaField": {
+						"id": 0,
+						"tag": "257",
+						"name": "Feldname",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 3,
+					"name": "Field Type",
+					"rows": ["text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "text", "yesno", "text", "radio", "radio", "radio", "radio", "text", "radio", "text", "text", "checkbox", "text", "radio", "text", "text", "radio", "text", "checkbox", "text", "radio", "text", "checkbox", "text"],
+					"assignedMetaField": {
+						"id": 2,
+						"tag": "259",
+						"name": "Feldtyp",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 4,
+					"name": "Field Label",
+					"rows": ["männlich", "weiblich", "divers", "Impfung 1 (Grundimmunisierung)", "Impfung 2 (Grundimmunisierung)", "Impfung 3 (Auffrischimpfung)", "Impfung 4 (Auffrischimpfung)", "Impfung 5 (Auffrischimpfung)", "Impfung 6 (Auffrischimpfung)", "Anzahl Impfungen gesamt", "BioNTech/Pfizer (GOP 88331A)", "Moderna (GOP 88332A)", "AstraZeneca (GOP 88333A)", "ICD U09.9 Post-COVID-19-Zustand", "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19 ", "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome) ", "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet ", "ICD T88.1 Sonstige Komplikationen nach Impfung", "Sonstige ICD-Codierung (in Bezug auf Post-COVID) ", "ICD U09.9 Post-COVID-19-Zustand", "ICD U10.9 Multisystemisches Entzündungssyndrom in Verbindung mit COVID-19 ", "ICD G93.3 Chronisches Fatigue Syndrom (Chronic fatigue syndrome) ", "ICD U12.9 Unerwünschte Nebenwirkungen bei der Anwendung von COVID-19-Impfstoffen, nicht näher bezeichnet ", "ICD T88.1 Sonstige Komplikationen nach Impfung", "Sonstige ICD-Codierung (in Bezug auf Post-COVID)", "<div class=\"\"rich-text-field-label\"\"><p>7.1 Wurden Patient*innen mit Post-Covid im <span style=\"\"text-decoration: underline; background-color: #bfedd2;\"\">1. Quartal 2024</span> von Ihnen immer mit ICD U09.9 bzw. ICD U10.9 bzw. ICD G93.3 codiert?</p> <p> </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>7.2 Wenn nein, welche Codierung(en) wurden (auch) verwendet: </p></div>", "Die vorhandenen Impfungen stellen einen  wirksamen Schutz vor COVID-19 dar.", "Ich fühle mich kompetent in der Diagnostik von  Patient*innen mit Post-COVID19-Zustand.", "Ich fühle mich kompetent in der Therapie von  Patient*innen mit Post-COVID19-Zustand.", "<div class=\"\"rich-text-field-label\"\"><p>9.1 Gibt es Ihrer Meinung nach Patientengruppen, die anfälliger für Post-COVID sind?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>9.2 Wenn ja, welche Patientengruppen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.1 Stellt Post-COVID Ihrer Meinung nach eine eigene Krankheitsentität dar?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.2 Wenn nein, welchen anderen Krankheiten lassen sich die Symptome zuordnen?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>10.2 Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen?</p></div>", "11. Was sind die Beratungsanlässe von Patient*innen mit Post-COVID in Ihrer Praxis? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>12.1 Stellt Post-VAC Ihrer Meinung nach eine eigene Krankheitsentität dar? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p> 12.2 Wenn nein, welchen anderen Krankheiten lassen sich die Symptome zuordnen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p> 12.2 Wenn Sie unsicher sind, welchen anderen Krankheiten lassen sich die Symptome zuordnen? </p></div>", "<div class=\"\"rich-text-field-label\"\"><p>13.1 Gab es bereits Patient*innen in Ihrer Praxis<span style=\"\"background-color: #ffffff;\"\">, <span style=\"\"color: #ba372a;\"\">die von sich aus den Verdacht geäußert haben</span></span>, dass ihre Beschwerden Nebenwirkungen der Covid-19-Impfung waren. (Post-VAC-Syndrom)</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>13.2 Wenn ja, wie viele ungefähr? </p></div>", "13.3 Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>14.1 Gab es bereits Patient*innen in Ihrer Praxis,<span style=\"\"color: #ba372a;\"\"> bei denen Sie den Verdacht</span> auf ein Post-VAC Syndrom (seltene unerwünschte Reaktionen auf Impfung) hatten?</p></div>", "<div class=\"\"rich-text-field-label\"\"><p>14.2 Wenn ja, wie viele ungefähr? </p></div>", "14.3 Wenn ja, mit welchen Beratungsanlässen? Bitte kreuzen Sie an (Mehrfachnennungen möglich)", "<div class=\"\"rich-text-field-label\"\"><p>Sonstiges:</p></div>"],
+					"assignedMetaField": {
+						"id": 3,
+						"tag": "260",
+						"name": "Frage",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 5,
+					"name": "Choices, Calculations, OR Slider Labels",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - gar nicht|2 - eher nicht|3 - bin unentschieden|4 - eher ja|5 - voll und ganz", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_11_sonst}", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_13_sonst}", "", "1 - Ja|0 - Nein|2 - Ich bin mir unsicher", "", "1 - Beschwerden der oberen Atemwege|2 - Brustbeschwerden/ kardiale Beschwerden|3 - Muskuloskelettale Schmerzen|4 - Fieber und Schüttelfrost|5 - Neurokognitive Beeinträchtigung|6 - Kopfschmerzen/ Schwindel|7 - Geruchs-/ Geschmackstörungen|8 - Fatigue (ständige starke Müdigkeit)|9 - Psychologische Symptome|10 - Magen-Darm-Beschwerden|11 - Schlafbeschwerden|12 - Sonstiges {teila_14_sonst}", ""],
+					"assignedMetaField": {
+						"id": 4,
+						"tag": "261",
+						"name": "Mapping",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				},
+				{
+					"id": 7,
+					"name": "Text Validation Type OR Show Slider Number",
+					"rows": ["number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "number", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "number", "", "", "", "number", "", ""],
+					"assignedMetaField": null
+				},
+				{
+					"id": 8,
+					"name": "Text Validation Min",
+					"rows": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", 0, "", "", "", 0, "", ""],
+					"assignedMetaField": null
+				},
+				{
+					"id": 9,
+					"name": "Text Validation Max",
+					"rows": ["", "", "", 10000, 10000, 10000, 10000, 10000, 10000, 15000, 2000, 2000, 2000, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, 500, "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+					"assignedMetaField": null
+				},
+				{
+					"id": 11,
+					"name": "Branching Logic (Show field only if...)",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "[teila_7] = '0'", "", "", "", "", "[teila_9] = '1'", "", "[teila_10] = '0'", "[teila_10] = '2'", "", "[teila_11(12)] = '1'", "", "[teila_12] = '0'", "[teila_12] = '2'", "", "[teila_13] = '1'", "[teila_13] = '1'", "[teila_13_anlass(12)] = '1'", "", "[teila_14] = '1'", "[teila_14] = '1'", "[teila_14_anlass(12)] = '1'"],
+					"assignedMetaField": null
+				},
+				{
+					"id": 12,
+					"name": "Required Field?",
+					"rows": ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "y", "y", "y", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+					"assignedMetaField": {
+						"id": 5,
+						"tag": "262",
+						"name": "Benötigt",
+						"isStakeholder": false,
+						"isLeaf": true,
+						"isVerified": true,
+						"created": "2025-03-01T10:32:39",
+						"lastUpdated": "2025-03-01T10:32:39"
+					}
+				}
+			],
+			"linkedData": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				{
+					"id": 100,
+					"Feldname": "cov19_vaccination",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Die vorhandenen COVID-19 Impfstoffe bieten meiner Meinung nach einen wirksamen Schutz.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				{
+					"id": 101,
+					"Feldname": "cov19_diagnose",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Ich kann Patienten aufgrund meiner Kenntnisse mit dem Post-COVID-19-Zustand diagnostizieren.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				{
+					"id": 102,
+					"Feldname": "cov19_therapy",
+					"Sektionsüberschrift": "Trifft folgende Aussage auf Sie zu?",
+					"Feldtyp": "Einzelauswahl",
+					"Frage": "Ich kann Patienten aufgrund meiner Kenntnisse von dem Post-COVID-19-Zustand therapieren.",
+					"Mapping": "1 - Nein, 2 - eher nein, 3 - unentschieden, 4 - eher ja, 5 - Ja",
+					"Benötigt": "Ja"
+				},
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null
+			]
+		}
+	]
+}

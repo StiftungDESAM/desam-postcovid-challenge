@@ -1,0 +1,43 @@
+ARG WorkingDirectory=/usr/src/frontend
+
+# Build frontend
+FROM node:lts-alpine AS build-stage-node
+ 
+# directory containing our code inside the container
+WORKDIR $WorkingDirectory
+
+# copy whole project to your docker home directory.
+COPY . $WorkingDirectory
+
+RUN rm -rf node_modules package-lock.json
+
+# run this command to install all dependencies
+ENV NODE_OPTIONS=--openssl-legacy-provider
+RUN npm install
+RUN npm run build
+
+
+# Build mkdocs documentation
+FROM python:3.12-slim-bullseye AS build-stage-python
+
+WORKDIR $WorkingDirectory
+
+COPY ./mkdocs $WorkingDirectory
+
+RUN apt update
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+
+RUN mkdocs build
+
+
+# Run nginx
+FROM nginx:latest
+
+RUN mkdir frontend mkdocs frontend/page frontend/docs
+
+COPY --from=build-stage-node $WorkingDirectory/dist/ frontend/page/
+COPY --from=build-stage-node $WorkingDirectory/docs/ frontend/docs/
+COPY --from=build-stage-python $WorkingDirectory/site/ mkdocs/
+

@@ -1,0 +1,1 @@
+TODO: Explain the graph database concept here, as well as how it's implemented using neomodel.

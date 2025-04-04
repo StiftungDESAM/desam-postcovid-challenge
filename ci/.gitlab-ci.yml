@@ -1,0 +1,18 @@
+stages:
+  - test
+
+# Uses the ci.env as .env for the pipeline.
+before_script:
+  - cp ci/ci.env .env
+
+test:
+  stage: test
+  script:
+    - docker compose down
+    - docker compose build
+    - docker compose up -d
+    - bash ci/wait_for_neo4j.sh
+    - 'docker exec -t postcovid_backend pytest -W ignore::'
+    - docker compose down
+    - docker system prune -f
+

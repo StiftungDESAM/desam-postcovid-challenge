@@ -1,0 +1,371 @@
+[
+	{
+		"user": {
+			"firstName": "Alice",
+			"lastName": "Johnson",
+			"gender": "FEMALE",
+			"dateOfBirth": "1990-05-12"
+		},
+		"access": {
+			"role": ["ADMIN"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": ["ADMIN", "ONTOLOGY_VIEW", "DATA_VIEW", "DATA_EXPORT"]
+		},
+		"credentials": {
+			"email": "alice.johnson@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Bob",
+			"lastName": "Smith",
+			"gender": "MALE",
+			"dateOfBirth": "1985-09-23"
+		},
+		"access": {
+			"role": ["SUPER_ADMIN"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "ONTOLOGY_UPLOAD", "ONTOLOGY_REVIEW", "DATA_UPLOAD", "DATA_REVIEW", "DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": [
+				"ADMIN",
+				"ONTOLOGY_VIEW",
+				"ONTOLOGY_UPLOAD",
+				"ONTOLOGY_REVIEW",
+				"DATA_UPLOAD",
+				"DATA_REVIEW",
+				"DATA_VIEW",
+				"DATA_EXPORT"
+			]
+		},
+		"credentials": {
+			"email": "bob.smith@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Charlie",
+			"lastName": "Davis",
+			"gender": "OTHER",
+			"dateOfBirth": "1995-11-15"
+		},
+		"access": {
+			"role": ["PRACTITIONER"],
+			"permissionsRequested": ["DATA_VIEW"],
+			"permissionsGranted": ["DATA_UPLOAD"]
+		},
+		"credentials": {
+			"email": "charlie.davis@example.com"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Diana",
+			"lastName": "Lee",
+			"gender": "FEMALE",
+			"dateOfBirth": "1992-07-30"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW"],
+			"permissionsGranted": ["DATA_VIEW"]
+		},
+		"credentials": {
+			"email": "diana.lee@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Ethan",
+			"lastName": "Brown",
+			"gender": "MALE",
+			"dateOfBirth": "1988-02-10"
+		},
+		"access": {
+			"role": ["MAINTAINER"],
+			"permissionsRequested": ["ONTOLOGY_UPLOAD", "DATA_UPLOAD"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "ethan.brown@example.com"
+		},
+		"accountVerification": "CODE_EXPIRED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Fiona",
+			"lastName": "Williams",
+			"gender": "FEMALE",
+			"dateOfBirth": "1997-04-18"
+		},
+		"access": {
+			"role": ["PRACTITIONER"],
+			"permissionsRequested": ["DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "fiona.williams@example.com"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "George",
+			"lastName": "Miller",
+			"gender": "MALE",
+			"dateOfBirth": "1983-06-22"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "ONTOLOGY_UPLOAD", "DATA_UPLOAD", "DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": ["ONTOLOGY_VIEW", "ONTOLOGY_UPLOAD", "DATA_UPLOAD", "DATA_VIEW", "DATA_EXPORT"]
+		},
+		"credentials": {
+			"email": "george.miller@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Hannah",
+			"lastName": "Clark",
+			"gender": "FEMALE",
+			"dateOfBirth": "1999-12-05"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "hannah.clark@example.com"
+		},
+		"accountVerification": "CODE_EXPIRED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Ian",
+			"lastName": "Martinez",
+			"gender": "MALE",
+			"dateOfBirth": "1994-08-14"
+		},
+		"access": {
+			"role": ["ADMIN"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "ian.martinez@example.com"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Jasmine",
+			"lastName": "Lopez",
+			"gender": "FEMALE",
+			"dateOfBirth": "1989-03-28"
+		},
+		"access": {
+			"role": ["MAINTAINER"],
+			"permissionsRequested": ["ONTOLOGY_UPLOAD", "DATA_UPLOAD", "DATA_VIEW"],
+			"permissionsGranted": ["ONTOLOGY_UPLOAD", "DATA_UPLOAD", "DATA_VIEW"]
+		},
+		"credentials": {
+			"email": "jasmine.lopez@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Liam",
+			"lastName": "Anderson",
+			"gender": "MALE",
+			"dateOfBirth": "1986-03-10"
+		},
+		"access": {
+			"role": ["ADMIN"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW", "DATA_EXPORT"],
+			"permissionsGranted": ["ADMIN", "ONTOLOGY_VIEW", "DATA_VIEW", "DATA_EXPORT"]
+		},
+		"credentials": {
+			"email": "liam.anderson@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Sophia",
+			"lastName": "Martinez",
+			"gender": "FEMALE",
+			"dateOfBirth": "1991-07-14"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_UPLOAD", "DATA_UPLOAD"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "sophia.martinez@example.comlsdjfglösdfghklsdfgklösdhgksdfghsdfgsdfö"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Noah",
+			"lastName": "Harris",
+			"gender": "MALE",
+			"dateOfBirth": "1982-09-21"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "ONTOLOGY_UPLOAD", "DATA_VIEW"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "noah.harris@example.com"
+		},
+		"accountVerification": "CODE_EXPIRED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Ava",
+			"lastName": "Clark",
+			"gender": "FEMALE",
+			"dateOfBirth": "1993-11-05"
+		},
+		"access": {
+			"role": ["PRACTITIONER"],
+			"permissionsRequested": ["DATA_VIEW", "DATA_EXPORT", "DATA_UPLOAD"],
+			"permissionsGranted": ["DATA_VIEW", "DATA_UPLOAD"]
+		},
+		"credentials": {
+			"email": "ava.clark@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Elijah",
+			"lastName": "Lewis",
+			"gender": "MALE",
+			"dateOfBirth": "1979-05-30"
+		},
+		"access": {
+			"role": ["MAINTAINER"],
+			"permissionsRequested": ["ONTOLOGY_UPLOAD", "DATA_UPLOAD"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "elijah.lewis@example.com"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Mia",
+			"lastName": "Walker",
+			"gender": "FEMALE",
+			"dateOfBirth": "1990-12-19"
+		},
+		"access": {
+			"role": ["ADMIN"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW", "ONTOLOGY_UPLOAD"],
+			"permissionsGranted": ["ADMIN", "ONTOLOGY_VIEW", "DATA_VIEW", "ONTOLOGY_UPLOAD"]
+		},
+		"credentials": {
+			"email": "mia.walker@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "James",
+			"lastName": "Hall",
+			"gender": "MALE",
+			"dateOfBirth": "1985-08-08"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["DATA_VIEW", "DATA_UPLOAD", "DATA_EXPORT", "ONTOLOGY_UPLOAD"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "james.hall@example.com"
+		},
+		"accountVerification": "CODE_EXPIRED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Isabella",
+			"lastName": "Allen",
+			"gender": "FEMALE",
+			"dateOfBirth": "1987-04-25"
+		},
+		"access": {
+			"role": ["RESEARCHER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "DATA_VIEW"],
+			"permissionsGranted": ["ONTOLOGY_VIEW", "DATA_VIEW"]
+		},
+		"credentials": {
+			"email": "isabella.allen@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Benjamin",
+			"lastName": "Young",
+			"gender": "MALE",
+			"dateOfBirth": "1976-06-13"
+		},
+		"access": {
+			"role": ["PRACTITIONER"],
+			"permissionsRequested": ["DATA_UPLOAD", "DATA_VIEW"],
+			"permissionsGranted": []
+		},
+		"credentials": {
+			"email": "benjamin.young@example.com"
+		},
+		"accountVerification": "NOT_VERIFIED",
+		"permissionVerification": "NOT_VERIFIED"
+	},
+	{
+		"user": {
+			"firstName": "Charlotte",
+			"lastName": "King",
+			"gender": "FEMALE",
+			"dateOfBirth": "1989-02-16"
+		},
+		"access": {
+			"role": ["MAINTAINER"],
+			"permissionsRequested": ["ONTOLOGY_VIEW", "ONTOLOGY_UPLOAD", "DATA_UPLOAD"],
+			"permissionsGranted": ["ONTOLOGY_VIEW"]
+		},
+		"credentials": {
+			"email": "charlotte.king@example.com"
+		},
+		"accountVerification": "VERIFIED",
+		"permissionVerification": "VERIFIED"
+	}
+]

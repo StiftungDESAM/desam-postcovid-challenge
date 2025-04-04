@@ -1,0 +1,24 @@
+@prefix pro: <property#> .
+@prefix node: <node#> .
+@prefix rel: <relationship#> .
+@prefix data: <data#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+node:25 a pro:Item;
+  pro:tag "254"^^xsd:long;
+  rel:8 node:35 .
+
+rel:8 a pro:HAT;
+  pro:tag "1007"^^xsd:long;
+  pro:cardinality "n" .
+
+node:35 a pro:Antwort;
+  pro:tag "256"^^xsd:long;
+  rel:17 data:117 .
+
+rel:17 a pro:AKTUELL;
+  pro:tag "263"^^xsd:long.
+
+data:117 a pro:Data;
+  pro:value "4, eher ja".
+

@@ -1,0 +1,132 @@
+[
+	{
+		"id": 1,
+		"submitter": {
+			"firstName": "Laura",
+			"lastName": "Schmidt",
+			"role": ["MAINTAINER"]
+		},
+		"submissionDate": "2025-03-11T10:30:00",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	},
+	{
+		"id": 2,
+		"submitter": {
+			"firstName": "Paul",
+			"lastName": "Richter",
+			"role": ["PRACTITIONER"]
+		},
+		"submissionDate": "2025-03-10T08:00:00",
+		"reviewer": {
+			"firstName": "Test",
+			"lastName": "User",
+			"email": "test.user@reutlingen-university.de"
+		},
+		"submissionStatus": "ASSIGNED"
+	},
+	{
+		"id": 3,
+		"submitter": {
+			"firstName": "Tom",
+			"lastName": "Becker",
+			"role": ["RESEARCHER"]
+		},
+		"submissionDate": "2025-03-12T15:15:00",
+		"reviewer": {
+			"firstName": "Hannah",
+			"lastName": "Fischer",
+			"email": "hannah.fischer@example.com"
+		},
+		"submissionStatus": "DECLINED"
+	},
+	{
+		"id": 4,
+		"submitter": {
+			"firstName": "Emma",
+			"lastName": "Wagner",
+			"role": ["MAINTAINER"]
+		},
+		"submissionDate": "2025-03-13T09:45:00",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	},
+	{
+		"id": 5,
+		"submitter": {
+			"firstName": "Maximilian",
+			"lastName": "Schwarz",
+			"role": ["PRACTITIONER"]
+		},
+		"submissionDate": "2025-03-14T14:20:00",
+		"reviewer": {
+			"firstName": "Julia",
+			"lastName": "Bauer",
+			"email": "julia.bauer@example.com"
+		},
+		"submissionStatus": "ACCEPTED"
+	},
+	{
+		"id": 6,
+		"submitter": {
+			"firstName": "Sophia",
+			"lastName": "Neumann",
+			"role": ["RESEARCHER"]
+		},
+		"submissionDate": "2025-03-15T11:10:00",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	},
+	{
+		"id": 7,
+		"submitter": {
+			"firstName": "Lukas",
+			"lastName": "Krüger",
+			"role": ["MAINTAINER"],
+			"email": "lukas.krüger@example.com"
+		},
+		"submissionDate": "2025-03-16T16:05:00",
+		"reviewer": {
+			"firstName": "Anna",
+			"lastName": "Mayer"
+		},
+		"submissionStatus": "ASSIGNED"
+	},
+	{
+		"id": 8,
+		"submitter": {
+			"firstName": "Isabella",
+			"lastName": "Hoffmann",
+			"role": ["PRACTITIONER"]
+		},
+		"submissionDate": "2025-03-17T12:40:00",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	},
+	{
+		"id": 9,
+		"submitter": {
+			"firstName": "Finn",
+			"lastName": "Hartmann",
+			"role": ["RESEARCHER"]
+		},
+		"submissionDate": "2025-03-18T13:50:00",
+		"reviewer": {
+			"firstName": "Mia",
+			"lastName": "Schuster",
+			"email": "mia.schuster@example.com"
+		},
+		"submissionStatus": "MODIFICATION_NEEDED"
+	},
+	{
+		"id": 10,
+		"submitter": {
+			"firstName": "Lena",
+			"lastName": "Peters",
+			"role": ["MAINTAINER"]
+		},
+		"submissionDate": "2025-03-19T17:25:00",
+		"reviewer": null,
+		"submissionStatus": "OPEN"
+	}
+]

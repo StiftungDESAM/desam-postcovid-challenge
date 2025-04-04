@@ -1,0 +1,26 @@
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const sidebarItems = document.querySelectorAll('.sidebaritem');
+		sidebarItems.forEach((it) => {
+			it.querySelector('.itemchildren').style.display = 'none';
+
+			it.querySelector('.open').classList.remove('open');
+
+			window.location.hash = '/start.md';
+		});
+
+		sidebarItems.forEach((it) => {
+			let firstClick = true;
+			it.addEventListener('click', function (e) {
+				if (firstClick) {
+					firstClick = false;
+					setTimeout(() => {
+						if (e.target.tagName == 'path') e.target.parentElement.parentElement.click();
+						else if (e.target.tagName == 'svg') e.target.parentElement.click();
+						else e.target.click();
+					}, 50);
+				}
+			});
+		});
+	});
+</script>
