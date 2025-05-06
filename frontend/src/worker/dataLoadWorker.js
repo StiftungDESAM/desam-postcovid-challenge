@@ -4,11 +4,19 @@ const t = i18n.global.t;
 
 self.data = {};
 
+function detectDelimiter(csvString) {
+	const lines = csvString.split('\n').slice(0, 5);
+	const commaCount = lines.map((line) => line.split(',').length).reduce((a, b) => a + b, 0);
+	const semicolonCount = lines.map((line) => line.split(';').length).reduce((a, b) => a + b, 0);
+
+	return commaCount >= semicolonCount ? ',' : ';';
+}
 self.onmessage = function (e) {
 	self.data = e.data;
+	const delimiter = detectDelimiter(self.data.fileData);
 
 	Papa.parse(self.data.fileData, {
-		delimiter: ',',
+		delimiter: delimiter,
 		header: false,
 		skipEmptyLines: false,
 		quoteChar: '"',
@@ -86,13 +94,17 @@ self.functions = {
 		if (self.data.translationColumn) {
 			const refIdx = self.functions.getIdxOfColumn(name);
 			const columnMapping = self.data.tableConfigsForCodeBooks.find((codeBook) => codeBook.id == self.data.selectedCodeBook.id);
-			const translationColumn = columnMapping.data.find((it) => it.id == self.data.translationColumn);
+			const translationColumn = columnMapping.data.find(
+				(it) => it.tag == columnMapping.mappingColumn || it.assignedItem?.tag == columnMapping.mappingColumn
+			);
 			return refIdx >= 0 ? translationColumn.rows[refIdx] : '-';
 		} else return '-';
 	},
 	getIdxOfColumn: (ref) => {
 		const columnMapping = self.data.tableConfigsForCodeBooks.find((codeBook) => codeBook.id == self.data.selectedCodeBook.id);
-		const mappingColumn = columnMapping.mappings.find((it) => it.id == self.data.mappingColumn);
+		const mappingColumn = columnMapping.mappings.find(
+			(it) => it.tag == columnMapping.mappingColumn || it.assignedItem?.tag == columnMapping.mappingColumn
+		);
 		return mappingColumn.rows.findIndex((it) => it == ref);
 	},
 };

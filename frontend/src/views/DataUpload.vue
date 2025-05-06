@@ -1,5 +1,7 @@
 <template>
 	<div class="du-wrap-content">
+		<h2>{{ $t('duAvailableStudies') }}</h2>
+		<ConfirmationWindow v-if="confirmUploadConfig" :config="confirmUploadConfig" />
 		<LoadingSpinner v-if="isUploading" :wrapperClass="'du-wrap-content'" />
 		<div class="du-wrap-studies-table">
 			<LoadingSpinner v-if="isLoading" :wrapperClass="'du-wrap-studies-table'" />
@@ -14,21 +16,25 @@
 			<div class="du-wrap-row-mapping">
 				<div class="du-wrap-mapping">
 					<label>{{ $t('duColumnIdentifier') }}</label>
-					<select v-model="mappingColumn" @change="changeMapping" disabled>
+					<select v-model="mappingColumn" disabled>
 						<!-- <option :value="null" default selected hidden>{{ $t('duSelectMapping') }}</option> -->
 						<!-- <option :value="null" default selected>{{ $t('duDeselectMapping') }}</option> -->
-						<option v-for="col in currentColumnMapping?.mappings" :key="col.id" :value="col.id">
-							{{ col.assignedItem ? col.assignedItem : col.name }}
+						<option
+							v-for="col in currentColumnMapping?.mappings"
+							:key="col.id"
+							:value="col.assignedItem ? col.assignedItem.tag : col.tag"
+						>
+							{{ col.assignedItem ? `${col.assignedItem.name} (${col.name})` : col.name }}
 						</option>
 					</select>
 				</div>
 				<div class="du-wrap-mapping">
 					<label>{{ $t('duColumnTranslation') }}</label>
 					<select v-model="translationColumn" @change="changeTranslation">
-						<option :value="null" default selected hidden>{{ $t('duSelectTranslation') }}</option>
+						<option value="" default selected hidden>{{ $t('duSelectTranslation') }}</option>
 						<option :value="null" default selected>{{ $t('duDeselectTranslation') }}</option>
-						<option v-for="col in currentColumnMapping?.data" :key="col.id" :value="col.id">
-							{{ col.assignedItem ? col.assignedItem : col.name }}
+						<option v-for="col in currentColumnMapping?.data" :key="col.id" :value="col.assignedItem ? col.assignedItem.tag : col.tag">
+							{{ col.assignedItem ? `${col.assignedItem.name} (${col.name})` : col.name }}
 						</option>
 					</select>
 				</div>
@@ -95,7 +101,7 @@
 				v-if="selectedItem"
 				:linkedItem="linkedItem"
 				:mappedItems="mappedItems"
-				:mappingColumn="selectedCodeBook?.data[mappingColumn]"
+				:mappingColumn="mappingColumnForSelectedCodeBook"
 			/>
 			<div class="du-wrap-bottom">
 				<div class="du-wrap-data-status">
@@ -111,7 +117,7 @@
 					<p v-else><fai icon="fas fa-circle-check" class="du-success-svg" />{{ $t('duDataCanBeUploaded') }}</p>
 				</div>
 				<div class="du-wrap-buttons">
-					<button :class="uploadAllowed ? 'app-success-btn' : 'app-disabled-btn'" @click="uploadData">
+					<button :class="uploadAllowed ? 'app-success-btn' : 'app-disabled-btn'" @click="confirmUpload">
 						{{ $t('duSubmitData') }} <fai icon="fas fa-paper-plane" />
 					</button>
 				</div>
@@ -126,6 +132,7 @@ import DataLoadWorker from '@/worker/dataLoadWorker.js?worker';
 import LoadingSpinner from '@/components/general/LoadingSpinner.vue';
 import { studyTableConfig } from '@/components/upload/studyTableConfig';
 import { dataTableConfig } from '@/components/upload/dataTableConfig';
+import ConfirmationWindow from '@/components/general/ConfirmationWindow.vue';
 import studies from '@/assets/dummy/studies.json';
 import detailedStudy from '@/assets/dummy/detailedStudy.json';
 import { ROUTE, TOAST_TYPE, DATA_QUALITY_CHECK_MODE } from '@/enums/enums';
@@ -139,7 +146,7 @@ import { reactive } from 'vue';
  */
 export default {
 	name: 'DataUpload',
-	components: { Table, LoadingSpinner, AssignedAndLinkedData, DataQualityCheck },
+	components: { Table, LoadingSpinner, AssignedAndLinkedData, DataQualityCheck, ConfirmationWindow },
 	emits: [],
 	props: {},
 	watch: {},
@@ -164,28 +171,35 @@ export default {
 			selectedItem: null,
 			assignedMetaItem: null,
 			detailedInfo: null,
+			confirmUploadConfig: null,
 		};
 	},
 	computed: {
 		currentColumnMapping() {
 			return this.tableConfigsForCodeBooks.find((it) => it.id == this.selectedCodeBook.id);
 		},
+		mappingColumnForSelectedCodeBook() {
+			return this.selectedCodeBook?.data.find((it) => it.assignedItem?.tag == this.mappingColumn || it.tag == this.mappingColumn);
+		},
 		mappedItems() {
 			const mappedItems = [];
-			let idx = this.selectedCodeBook?.data[this.mappingColumn].rows.findIndex((d) => d == this.selectedItem?.ref.join(''));
+			const mappingColumn = this.selectedCodeBook.data.find((it) => it.tag == this.mappingColumn || it.assignedItem?.tag == this.mappingColumn);
+			let idx = mappingColumn.rows.findIndex((d) => d == this.selectedItem?.ref.join(''));
 
 			this.selectedCodeBook?.data.forEach((it) => {
 				mappedItems.push({
 					name: it.name,
+					tag: it.tag,
 					value: it.rows[idx],
-					assignedMetaField: it.assignedMetaField,
+					assignedMetaField: it.assignedItem,
 				});
 			});
 
 			return mappedItems;
 		},
 		linkedItem() {
-			let idx = this.selectedCodeBook?.data[this.mappingColumn].rows.findIndex((d) => d == this.selectedItem?.ref.join(''));
+			const mappingColumn = this.selectedCodeBook.data.find((it) => it.tag == this.mappingColumn || it.assignedItem?.tag == this.mappingColumn);
+			let idx = mappingColumn.rows.findIndex((d) => d == this.selectedItem?.ref.join(''));
 
 			return this.selectedCodeBook?.linkedData[idx];
 		},
@@ -218,11 +232,9 @@ export default {
 		queryStudies() {
 			this.isLoading = true;
 
-			this.$network.getData(`/api/data/studies`, null, null, (err, data) => {
+			this.$network.getData(`/api/study?for_route=UPLOAD`, null, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					// if (!err) this.tableConfig.data.values = data;
-					if (err) this.studyTableConfig.data.values = this.studies;
+					if (!err) this.studyTableConfig.data.values = data;
 					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 				} catch (error) {
 					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
@@ -237,24 +249,38 @@ export default {
 			if (study) {
 				this.isLoading = true;
 
-				this.$network.getData(`/api/data/studies/${study.id}`, null, null, (err, data) => {
+				this.$network.getData(`/api/study/${study.id}`, null, null, (err, data) => {
 					try {
-						// TODO: Remove mocked data
-						// if (!err) this.selectedStudy = data;
-						if (err) {
-							this.selectedStudy = this.study;
+						if (!err) {
+							this.selectedStudy = data;
 							this.mappingColumn = this.selectedStudy.codeBooks[0].mappingColumn;
 							this.translationColumn = this.selectedStudy.codeBooks[0].translationColumn;
 
 							this.selectedStudy.codeBooks.forEach((codeBook) => {
+								const sortedColumns = codeBook.columns.sort((a, b) => a.idx - b.idx);
+
+								const mappings = codeBook.meta
+									.map((it) => {
+										return {
+											id: it.idx,
+											tag: it.tag,
+											name: it.header,
+											rows: it.rows,
+											assignedItem: it.assignedMetaField,
+										};
+									})
+									.sort((a, b) => a.name.localeCompare(b.name));
+
 								this.tableConfigsForCodeBooks.push({
 									id: codeBook.id,
 									name: codeBook.name,
 									tableConfig: null,
-									mappings: codeBook.data.filter((it) => new Set(it.rows).size == it.rows.length),
-									data: codeBook.data,
-									linkedData: codeBook.linkedData,
+									mappings: mappings.filter((it) => new Set(it.rows).size == it.rows.length),
+									data: mappings,
+									linkedData: sortedColumns.map((col) => col.linkedItem),
 									dataQualityCheckConfig: null,
+									mappingColumn: codeBook.mappingColumn,
+									translationColumn: codeBook.translationColumn,
 								});
 							});
 							this.selectedCodeBook = this.tableConfigsForCodeBooks.find((it) => it.id == this.selectedStudy.codeBooks[0].id);
@@ -344,9 +370,6 @@ export default {
 			this.selectedItem = null;
 			this.assignedMetaItem = null;
 		},
-		changeMapping() {
-			// TODO: Check if this should even be allowed
-		},
 		changeTranslation() {
 			this.selectedStudy.codeBooks.map((it) => {
 				if (it.id == this.selectedCodeBook.id) it.translationColumn = this.translationColumn;
@@ -373,14 +396,16 @@ export default {
 		},
 		getIdxOfColumn(ref) {
 			const columnMapping = this.tableConfigsForCodeBooks.find((codeBook) => codeBook.id == this.selectedCodeBook.id);
-			const mappingColumn = columnMapping.mappings.find((it) => it.id == this.mappingColumn);
+			const mappingColumn = columnMapping.mappings.find((it) => it.tag == this.mappingColumn || it.assignedItem?.tag == this.mappingColumn);
 			return mappingColumn.rows.findIndex((it) => it == ref);
 		},
 		getTranslationForColumn(ref) {
 			if (this.translationColumn) {
 				const refIdx = this.getIdxOfColumn(ref);
 				const columnMapping = this.tableConfigsForCodeBooks.find((codeBook) => codeBook.id == this.selectedCodeBook.id);
-				const translationColumn = columnMapping.data.find((it) => it.id == this.translationColumn);
+				const translationColumn = columnMapping.data.find(
+					(it) => it.tag == this.translationColumn || it.assignedItem?.tag == this.translationColumn
+				);
 				return refIdx >= 0 ? translationColumn.rows[refIdx] : '-';
 			} else return '-';
 		},
@@ -476,6 +501,28 @@ export default {
 				),
 			};
 		},
+		confirmUpload() {
+			this.confirmUploadConfig = {
+				title: this.$t('duConfirmDataUploadTitel'),
+				text: this.$t('duConfirmDataUploadText'),
+				cancelButton: {
+					class: 'app-default-btn',
+					text: this.$t('duCancel'),
+					callback: () => {
+						this.isLoading = false;
+						this.confirmUploadConfig = null;
+					},
+				},
+				confirmButton: {
+					class: 'app-warn-btn',
+					text: this.$t('duConfirmDataUpload'),
+					callback: () => {
+						this.confirmUploadConfig = null;
+						this.uploadData();
+					},
+				},
+			};
+		},
 		uploadData() {
 			if (!this.isUploading) {
 				this.isUploading = true;
@@ -510,23 +557,19 @@ export default {
 					uploadData.push(dataGroup);
 				});
 
-				window.setTimeout(() => {
-					this.$network.postData(`/api/data/studies/${this.selectedStudy.id}`, uploadData, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) ...
-							if (err) {
-								this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('duUploadedDataSuccessfully'));
-								this.$router.push({ name: ROUTE.PROFILE });
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isUploading = false;
-							window.dispatchEvent(new Event('resize'));
-						}
-					});
-				}, 1000);
+				this.$network.postData(`/api/study/${this.selectedStudy.id}/data`, uploadData, null, (err, data) => {
+					try {
+						if (!err) {
+							this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('duUploadedDataSuccessfully'));
+							this.$router.push({ name: ROUTE.PROFILE });
+						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isUploading = false;
+						window.dispatchEvent(new Event('resize'));
+					}
+				});
 			}
 		},
 		resetView() {
@@ -550,6 +593,12 @@ export default {
 	width: 100%;
 	padding-bottom: 20px;
 	position: relative;
+}
+
+.du-wrap-content h2 {
+	margin: 10px 0px 20px 0px;
+	text-decoration: underline;
+	font-weight: normal;
 }
 
 .du-wrap-studies-table {

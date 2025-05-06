@@ -15,11 +15,27 @@ const ARRAY_TYPES_DE = [];
 const ARRAY_TYPES = ['array', 'list', 'vector', 'tuple', ...ARRAY_TYPES_DE];
 const OBJECT_TYPES_DE = [];
 const OBJECT_TYPES = ['object', 'dict', 'map', 'record', 'struct', 'hashmap', 'json', ...OBJECT_TYPES_DE];
+const IGNORED_COLUMNS = ['trustCenterID'];
 
 // Required checking
 // prettier-ignore
-const REQUIRED_TYPES_DE = ['erforderlich', 'notwendig', 'verpflichtend', 'pflicht', 'muss', 'benötigt', 'obligatorisch', 'zwingend', 'ja', 'ein', 'aktiv', 'einschalten'];
+const REQUIRED_TYPES_DE = ['erforderlich', 'notwendig', 'verpflichtend', 'pflicht', 'muss', 'benötigt', 'obligatorisch', 'zwingend', 'ja', 'ein', 'aktiv', 'einschalten', 'eingabe notwendig'];
 const REQUIRED_TYPES = ['true', '1', 'yes', 'y', 'required', 'on', 'enable', 'mandatory', 'must', ...REQUIRED_TYPES_DE];
+
+// Checks for missing config and return info
+let configWarningPushed = false;
+const checkConfigNull = (config, configKey) => {
+	if (config[configKey] == null) {
+		if (!configWarningPushed) {
+			self.checkResult.info.push({
+				text: 'CONFIG_IS_NULL',
+			});
+			configWarningPushed = true;
+		}
+		return true;
+	}
+	return false;
+};
 
 self.checkResult = {
 	errors: [],
@@ -61,37 +77,33 @@ self.onmessage = function (e) {
 
 self.functions = {
 	loopThroughCells: (config, data, mode, cb) => {
-		if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-			data.tableConfig.data.columns.forEach((col, idx) => {
-				const colRef = col.ref.join('');
-				const refIdx = data.mappings[0].rows.findIndex((it) => it == colRef);
+		data.tableConfig.data.columns.forEach((col, idx) => {
+			const colRef = col.ref.join('');
 
-				// Only loop through columns that are included in the codebook
-				if (refIdx != -1)
-					data.tableConfig.data.values.forEach((row) => cb(data, config, refIdx, row[colRef], colRef, row[data.tableConfig.data.key]));
-			});
-		} else {
-			data.data.forEach((item) => {
-				item.answers.forEach((ans, idx) =>
-					cb(data, config, null, ans.toString(), item.itemMeta[data.usedIdentifier], idx + 1, item.itemMeta)
-				);
-			});
-		}
+			if (IGNORED_COLUMNS.includes(colRef)) return;
+			const refIdx = data.mappings[0].rows.findIndex((it) => it == colRef);
+
+			// Only loop through columns that are included in the codebook
+			if (refIdx != -1)
+				data.tableConfig.data.values.forEach((row) => cb(data, config, refIdx, row[colRef], colRef, row[data.tableConfig.data.key]));
+		});
 	},
 	checkValueType: (mode, data, config, refIdx, value, colRef, rowRef, meta) => {
+		//ignores trustCenterID in check. Actual set as config VALUE_TYPE
+		if (meta && meta.Feldname === 'trustCenterID') return;
+		if (checkConfigNull(config, 'VALUE_TYPE')) return;
+
 		let compareValue = null;
 		let valueType = null;
 		let linkedData = null;
 
 		try {
-			if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-				valueType = data.data.find((it) => it.id.toString() == config.VALUE_TYPE);
-				linkedData = data.linkedData[refIdx];
-				compareValue =
-					linkedData && valueType.assignedMetaField && linkedData[valueType.assignedMetaField.name]
-						? linkedData[valueType.assignedMetaField.name]?.toLowerCase()
-						: valueType.rows[refIdx]?.toLowerCase();
-			} else compareValue = meta[config.VALUE_TYPE]?.toLowerCase();
+			valueType = data.data.find((it) => it.assignedItem?.tag === config.VALUE_TYPE || it.tag == config.VALUE_TYPE);
+			linkedData = data.linkedData[refIdx];
+			compareValue =
+				linkedData && valueType.assignedItem && linkedData[valueType.assignedItem.tag]
+					? linkedData[valueType.assignedItem.tag]?.toLowerCase()
+					: valueType.rows[refIdx]?.toLowerCase();
 
 			if (NUMBER_TYPES.includes(compareValue)) {
 				if (isNaN(value) || value.trim() == '') throw 'WRONG_DATATYPE';
@@ -127,19 +139,19 @@ self.functions = {
 		}
 	},
 	checkValueRangeMin: (mode, data, config, refIdx, value, colRef, rowRef, meta) => {
+		if (checkConfigNull(config, 'VALUE_RANGE_MIN')) return;
+
 		let minValue = null;
 		let valueRangeMin = null;
 		let linkedData = null;
 
 		try {
-			if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-				valueRangeMin = data.data.find((it) => it.id.toString() == config.VALUE_RANGE_MIN);
-				linkedData = data.linkedData[refIdx];
-				minValue =
-					linkedData && valueRangeMin.assignedMetaField && linkedData[valueRangeMin.assignedMetaField.name]
-						? linkedData[valueRangeMin.assignedMetaField.name]?.toString()
-						: valueRangeMin.rows[refIdx]?.toString();
-			} else minValue = meta[config.VALUE_RANGE_MIN]?.toString();
+			valueRangeMin = data.data.find((it) => it.assignedItem?.tag === config.VALUE_RANGE_MIN || it.tag == config.VALUE_RANGE_MIN);
+			linkedData = data.linkedData[refIdx];
+			minValue =
+				linkedData && valueRangeMin.assignedItem && linkedData[valueRangeMin.assignedItem.tag]
+					? linkedData[valueRangeMin.assignedItem.tag]?.toString()
+					: valueRangeMin.rows[refIdx]?.toString();
 
 			if (!isNaN(minValue) && minValue != '') {
 				if (!isNaN(value)) {
@@ -162,19 +174,19 @@ self.functions = {
 		}
 	},
 	checkValueRangeMax: (mode, data, config, refIdx, value, colRef, rowRef, meta) => {
+		if (checkConfigNull(config, 'VALUE_RANGE_MAX')) return;
+
 		let valueRangeMax = null;
 		let linkedData = null;
 		let maxValue = null;
 
 		try {
-			if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-				valueRangeMax = data.data.find((it) => it.id.toString() == config.VALUE_RANGE_MAX);
-				linkedData = data.linkedData[refIdx];
-				maxValue =
-					linkedData && valueRangeMax.assignedMetaField && linkedData[valueRangeMax.assignedMetaField.name]
-						? linkedData[valueRangeMax.assignedMetaField.name]?.toString()
-						: valueRangeMax.rows[refIdx]?.toString();
-			} else maxValue = meta[config.VALUE_RANGE_MAX]?.toString();
+			valueRangeMax = data.data.find((it) => it.assignedItem?.tag === config.VALUE_RANGE_MAX || it.tag == config.VALUE_RANGE_MAX);
+			linkedData = data.linkedData[refIdx];
+			maxValue =
+				linkedData && valueRangeMax.assignedItem && linkedData[valueRangeMax.assignedItem.tag]
+					? linkedData[valueRangeMax.assignedItem.tag]?.toString()
+					: valueRangeMax.rows[refIdx]?.toString();
 
 			if (!isNaN(maxValue) && maxValue != '') {
 				if (!isNaN(value)) {
@@ -197,35 +209,38 @@ self.functions = {
 		}
 	},
 	checkValueMapping: (mode, data, config, refIdx, value, colRef, rowRef, meta) => {
+		if (checkConfigNull(config, 'VALUE_MAPPING')) return;
+
 		let mappingValue = null;
 		let mappings = null;
 		let linkedData = null;
 		let linkedMappingValues = '';
 		let originalMappingValues = '';
+		const answerSeparator = self.functions.getSeparator(config.answerSeparator);
+		const mappingSeparator = self.functions.getSeparator(config.mappingSeparator);
 		try {
 			if (value && value != '') {
-				if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-					mappings = data.data.find((it) => it.id.toString() == config.VALUE_MAPPING);
-					linkedData = data.linkedData[refIdx];
-					linkedMappingValues =
-						linkedData && mappings.assignedMetaField && linkedData[mappings.assignedMetaField.name]
-							? linkedData[mappings.assignedMetaField.name]
-							: [];
-					originalMappingValues = mappings.rows[refIdx];
-				} else linkedMappingValues = meta[config.VALUE_MAPPING];
+				mappings = data.data.find((it) => it.assignedItem?.tag === config.VALUE_MAPPING || it.tag == config.VALUE_MAPPING);
+				linkedData = data.linkedData[refIdx];
 
-				const answeredValues = value?.split(self.functions.getSeparator(config.answerSeparator)).map((it) => it.trim()) || [];
+				if (linkedData && mappings && mappings.assignedItem) {
+					linkedMappingValues = linkedData[mappings.assignedItem.tag] || '';
+				}
+
+				originalMappingValues = mappings ? mappings.rows[refIdx] : '';
+
+				const answeredValues = value.split(answerSeparator).map((it) => it.trim());
 				let error = false;
 
 				// Checking answers by linked data
-				if (linkedMappingValues && linkedMappingValues != '') {
-					mappingValue = linkedMappingValues.split(self.functions.getSeparator(config.mappingSeparator)).map((it) => it.trim());
+				if (linkedMappingValues && typeof linkedMappingValues === 'string') {
+					mappingValue = linkedMappingValues.split(mappingSeparator).map((it) => it.trim());
 					answeredValues.forEach((answer) => {
 						if (!mappingValue.includes(answer)) error = true;
 					});
 
-					// Fallback to split by ,
-					if (mappingValue.length == 1) {
+					// Fallback to split by
+					if (mappingValue.length === 1) {
 						error = false;
 						mappingValue = linkedMappingValues.split(',').map((it) => it.trim());
 						answeredValues.forEach((answer) => {
@@ -235,19 +250,21 @@ self.functions = {
 				}
 
 				// Using original mapping if no linked data is available
-				if ((!linkedMappingValues || linkedMappingValues == '' || error) && originalMappingValues && originalMappingValues != '') {
-					mappingValue = originalMappingValues.split(self.functions.getSeparator(config.mappingSeparator)).map((it) => it.trim());
+				if ((!linkedMappingValues || error) && originalMappingValues && originalMappingValues !== '') {
+					mappingValue = originalMappingValues.split(mappingSeparator).map((it) => it.trim());
 					answeredValues.forEach((val) => {
 						if (!mappingValue.includes(val)) throw 'WRONG_MAPPING';
 					});
-				} else if (error) throw 'WRONG_MAPPING';
+				} else if (error) {
+					throw 'WRONG_MAPPING';
+				}
 			}
 		} catch (error) {
 			const checkResult = {
 				text: typeof error == 'string' ? error : 'UNKNOWN_ERROR',
 				textOptions: {
 					value: value,
-					requiredValues: mode == DATA_QUALITY_CHECK_MODE.UPLOAD ? mappingValue.join(', ') : meta[config.VALUE_MAPPING],
+					requiredValues: mappingValue.join(', '),
 					error: error,
 				},
 				colRef: colRef,
@@ -275,11 +292,13 @@ self.functions = {
 		let branchingValue = null;
 		let lastValue = null;
 		try {
-			const branchingType = data.data.find((it) => it.id.toString() == config.VALUE_BRANCHING);
+			const branchingType = data.data.find((it) => it.assignedItem?.tag === config.VALUE_BRANCHING || it.tag == config.VALUE_BRANCHING);
+			// for later usage
+			//const branchingTyp = data.data.find((it) => it.assignedItem?.name === config.VALUE_BRANCHING);
 			const linkedData = data.linkedData[refIdx];
 			const linkedBranchingValue =
-				linkedData && branchingType.assignedMetaField && linkedData[branchingType.assignedMetaField.name]
-					? linkedData[branchingType.assignedMetaField.name]
+				linkedData && branchingType.assignedItem && linkedData[branchingType.assignedItem.tag]
+					? linkedData[branchingType.assignedItem.tag]
 					: null;
 			const originalBranchingValue = branchingType.rows[refIdx];
 
@@ -328,19 +347,19 @@ self.functions = {
 		}
 	},
 	checkValueRequired: (mode, data, config, refIdx, value, colRef, rowRef, meta) => {
+		if (checkConfigNull(config, 'VALUE_REQUIRED')) return;
+
 		let requiredType = null;
 		let linkedData = null;
 		let requiredValue = null;
 
 		try {
-			if (mode == DATA_QUALITY_CHECK_MODE.UPLOAD) {
-				requiredType = data.data.find((it) => it.id.toString() == config.VALUE_REQUIRED);
-				linkedData = data.linkedData[refIdx];
-				requiredValue =
-					linkedData && requiredType.assignedMetaField && linkedData[requiredType.assignedMetaField.name]
-						? linkedData[requiredType.assignedMetaField.name]?.toString().toLowerCase()
-						: requiredType.rows[refIdx]?.toString().toLowerCase();
-			} else requiredValue = meta[config.VALUE_REQUIRED]?.toString().toLowerCase();
+			requiredType = data.data.find((it) => it.assignedItem?.tag === config.VALUE_REQUIRED || it.tag == config.VALUE_REQUIRED);
+			linkedData = data.linkedData[refIdx];
+			requiredValue =
+				linkedData && requiredType.assignedItem && linkedData[requiredType.assignedItem.tag]
+					? linkedData[requiredType.assignedItem.tag]?.toString().toLowerCase()
+					: requiredType.rows[refIdx]?.toString().toLowerCase();
 
 			if (REQUIRED_TYPES.includes(requiredValue) && (!value || value == '' || value == null || value == undefined)) throw 'REQUIRED_MISSING';
 		} catch (error) {
@@ -433,7 +452,7 @@ self.functions = {
 		}
 	},
 	valueIsNotAvailable: (value, includeEmptyString = false, includeZero = false) => {
-		const isNullOrUndefined = value == null;
+		const isNullOrUndefined = value == null || value == undefined;
 		const isEmpty = value === '';
 		const isZero = value === 0;
 

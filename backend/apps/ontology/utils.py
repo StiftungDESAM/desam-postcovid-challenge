@@ -69,7 +69,6 @@ def get_all_incoming_relationships(node: neomodel.StructuredNode, label: str|Non
     }
 
     results,_ = db.cypher_query(query, parameters, resolve_objects = True)
-
     return [
         LinkedNodes(
             start_node = row[0],
@@ -78,3 +77,46 @@ def get_all_incoming_relationships(node: neomodel.StructuredNode, label: str|Non
         )
         for row in results
     ]
+
+def get_all_relationships(label: str|None = None, **properties) -> list[LinkedNodes]:
+    optional_label = ":$($label)" if label else ""
+    properties_cypher = ', '.join('{0}: ${0}'.format(property) for property in properties)
+    
+    query = f"MATCH (n1)-[r{optional_label} {{ {properties_cypher} }}]->(n2) RETURN n1, n2, r"
+    parameters = {
+        "label": label,
+        **properties
+    }
+
+    results,_ = db.cypher_query(query, parameters, resolve_objects = True)
+    return [
+        LinkedNodes(
+            start_node = row[0],
+            end_node = row[1],
+            relationship = row[2]
+        )
+        for row in results
+    ]
+
+def get_relationship(label: str|None = None, **properties) -> LinkedNodes:
+    optional_label = ":$($label)" if label else ""
+    properties_cypher = ', '.join('{0}: ${0}'.format(property) for property in properties)
+    
+    query = f"MATCH (n1)-[r{optional_label} {{ {properties_cypher} }}]->(n2) RETURN n1, n2, r LIMIT 1"
+    parameters = {
+        "label": label,
+        **properties
+    }
+
+    results,_ = db.cypher_query(query, parameters, resolve_objects = True)
+    
+    if results:
+        row = results[0]
+        return LinkedNodes(
+            start_node = row[0],
+            end_node = row[1],
+            relationship = row[2]
+        )
+    else:
+        return None
+

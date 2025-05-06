@@ -52,11 +52,11 @@ export const feedbackConfig = {
 					text: t('fvamountCodeBooksDescSort'),
 				},
 				{
-					value: 'uploadTyp-desc',
+					value: 'uploadType-desc',
 					text: t('fvUploadTypDescSort'),
 				},
 				{
-					value: 'uploadTyp-asc',
+					value: 'uploadType-asc',
 					text: t('fvUploadTypAscSort'),
 				},
 				{
@@ -80,7 +80,7 @@ export const feedbackConfig = {
 				id: ['id'],
 				submissionDate: ['submissionDate'],
 				amount: ['amountCodeBooks'],
-				uploadTyp: ['uploadTyp'],
+				uploadType: ['uploadType'],
 				reviewer: ['reviewer.firstName', 'reviewer.lastName'],
 				status: ['submissionStatus'],
 			},
@@ -113,10 +113,10 @@ export const feedbackConfig = {
 				text: t('fvamountCodeBooks'),
 			},
 			{
-				ref: ['uploadTyp'],
+				ref: ['uploadType'],
 				text: t('fvUploadTyp'),
-				formatter: (uploadTyp) => {
-					switch (uploadTyp) {
+				formatter: (uploadType) => {
+					switch (uploadType) {
 						case UPLOAD_TYP.UPLOAD_DATA:
 							return t('UPLOAD_DATA');
 						case UPLOAD_TYP.UPLOAD_ONTOLOGY:

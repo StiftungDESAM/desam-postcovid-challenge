@@ -1,18 +1,19 @@
-from ninja import Router
-from authentication.models import CustomUser, Role, Scope, Token
-from ninja.errors import HttpError
-from api import schema
-from django.utils import timezone
+from api.transactions import TransactionRouter
+
 from django.conf import settings
 from django.contrib.auth import authenticate
+from django.http import HttpResponseRedirect
+from django.utils import timezone
+from ninja.errors import HttpError
+
+from api import schema
+from authentication.models import CustomUser, Role, Scope, Token, TemplateMail, UserCode, CodeType
+from authentication.email import send_email, create_verification_link, create_reset_link
 
 import logging
-
-
 logger = logging.getLogger(__name__)
 
-router = Router()
-
+router = TransactionRouter()
 
 @router.post(
     "/registration",
@@ -70,10 +71,52 @@ def register_user(request, data: schema.UserRegistrationSchema):
     user.role.set(roles)
     user.permissions_requested.set(permissions)
     logger.debug(permissions)
+    
+    verification_code = UserCode.objects.generate(user, CodeType.VERIFICATION)
+    
+    send_email(
+        recipient_list=[credentials['email']], 
+        subject=TemplateMail.ACCOUNT_VERIFICATION.subject,
+        message=f"{TemplateMail.ACCOUNT_VERIFICATION.message}{create_verification_link(verification_code.code)}",
+    )
+    
+    user.verification_email_sent = timezone.now()
+    user.save()
 
     return 201, { "message": "User registered successfully", "user_id": user.id }
 
-
+@router.get(
+        "/email-verification",
+        summary = "Verification of a user account by a code",
+        description = "This endpoint receives a code generated during the registration process of a user and verifies the account if the code is correct and not expired",
+        auth = None,
+        response = {302: None}
+)
+def verify_email(request):
+    try:
+        code = request.GET.get("code")
+        
+        user_code = UserCode.objects.get(code=code, type=CodeType.VERIFICATION)
+    except UserCode.DoesNotExist:
+        return HttpResponseRedirect("/page?msg=REGISTRATION_FAILED")
+    
+    if user_code.is_expired():
+        user_code.delete()
+        return HttpResponseRedirect("/page?msg=CODE_EXPIRED")
+    
+    user_code.user.is_active = True
+    user_code.user.email_verified = True
+    user_code.user.save()
+    
+    send_email(
+        recipient_list=[user_code.user.email], 
+        subject=TemplateMail.ACCOUNT_VERIFICATION_SUCCESS.subject,
+        message=TemplateMail.ACCOUNT_VERIFICATION_SUCCESS.message
+    )
+    
+    user_code.delete()
+    
+    return HttpResponseRedirect("/page?msg=REGISTRATION_SUCCESSFUL")
 
 @router.post(
     "/login",
@@ -90,7 +133,7 @@ def login_user(request, login_data: schema.CredentialsData):
     
     if not user.email_verified:
         raise HttpError(403, "Email isn't verified")
-
+    
     token, _ = Token.objects.get_or_create(user=user)
 
     # Token exists but is expired, create a new one
@@ -115,6 +158,61 @@ def logout_user(request):
 
     return 204, None
 
+@router.post(
+    "/request-password-reset",
+    summary="Requests a password reset",
+    description="This endpoint requests a password reset by the user itself. Triggers a email with a code that is used for verification of the process.",
+    auth = None,
+    response={201: None}
+)
+def request_password_reset(request, data: schema.RequestPasswordResetSchema):
+    try:
+        user = CustomUser.objects.get(email=data.email)
+    except CustomUser.DoesNotExist:
+        return 201, None
+        
+    reset_code = UserCode.objects.generate(user, CodeType.PASSWORD_RESET)
+    
+    send_email(
+        recipient_list=[data.email], 
+        subject=TemplateMail.PASSWORD_RESET.subject,
+        message=f"{TemplateMail.PASSWORD_RESET.message}{create_reset_link(reset_code.code)}",
+    )
+
+    return 201, None
+
+@router.post(
+    "/password-reset",
+    summary="Handles the actual password reset",
+    description="This endpoint handles the actual password reset by the user itself. Receives the code from the email as well as the new password for the user.",
+    auth = None,
+    response={200: None, 400: str, 403: str}
+)
+def password_reset(request, data: schema.PasswordResetSchema):    
+    if not data.password:
+        raise HttpError(400, "PASSWORD_RESET_FAILED")
+    
+    try:
+        user_code = UserCode.objects.get(code=data.code, type=CodeType.PASSWORD_RESET)
+    except UserCode.DoesNotExist:
+        raise HttpError(400, "PASSWORD_RESET_FAILED")
+
+    if user_code.is_expired():
+        user_code.delete()
+        raise HttpError(403, "CODE_EXPIRED")
+        
+    user_code.user.set_password(data.password)
+    user_code.user.save()
+    
+    send_email(
+        recipient_list=[user_code.user.email], 
+        subject=TemplateMail.PASSWORD_RESET_SUCCESS.subject,
+        message=TemplateMail.PASSWORD_RESET_SUCCESS.message
+    )
+    
+    user_code.delete()
+    
+    return 200, None
 
 @router.get(
         "/",
@@ -124,3 +222,37 @@ def logout_user(request):
 )
 def get_user(request):
     return request.user
+
+
+
+@router.get(
+    "/access-check",
+    summary="Check access for a user",
+    description="This endpoint checks if the user has the requested permission",
+    response={200: None},
+)
+def check_access(request, permissions: str, require_all: bool = True):
+    # Superusers have all permissions
+    if request.user.is_superuser:
+        return 200, None
+    
+    permission_list = [x.strip() for x in permissions.split(";")]
+  
+    # check if the requested permissions are in the list of possible permissions
+    if not all(Scope.objects.filter(name=permission).exists() for permission in permission_list):
+        raise HttpError(400, "Not all requested permissions are valid permissions.")
+    
+    has_permission = False
+    
+    if require_all:
+        # User must have all required_permissions
+        has_permission = request.user.has_permissions(permission_list)
+    else:
+        # User needs at least one of the required_permissions
+        has_permission = any(request.user.has_permission(permission) for permission in permission_list)
+    
+    # raise error if the user does not have the required permissions    
+    if not has_permission:
+        raise HttpError(403, "Required permission not granted")
+    
+    return 200, None

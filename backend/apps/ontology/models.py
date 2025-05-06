@@ -5,9 +5,10 @@
 # Otherwise neomodel thinks you're redefining models and relationships and raises exceptions.
 
 import neomodel
-from neomodel.sync_.core import db
+from neomodel import db
+from django.db import models
+
 from django.utils import timezone
-from django.db.models import TextChoices
 from typing import Type
 
 class OntologyRelationship(neomodel.StructuredRel):
@@ -19,7 +20,7 @@ class OntologyRelationship(neomodel.StructuredRel):
     updated_at = neomodel.DateTimeProperty(default = timezone.now)
 
     @property
-    def properties(self):
+    def all_properties(self):
         return {
             "name": self.name,
             "tag": self.tag,
@@ -27,13 +28,31 @@ class OntologyRelationship(neomodel.StructuredRel):
             "created_at": self.created_at,
             "updated_at": self.updated_at
         }
+    
+    @property
+    def properties(self):
+        """Only returns properties that are JSON serializable."""
+        return {
+            "name": self.name,
+            "tag": self.tag,
+            "cardinality": self.cardinality
+        }
+    
+    @classmethod
+    def from_properties(cls, settings: dict):
+        return cls(
+            name = settings["name"],
+            tag = settings["tag"],
+            cardinality = settings["cardinality"]
+        )
 
-class OntologyNodeTypes(TextChoices):
+class OntologyNodeTypes(models.TextChoices):
     LEAF = "L", "Leaf"
     STAKEHOLDER = "S", "Stakeholder"
     CONNECTIVE = "C", "Connective"
 
 class OntologyNode(neomodel.StructuredNode):
+    uuid = neomodel.UniqueIdProperty()
     name: str = neomodel.StringProperty(required = True)
     tag: str = neomodel.StringProperty(required = True, unique_index = True)
     node_type: OntologyNodeTypes = neomodel.StringProperty(required = True, choices = OntologyNodeTypes.choices)
@@ -44,7 +63,8 @@ class OntologyNode(neomodel.StructuredNode):
     children: neomodel.RelationshipManager = neomodel.RelationshipTo("OntologyNode", "IS_RELATED_TO", model = OntologyRelationship)
     parents: neomodel.RelationshipManager = neomodel.RelationshipFrom("OntologyNode", "IS_RELATED_TO", model = OntologyRelationship)
 
-    def _load_node_class(self) -> neomodel.StructuredNode:
+    @property
+    def node_class(self) -> Type[neomodel.StructuredNode]:
         """Loads the knowledge node class from the registry or creates it if it doesn't exist yet."""
         # We must only create knowledge node classes for ontology nodes that have been commited to the database.
         # If element_id is not set, this means that this isn't the case for this ontology node.
@@ -60,20 +80,36 @@ class OntologyNode(neomodel.StructuredNode):
         from knowledge.models import load_knowledge_node_class
         return load_knowledge_node_class(self)
 
+    @classmethod
+    def get_relationship_label(cls) -> str:
+        return cls.children.definition["relation_type"]
+    
     @property
-    def node_class(self) -> Type[neomodel.StructuredNode]:
-        """Returns the knowledge node class associated with this ontology node.
-        This requires the node to be saved to the database."""
-        # Tries to load the node class if it hasn't been loaded for this instance yet.
-        if not hasattr(self, "_node_class") or self._node_class is None:
-            self._node_class = self._load_node_class()
-        if self._node_class is None:
-            raise ValueError("Couldn't load node class associated with this ontology node. Has it been saved to the database yet?")
-        return self._node_class
+    def all_properties(self) -> dict:
+        return {
+            "name": self.name,
+            "tag": self.tag,
+            "node_type": self.node_type,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
+        }
+
+    @property
+    def properties(self) -> dict:
+        """Only returns properties that are JSON serializable."""
+        return {
+            "name": self.name,
+            "tag": self.tag,
+            "node_type": self.node_type,
+        }
 
     @classmethod
-    def get_relationship_label(cls):
-        return cls.children.definition["relation_type"]
+    def from_properties(cls, settings: dict):
+        return cls(
+            name = settings["name"],
+            tag = settings["tag"],
+            node_type = settings["node_type"]
+        )
     
     def __hash__(self):
         return hash((self.tag,))

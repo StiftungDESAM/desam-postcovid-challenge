@@ -19,7 +19,7 @@
 			"dateStart": "2023-01-10",
 			"dateEnd": "2024-01-10",
 			"description": "Mit der überregionalen Studie Covid_ShortForm_GP werden\n• Inzidenzen von Long-/Post-Covid in der Hausarztpraxis realitätsnah retrospektiv erfasst\n• Versorgungsmerkmale von Patient:innen mit Long-/Post-Covid aus der Perspektive der versorgenden\nHausärzt:innen beschrieben\nDie Studie dient der Machbarkeitsprüfung, um das\ngewählte Studiendesign (Erhebung von\nVersorgungs-merkmalen auf Basis von Abrechnungs- und Versorgungsdaten aus den Praxisverwaltungssystemen) für weitere überregionale\nStudien mit Hausarztpraxen zu optimieren.",
-			"drksID": 123
+			"drksId": 123
 		},
 		"modifiedOntology": null,
 		"migrationOperations": [

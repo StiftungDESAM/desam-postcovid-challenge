@@ -7,7 +7,6 @@
 		<div class="ad-wrap-user-edit">
 			<UserEdit v-if="selectedUser" :user="selectedUser" @closeUserEdit="selectedUser = null" @reloadUsers="reloadUsers" />
 		</div>
-		<button @click="toggleWidth">Toggle width</button>
 	</div>
 </template>
 
@@ -72,14 +71,6 @@ export default {
 			if (reset) this.selectedUser = null;
 
 			this.queryUsers();
-		},
-		toggleWidth() {
-			const wrapper = document.querySelector('.ad-wrap-content');
-
-			if (wrapper.style.width == '1538px') wrapper.style.width = '1537px';
-			else wrapper.style.width = '1538px';
-
-			window.dispatchEvent(new Event('resize'));
 		},
 	},
 };

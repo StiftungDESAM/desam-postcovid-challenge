@@ -57,6 +57,7 @@ export default {
 			currentUser: this.$store.getCurrentUser(),
 			isLoading: false,
 			rdf: null,
+			diffRdf: null,
 			uploadedRdf: null,
 			originalRdf: null,
 			displayExisting: true,
@@ -74,14 +75,18 @@ export default {
 		queryOntology() {
 			this.isLoading = true;
 
-			this.$network.getData('/api/ontology', null, null, (err, data) => {
+			this.$network.getData('/api/ontology/', null, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					if (err) {
-						// if(!err){
-						this.originalRdf = this.rdfOntology;
-						this.rdf = this.rdfOntology;
+					if (!err) {
+						this.originalRdf = data.rdf;
+						this.rdf = data.rdf;
 					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					// TODO: Remove mocked data
+					// if (err) {
+					// 	// if(!err){
+					// 	this.originalRdf = this.rdfOntology;
+					// 	this.rdf = this.rdfOntology;
+					// } else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 				} catch (error) {
 					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
 				} finally {
@@ -177,12 +182,8 @@ export default {
 
 				this.$network.postData('/api/ontology/diff', { rdf: this.uploadedRdf }, null, (err, data) => {
 					try {
-						// TODO: Remove mocked data
-						// if (!err) {
-						// this.diffRdf = data;
-						// this.rdf = this.diffRdf;
-						if (err) {
-							this.diffRdf = this.modifiedOntology;
+						if (!err) {
+							this.diffRdf = data.rdf;
 							this.rdf = this.diffRdf;
 						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 					} catch (error) {
@@ -196,18 +197,16 @@ export default {
 		submitOntology() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.postData('/api/ontology', { rdf: this.uploadedRdf }, null, (err, data) => {
-					try {
-						if (!err) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ovSubmittedOntologySuccessfully'));
-						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-					}
-				});
-			}, 2000);
+			this.$network.postData('/api/ontology/', { rdf: this.uploadedRdf }, null, (err, data) => {
+				try {
+					if (!err) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ovSubmittedOntologySuccessfully'));
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+				}
+			});
 		},
 		exportOntology() {
 			const blob = new Blob([this.originalRdf], { type: 'text/turtle' });

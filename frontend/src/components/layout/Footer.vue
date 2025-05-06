@@ -1,6 +1,6 @@
 <template>
 	<div class="fo-wrap-content">
-		<h2>DESAM Post-Covid Challenge</h2>
+		<h2>MEVODAT - Post-Covid Datenplattform</h2>
 		<div class="fo-wrap-links">
 			<a href="https://desam.de/ueber-uns" target="_blank">DESAM Stiftung</a>
 			<span>|</span>
@@ -20,7 +20,11 @@
 				>Universitätsklinikum Tübingen (DIZ/meDIC)</a
 			>
 			<span>|</span>
-			<a href="https://www.medizin.uni-tuebingen.de/de/" target="_blank">Universität Tübingen (ZIV)</a>
+			<a
+				href=" https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/methods-in-medical-informatics/research-and-publications/research-projects/#c2238606"
+				target="_blank"
+				>Universität Tübingen (ZIV)</a
+			>
 
 			<!--<router-link :to="{ name: enumROUTE.HOME }">/</router-link>
 			<router-link :to="{ name: enumROUTE.ADMIN }">/admin</router-link>
@@ -39,7 +43,7 @@
 			<router-link :to="{ path: '/notfound' }">/not-found</router-link> -->
 		</div>
 		<div class="fo-wrap-links">
-			<router-link :to="{ name: enumROUTE.LEGAL_NOTICE, hash: '#term-of-use' }">Impressum</router-link>
+			<router-link :to="{ name: enumROUTE.LEGAL_NOTICE, hash: '#impressum' }">Impressum</router-link>
 			<span>|</span>
 			<router-link :to="{ name: enumROUTE.LEGAL_NOTICE, hash: '#data-privacy' }">Datenschutz</router-link>
 		</div>

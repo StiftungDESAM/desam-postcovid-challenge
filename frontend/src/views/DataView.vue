@@ -1,13 +1,13 @@
 <template>
 	<div class="dv-wrap-content">
-		<h2>{{ $t('dvSubmittedStudies') }}</h2>
+		<h2>{{ $t('dvAvailableStudies') }}</h2>
 		<div class="dv-wrap-submissions">
 			<LoadingSpinner v-if="isLoading" :wrapper-class="'dv-wrap-submissions'" />
 			<Table :config="studyConfig" @selectItem="selectStudy" />
 		</div>
 		<div v-if="selectedStudy" class="dv-wrap-submission-details">
 			<h2>{{ $t('dvSubmissionDetails') }}</h2>
-			<StudyInfo v-if="selectedStudy.submissionDetails.studyInfo" :disabled="true" :studyInfo="selectedStudy.submissionDetails.studyInfo" />
+			<StudyInfo v-if="selectedStudy.studyInfo" :disabled="true" :studyInfo="selectedStudy.studyInfo" />
 		</div>
 		<div v-if="selectedStudy" class="dv-wrap-data-table">
 			<h2>{{ $t('dvSubmittedData') }}</h2>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="dv-tab-view">
 				<div
-					v-for="codeBook in selectedStudy.submissionDetails.codeBooks"
+					v-for="codeBook in selectedStudy.codeBooks"
 					:key="codeBook.id"
 					:class="['dv-tab', codeBook.id == selectedCodeBook?.id ? 'dv-current-tab' : '']"
 					@click="selectCodeBook(codeBook.id)"
@@ -134,24 +134,16 @@ export default {
 		queryStudys() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.getData(`/api/data/studies`, null, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) this.studyConfig.data.values = data;
-						// else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg))
-						if (err) {
-							this.studyConfig.data.values = this.studys;
-						} else {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						}
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-					}
-				});
-			}, 2000);
+			this.$network.getData(`/api/study?for_route=VIEW`, null, null, (err, data) => {
+				try {
+					if (!err) this.studyConfig.data.values = data;
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+				}
+			});
 		},
 		selectStudy(study) {
 			this.resetView();
@@ -161,27 +153,18 @@ export default {
 				this.studyID = study.id;
 				this.$router.push({ name: ROUTE.DATA_VIEW, params: { studyID: study.id } });
 
-				window.setTimeout(() => {
-					this.$network.getData(`/api/data/studies/${this.studyID}`, null, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.selectedStudy = data;
-							if (err) {
-								this.selectedStudy =
-									study.id == 1
-										? this.dataViewStudyDataFirst
-										: study.id == 2
-											? this.dataViewStudyDataSecond
-											: this.dataViewStudyDataThird;
-								this.setupDataTable();
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isLoading = false;
-						}
-					});
-				}, 1000);
+				this.$network.getData(`/api/study/${this.studyID}`, null, null, (err, data) => {
+					try {
+						if (!err) {
+							this.selectedStudy = data;
+							this.setupDataTable();
+						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isLoading = false;
+					}
+				});
 			}
 		},
 		setupDataTable() {
@@ -191,37 +174,44 @@ export default {
 
 			let tableConfigsForCodeBooks = [];
 
-			this.selectedStudy.submissionDetails.codeBooks.forEach((codeBook) => {
+			this.selectedStudy.codeBooks.map((it) => {
+				it.dataQualityCheckConfig = this.mapDataQualityCheckConfig(it.dataQualityCheckConfig);
+				return it;
+			});
+
+			this.selectedStudy.codeBooks.forEach((codeBook) => {
 				const propertyValues = {};
-				codeBook.dataItems.forEach((item) => {
-					for (const key in item.itemMeta) {
+
+				codeBook.columns.forEach((col) => {
+					for (const key in col.item) {
 						if (!propertyValues[key]) propertyValues[key] = new Set();
 
-						propertyValues[key].add(item.itemMeta[key]);
+						propertyValues[key].add(col.item[key]);
 					}
 				});
 
-				const identifierForCodebook = [
-					...Object.keys(propertyValues).filter((key) => propertyValues[key].size === codeBook.dataItems.length),
-					'id',
-				];
+				const identifierForCodebook = [...Object.keys(propertyValues).filter((key) => propertyValues[key].size === codeBook.columns.length)];
 
-				const usedIdentifier = identifierForCodebook[0];
+				const usedIdentifier =
+					identifierForCodebook[0] == 'id' && identifierForCodebook.length > 1 ? identifierForCodebook[1] : identifierForCodebook[0];
 
-				const { columns: columns, rows: rows } = this.computeColumnsAndRows(codeBook.dataItems, usedIdentifier);
+				const { columns: columns, rows: rows } = this.computeColumnsAndRows(codeBook, usedIdentifier);
 
 				let dataTableConfig = JSON.parse(JSON.stringify(this.dataTableConfig));
 				dataTableConfig.data.columns = columns;
 				dataTableConfig.data.values = rows;
 
-				const mappings = [
-					{
-						id: 0,
-						name: usedIdentifier,
-						assignedMetaField: null,
-						rows: columns.map((it) => it.text),
-					},
-				];
+				const mappings = codeBook.meta
+					.map((it) => {
+						return {
+							id: it.idx,
+							tag: it.tag,
+							name: it.header,
+							rows: it.rows,
+							assignedItem: it.assignedMetaField,
+						};
+					})
+					.sort((a, b) => a.name.localeCompare(b.name));
 
 				tableConfigsForCodeBooks.push({
 					id: codeBook.id,
@@ -230,9 +220,10 @@ export default {
 					identifierForCodebook: identifierForCodebook,
 					usedIdentifier: usedIdentifier,
 					dataQualityCheckConfig: codeBook.dataQualityCheckConfig,
-					data: codeBook.dataItems,
-					mappings: mappings,
-					meta: [...Object.keys(propertyValues)],
+					mappings: mappings.filter((it) => new Set(it.rows).size == it.rows.length),
+					linkedData: codeBook.columns.sort((a, b) => a.idx - b.idx).map((col) => col.linkedItem),
+					data: mappings,
+					// meta: [...Object.keys(propertyValues)],
 				});
 			});
 
@@ -240,13 +231,29 @@ export default {
 			this.usedIdentifier = tableConfigsForCodeBooks[0].usedIdentifier;
 			this.tableConfigsForCodeBooks = tableConfigsForCodeBooks;
 		},
+		mapDataQualityCheckConfig(dataQualityCheckConfig) {
+			return {
+				checkConfig: {
+					VALUE_TYPE: dataQualityCheckConfig.valueType,
+					VALUE_RANGE_MIN: dataQualityCheckConfig.valueRangeMin,
+					VALUE_RANGE_MAX: dataQualityCheckConfig.valueRangeMax,
+					VALUE_MAPPING: dataQualityCheckConfig.valueMapping,
+					VALUE_REQUIRED: dataQualityCheckConfig.valueRequired,
+					EMPTY_VALUES: dataQualityCheckConfig.emptyValues,
+					EMPTY_ROWS: dataQualityCheckConfig.emptyRows,
+					EMPTY_COLUMNS: dataQualityCheckConfig.emptyColumns,
+				},
+				mappingSeparator: dataQualityCheckConfig.mappingSeparator,
+				answerSeparator: dataQualityCheckConfig.answerSeparator,
+			};
+		},
 		selectCodeBook(id) {
 			this.selectedCodeBook = this.tableConfigsForCodeBooks.find((it) => it.id == id);
 			this.usedIdentifier = this.selectedCodeBook.usedIdentifier;
 		},
 		setIdentifierForCodeBook() {
-			const codeBook = this.selectedStudy.submissionDetails.codeBooks.find((it) => it.id == this.selectedCodeBook.id);
-			const { columns: columns, rows: rows } = this.computeColumnsAndRows(codeBook.dataItems, this.usedIdentifier);
+			const codeBook = this.selectedStudy.codeBooks.find((it) => it.id == this.selectedCodeBook.id);
+			const { columns: columns, rows: rows } = this.computeColumnsAndRows(codeBook, this.usedIdentifier);
 
 			this.tableConfigsForCodeBooks.map((it) => {
 				if (it.id == this.selectedCodeBook.id) {
@@ -257,13 +264,17 @@ export default {
 				return it;
 			});
 		},
-		computeColumnsAndRows(data, usedIdentifier) {
+		computeColumnsAndRows(codebook, usedIdentifier) {
 			let columns = [{ ref: ['rowID'], text: this.$t('dvRowID') }];
 			let rows = [];
 			const useID = usedIdentifier == 'id';
 
-			data.forEach((item) => {
-				const identifier = useID ? item.id.toString() : item.itemMeta[usedIdentifier];
+			// Correctly orders the columns and rows
+			const sortedColumns = codebook.columns.sort((a, b) => a.idx - b.idx);
+			const sortedRows = codebook.rows.sort((a, b) => a.idx - b.idx);
+
+			sortedColumns.forEach((col, idx) => {
+				const identifier = useID ? col.item.id.toString() : col.item[usedIdentifier];
 
 				columns.push({
 					ref: [identifier],
@@ -273,9 +284,9 @@ export default {
 					},
 				});
 
-				item.answers.forEach((answer, idx) => {
-					if (!rows[idx]) rows.push({ rowID: idx + 1 });
-					rows[idx][identifier] = answer;
+				sortedRows.forEach((row, rowIdx) => {
+					if (!rows[rowIdx]) rows.push({ rowID: rowIdx + 1 });
+					rows[rowIdx][identifier] = row.cells[idx];
 				});
 			});
 

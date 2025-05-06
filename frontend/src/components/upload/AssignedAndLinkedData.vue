@@ -85,7 +85,7 @@ export default {
 	},
 	computed: {
 		mappedItemName() {
-			let ref = this.mappedItems.find((it) => it.name == this.mappingColumn.name)?.assignedMetaField?.name;
+			let ref = this.mappedItems.find((it) => it.tag == this.mappingColumn.tag)?.assignedMetaField?.name;
 			if (ref) return this.linkedItem[ref];
 			else return '-';
 		},

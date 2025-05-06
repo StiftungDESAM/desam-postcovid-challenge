@@ -69,7 +69,7 @@ const router = createRouter({
 			beforeEnter: checkAccess,
 		},
 		{
-			path: '/feedback/:feedbackID',
+			path: '/profile/feedback/:feedbackID',
 			name: ROUTE.FEEDBACK_VIEW,
 			component: FeedbackView,
 			meta: { permissions: [], breadcrumb: 'bcFeedbackView', icon: 'fas fa-comment-dots' },

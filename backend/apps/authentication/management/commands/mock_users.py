@@ -35,6 +35,7 @@ class Command(BaseCommand):
                 "gender": random.choice(Gender.values),
                 "date_of_birth": date(1950, 1, 1) + timedelta(days = random.randint(0, 365*50)),
                 "email_verified": True,
+                "is_active": True,
                 "permissions_verified": options["verified"] or is_super_admin,
                 "password": "x"
             }

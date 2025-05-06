@@ -27,17 +27,18 @@
 				<Table v-if="config.id == selectedCodeBook.id && config.tableConfig" :config="config.tableConfig" />
 			</div>
 		</div>
-		<h2 v-if="selectedReview">{{ $t('drOntologyChanges') }}</h2>
+		<!-- <h2 v-if="selectedReview">{{ $t('drOntologyChanges') }}</h2>
 		<div v-if="selectedReview" class="dr-wrap-viewer">
 			<OntologyViewer :rdfData="selectedReview.submissionDetails.dataOntology" :graphType="gtEnum.DATA" />
-		</div>
+		</div> -->
 		<div v-if="selectedReview" class="dr-wrap-review-section">
 			<h2>{{ $t('drReviewSection') }}</h2>
 			<ReviewSection
 				:reviewID="selectedReview.id"
 				:reviewer="selectedReview.reviewer"
 				:reviewDetails="selectedReview.review"
-				:userIsReviewerAndNotFinished="reviewCanBeEdited"
+				:reviewCanBeEdited="reviewCanBeEdited"
+				:reviewType="'DATA_UPLOAD'"
 				@assignReview="assignReview"
 				@updateReview="setReviewStatus"
 			/>
@@ -45,10 +46,10 @@
 
 		<div v-if="selectedReview" class="dr-wrap-buttons">
 			<LoadingSpinner v-if="isUpdating" :positioning="'fixed'" />
-			<button :class="reviewCanBeSaved ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraft()">
+			<button :class="reviewCanBeEdited ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraft()">
 				{{ $t('drSaveAsDraft') }} <fai icon="fas fa-save" />
 			</button>
-			<button :class="reviewCanBeSaved ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraftAndClose">
+			<button :class="reviewCanBeEdited ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraftAndClose">
 				{{ $t('drSaveAsDraftAndClose') }} <fai icon="fas fa-save" />
 			</button>
 			<button :class="reviewCanBeSaved ? 'app-success-btn' : 'app-disabled-btn'" @click="confirmFinishReview">
@@ -128,21 +129,19 @@ export default {
 		queryDataReviews() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.getData(`/api/review/data`, null, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) this.tableConfig.data.values = data;
-						if (err) this.tableConfig.data.values = this.dataReviews;
-						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 2000);
+			this.$network.getData(`/api/review/data`, null, null, (err, data) => {
+				try {
+					// TODO: Remove mocked data
+					// if (err) this.tableConfig.data.values = this.dataReviews;
+					if (!err) this.tableConfig.data.values = data;
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 		selectReview(review) {
 			this.selectedReview = null;
@@ -150,28 +149,18 @@ export default {
 			if (review) {
 				this.isLoading = true;
 
-				window.setTimeout(() => {
-					this.$network.getData(`/api/review/data/${review.id}`, null, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.selectedReview = data;
-							if (err) {
-								this.selectedReview =
-									review.submissionStatus == REVIEW_STATUS.OPEN
-										? this.openReview
-										: review.submissionStatus == REVIEW_STATUS.ASSIGNED
-											? this.assignedReview
-											: this.closedReview;
-								this.selectedReview.submissionDetails.dataOntology = this.dataOntology;
-								this.setupDataTable();
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isLoading = false;
-						}
-					});
-				}, 1000);
+				this.$network.getData(`/api/review/data/${review.id}`, null, null, (err, data) => {
+					try {
+						if (!err) {
+							this.selectedReview = data;
+							this.setupDataTable();
+						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isLoading = false;
+					}
+				});
 			}
 		},
 		setupDataTable() {
@@ -231,7 +220,7 @@ export default {
 			this.selectedReview.review = status;
 		},
 		saveAsDraft(cb) {
-			this.updateReview({ submissionState: REVIEW_STATUS.ASSIGNED, review: this.selectedReview.review }, false, cb);
+			this.updateReview({ submissionStatus: REVIEW_STATUS.ASSIGNED, review: this.selectedReview.review }, false, cb);
 		},
 		saveAsDraftAndClose() {
 			this.saveAsDraft(() => {
@@ -262,7 +251,7 @@ export default {
 			};
 		},
 		finishReview() {
-			this.updateReview({ submissionState: this.selectedReview.review.status, review: this.selectedReview.review }, true, () => {
+			this.updateReview({ submissionStatus: this.selectedReview.review.status, review: this.selectedReview.review }, true, () => {
 				this.selectedReview = null;
 				this.resetSelected = !this.resetSelected;
 				this.queryDataReviews();
@@ -271,24 +260,20 @@ export default {
 		updateReview(update, isFinish, cb) {
 			this.isUpdating = true;
 
-			window.setTimeout(() => {
-				this.$network.patchData(`/api/review/data/${this.selectedReview.id}`, update, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) {
-						if (err) {
-							if (isFinish) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('drFinishedSuccessfully'));
-							else this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('drSavedSuccessfully'));
-							if (cb) cb();
-						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isUpdating = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 1000);
+			this.$network.patchData(`/api/review/data/${this.selectedReview.id}`, update, null, (err, data) => {
+				try {
+					if (!err) {
+						if (isFinish) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('drFinishedSuccessfully'));
+						else this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('drSavedSuccessfully'));
+						if (cb) cb();
+					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isUpdating = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 	},
 };

@@ -36,7 +36,7 @@ export const linkedDataTableConfig = {
 			mode: TABLE_SELECTION.ROW_SELECT,
 		},
 		rows: {
-			delete: false,
+			checkBoxSelected: true,
 		},
 	},
 	data: {

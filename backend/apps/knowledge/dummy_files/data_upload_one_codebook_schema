@@ -1,0 +1,23 @@
+[
+  {
+    "code_book_id": 1,
+    "data_quality_check_config": {
+      "answer_separator": "answer_separator",
+      "mapping_separator": "mapping_separator",
+      "value_type": "value_type",
+      "value_range_min": "value_range_min",
+      "value_range_max": "value_range_max",
+      "value_mapping": "value_mapping",
+      "value_required": "value_required",
+      "empty_values": true,
+      "empty_rows": false,
+      "empty_columns": true
+    },
+    "values": [
+      ["Trustcenter-ID", "Alter"],
+      ["100", "35"],
+      ["101", "18"],
+      ["100", "40"]
+    ]
+  }
+]

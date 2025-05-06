@@ -55,12 +55,11 @@
 				</div>
 				<div class="ue-wrap-user-role">
 					<SelectField
+						v-model="modifiedUser.access.role"
 						:placeholder="$t('ueSelectRole')"
 						:labelText="$t('ueRole')"
 						:options="roleOptions"
-						v-model="modifiedUser.access.role"
 						:disabled="modifiedUser.access.role == enumROLE.SUPER_ADMIN"
-						@newValue="setSelectValue($event, 'role')"
 					/>
 				</div>
 			</div>
@@ -68,14 +67,7 @@
 		<div class="ue-wrap-user">
 			<h2>{{ $t('ueUserInformation') }}</h2>
 			<div class="ue-wrap-user-fields">
-				<InputField
-					v-model="user.credentials.email"
-					:placeholder="$t('ueEmail')"
-					:labelText="$t('ueEmail')"
-					:inputType="'email'"
-					:disabled="user.access.role == enumROLE.SUPER_ADMIN"
-					@newValue="checkEmail"
-				/>
+				<InputField v-model="user.credentials.email" :placeholder="$t('ueEmail')" :labelText="$t('ueEmail')" :disabled="true" />
 				<SelectField
 					v-model="user.accountVerification"
 					:placeholder="$t('ueSelectVerificationStatus')"
@@ -83,7 +75,7 @@
 					:options="accountVerificationOptions"
 					:disabled="user.access.role == enumROLE.SUPER_ADMIN"
 				/>
-				<button class="app-default-btn" @click="resendVerificationEmail">
+				<button class="app-default-btn" @click="confirmResendVerificationEmail">
 					{{ $t('ueResendVerificationEmail') }} <fai icon="fas fa-envelope" />
 				</button>
 				<button :class="user.access.role == enumROLE.SUPER_ADMIN ? 'app-disabled-btn' : 'app-warn-btn'" @click="confirmResetPassword">
@@ -153,10 +145,7 @@ export default {
 	computed: {
 		roleOptions() {
 			return Object.values(ROLE).filter(
-				(it) =>
-					it != ROLE.SUPER_ADMIN ||
-					(it == ROLE.SUPER_ADMIN && this.user.access.role == ROLE.SUPER_ADMIN) ||
-					(it == ROLE.SUPER_ADMIN && this.currentUser.access.role == ROLE.SUPER_ADMIN)
+				(it) => it != ROLE.SUPER_ADMIN || (it == ROLE.SUPER_ADMIN && this.user.access.role == ROLE.SUPER_ADMIN)
 			);
 		},
 		userInfoChanged() {
@@ -167,7 +156,6 @@ export default {
 			else if (this.user.user.dateOfBirth != this.modifiedUser.user.dateOfBirth) infoChanged = true;
 			else if (this.user.user.gender != this.modifiedUser.user.gender) infoChanged = true;
 			else if (this.user.access.role != this.modifiedUser.access.role) infoChanged = true;
-			else if (this.user.credentials.email != this.modifiedUser.credentials.email) infoChanged = true;
 			else if (this.user.accountVerification != this.modifiedUser.accountVerification) infoChanged = true;
 			else if (this.user.access.permissionsGranted.length != this.modifiedUser.access.permissionsGranted.length) infoChanged = true;
 			else {
@@ -188,7 +176,6 @@ export default {
 			else if (!this.$global.dobIsValid(this.modifiedUser.user.dateOfBirth)) allInfoValid = false;
 			else if (!this.modifiedUser.user.gender) allInfoValid = false;
 			else if (!this.modifiedUser.access.role) allInfoValid = false;
-			else if (!this.$global.emailIsValid(this.modifiedUser.credentials.email)) allInfoValid = false;
 
 			return allInfoValid && this.userInfoChanged;
 		},
@@ -207,7 +194,7 @@ export default {
 			});
 
 			if (this.modifiedUser.permissionVerification == VERIFICATION_STATUS.NOT_VERIFIED && this.user.access.permissionsGranted.length == 0) {
-				this.modifiedUser.access.permissionsGranted = this.modifiedUser.access.permissionsRequested;
+				this.modifiedUser.access.permissionsGranted = JSON.parse(JSON.stringify(this.modifiedUser.access.permissionsRequested));
 			} else {
 				this.modifiedUser.access.permissionsGranted = {};
 				this.user.access.permissionsGranted.forEach((it) => {
@@ -218,41 +205,35 @@ export default {
 		checkDOB(dob) {
 			if (dob && !dob.startsWith('0') && !this.$global.dobIsValid(dob)) this.$global.showToast(TOAST_TYPE.WARN, this.$t('reInvalidDate'));
 		},
-		checkEmail(email) {
-			if (email && !this.$global.emailIsValid(email)) this.$global.showToast(TOAST_TYPE.WARN, this.$t('reInvalidEmail'));
-		},
-		setInputValue(e, type, permission) {
-			let value = e.target.value.trim();
-
-			if (type == 'permissionsGranted') {
-				if (e.target.checked && !this.modifiedUser.access.permissionsGranted.some((it) => it == permission))
-					this.modifiedUser.access.permissionsGranted.push(permission);
-				else if (!e.target.checked)
-					this.modifiedUser.access.permissionsGranted = this.modifiedUser.access.permissionsGranted.filter((it) => it != permission);
-			} else if (type == 'email' && value != '') {
-				if (!this.$global.emailIsValid(value)) this.$global.showToast(TOAST_TYPE.WARN, this.$t('reInvalidEmail'));
-				this.modifiedUser.credentials.email = value;
-			}
-		},
-		setSelectValue(e, type) {
-			let value = e.target.options[e.target.selectedIndex].value;
-
-			if (value) {
-				if (type == 'gender') this.modifiedUser.user.gender = value;
-				else if (type == 'role') this.modifiedUser.access.role = value;
-				else if (type == 'accountVerification') this.modifiedUser.accountVerification = value;
-			}
+		confirmResendVerificationEmail() {
+			this.confirmationConfig = {
+				title: this.$t('ueResendVerificationEmail'),
+				text: this.$t('ueResendVerificationEmailText'),
+				cancelButton: {
+					class: 'app-default-btn',
+					text: this.$t('ueCancel'),
+					callback: () => {
+						this.isLoading = false;
+						this.confirmationConfig = null;
+					},
+				},
+				confirmButton: {
+					class: 'app-success-btn',
+					text: this.$t('ueResendVerificationEmail'),
+					callback: () => {
+						this.confirmationConfig = null;
+						this.resendVerificationEmail();
+					},
+				},
+			};
 		},
 		resendVerificationEmail() {
 			this.isLoading = true;
 
 			this.$network.postData(`/api/admin/users/${this.user.credentials.email}/resend-verification`, null, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					// if (!err)
-					if (err) {
-						this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ueVerificationEmailResent'));
-					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					if (!err) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ueVerificationEmailResent'));
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 				} catch (error) {
 					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
 				} finally {
@@ -285,13 +266,10 @@ export default {
 		requestPasswordReset() {
 			this.isLoading = true;
 
-			this.$network.postData('/api/admin/request-password-reset', { email: this.user.credentials.email }, null, (err, data) => {
+			this.$network.postData(`/api/admin/users/${this.user.credentials.email}/request-password-reset`, null, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					// if (!err)
-					if (err) {
-						this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ueResetEmailSent'));
-					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					if (!err) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ueResetEmailSent'));
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 				} catch (error) {
 					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
 				} finally {
@@ -389,12 +367,12 @@ export default {
 
 			let user = JSON.parse(JSON.stringify(this.modifiedUser));
 			user.access.role = [user.access.role];
+			user.access.permissionsRequested = Object.keys(user.access.permissionsRequested).filter((key) => user.access.permissionsRequested[key]);
+			user.access.permissionsGranted = Object.keys(user.access.permissionsGranted).filter((key) => user.access.permissionsGranted[key]);
 
 			this.$network.patchData(`/api/admin/users/${user.credentials.email}`, user, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					// if (!err)
-					if (err) {
+					if (!err) {
 						this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('ueUpdatedUserSuccessfully'));
 						this.$emit('reloadUsers', false);
 					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));

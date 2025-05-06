@@ -21,8 +21,8 @@
 		</div>
 		<div class="ta-wrap-table" ref="table" :id="`table-${tableID}`">
 			<div class="ta-wrap-header" :id="`header-${tableID}`">
-				<div v-if="config.functions?.rows?.delete" class="ta-header-spacer"></div>
-				<div data-cords="spacer" :class="[...getClassesForSpacer()]" ref="spacer"></div>
+				<div v-if="config.functions?.rows?.delete || config.functions?.rows?.checkBoxSelected" class="ta-header-spacer"></div>
+				<!--<div data-cords="spacer" :class="[...getClassesForSpacer()]" ref="spacer"></div>-->
 				<div
 					v-for="col in config.data.columns"
 					:key="col.ref.join('')"
@@ -59,43 +59,100 @@
 						/>
 					</div>
 					<p v-if="currentHeader?.ref.join('') != col.ref.join('')">{{ col.text }}</p>
-					<input v-else-if="currentHeader?.ref.join('') == col.ref.join('')" v-model="newHeaderName" @keyup.enter="editHeader" />
+					<input id="edit" v-else-if="currentHeader?.ref.join('') == col.ref.join('')" v-model="newHeaderName" @keyup.enter="editHeader" />
 				</div>
 			</div>
 			<div class="ta-wrap-body" :id="`body-${tableID}`">
-				<div
-					v-for="item in paginatedItems"
-					:key="item"
-					:data-cords="getValue(item, { ref: [config.data.key] })"
-					:class="[...getClassesForRow(item)]"
-					:id="`${tableID}-${getValue(item, { ref: [config.data.key] })}`"
+				<!-- Draggable Rows -->
+				<draggable
+					v-if="config.functions?.rows?.draggable"
+					v-model="config.data.values"
+					@start="onDragStart"
+					@end="onDragEnd"
+					@change="onDragChange"
+					tag="div"
+					class="ta-draggable-wrapper"
+					:item-key="'id'"
 				>
-					<div class="ta-cell-icon-wrapper">
-						<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', null, item)" />
-						<fai icon="fas fa-triangle-exclamation" class="ta-warning-icon" @click.stop="clickIcon('WARNING', null, item)" />
-					</div>
-					<div v-if="config.functions?.rows?.delete" class="ta-wrap-row-icons">
-						<fai icon="fas fa-trash" class="ta-delete-icon" @click.stop="$emit('deleteRow', item)" />
-					</div>
+					<template #item="{ element }">
+						<div
+							:data-cords="getValue(element, { ref: [config.data.key] })"
+							:class="[...getClassesForRow(element)]"
+							:id="`${tableID}-${getValue(element, { ref: [config.data.key] })}`"
+						>
+							<div class="ta-cell-icon-wrapper">
+								<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', null, element)" />
+								<fai icon="fas fa-triangle-exclamation" class="ta-warning-icon" @click.stop="clickIcon('WARNING', null, element)" />
+							</div>
+							<div v-if="config.functions?.rows?.delete" class="ta-wrap-row-icons">
+								<fai icon="fas fa-trash" class="ta-delete-icon" @click.stop="$emit('deleteRow', element)" />
+								<fai v-if="config.functions?.rows?.draggable" icon="fas fa-list" class="ta-drag-icon" />
+							</div>
+							<div
+								v-for="col in config.data.columns"
+								:key="col.ref.join('')"
+								:ref="col.ref.join('')"
+								:data-cords="`${col.ref.join('')}-${getValue(element, { ref: [config.data.key] })}`"
+								:class="[...getClassesForCell(col.ref, element)]"
+								:id="`bodyElement-${tableID}`"
+								@click="selectItem(col.ref, element)"
+								@mouseenter="setColor(col.ref, element, false)"
+								@mouseleave="setColor(col.ref, element, true)"
+							>
+								{{ getValue(element, col) }}
+								<div class="ta-cell-icon-wrapper">
+									<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', col, element)" />
+									<fai
+										icon="fas fa-triangle-exclamation"
+										class="ta-warning-icon"
+										@click.stop="clickIcon('WARNING', col, element)"
+									/>
+								</div>
+							</div>
+						</div>
+					</template>
+				</draggable>
+
+				<!-- Standard Rows (if not draggable) -->
+				<div v-else>
 					<div
-						v-for="col in config.data.columns"
-						:key="col.ref.join('')"
-						:ref="col.ref.join('')"
-						:data-cords="`${col.ref.join('')}-${getValue(item, { ref: [config.data.key] })}`"
-						:class="[...getClassesForCell(col.ref, item)]"
-						:id="`bodyElement-${tableID}`"
-						@click="selectItem(col.ref, item)"
-						@mouseenter="setColor(col.ref, item, false)"
-						@mouseleave="setColor(col.ref, item, true)"
+						v-for="item in paginatedItems"
+						:key="item"
+						:data-cords="getValue(item, { ref: [config.data.key] })"
+						:class="[...getClassesForRow(item)]"
+						:id="`${tableID}-${getValue(item, { ref: [config.data.key] })}`"
 					>
-						{{ getValue(item, col) }}
-						<div class="ta-cell-icon-wrapper">
-							<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', col, item)" />
-							<fai icon="fas fa-triangle-exclamation" class="ta-warning-icon" @click.stop="clickIcon('WARNING', col, item)" />
+						<div v-if="config.functions?.rows?.delete" class="ta-wrap-row-icons">
+							<fai icon="fas fa-trash" class="ta-delete-icon" @click.stop="$emit('deleteRow', item)" />
+							<div class="ta-cell-icon-wrapper">
+								<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', null, item)" />
+								<fai icon="fas fa-triangle-exclamation" class="ta-warning-icon" @click.stop="clickIcon('WARNING', null, item)" />
+							</div>
+						</div>
+						<div v-if="config.functions?.rows?.checkBoxSelected" class="ta-wrap-checkbox">
+							<input type="checkbox" :checked="config.selectedItemID === item.id" @click.stop="$emit('selectItem', item)" />
+						</div>
+						<div
+							v-for="col in config.data.columns"
+							:key="col.ref.join('')"
+							:ref="col.ref.join('')"
+							:data-cords="`${col.ref.join('')}-${getValue(item, { ref: [config.data.key] })}`"
+							:class="[...getClassesForCell(col.ref, item)]"
+							:id="`bodyElement-${tableID}`"
+							@click="selectItem(col.ref, item)"
+							@mouseenter="setColor(col.ref, item, false)"
+							@mouseleave="setColor(col.ref, item, true)"
+						>
+							{{ getValue(item, col) }}
+							<div class="ta-cell-icon-wrapper">
+								<fai icon="fas fa-circle-xmark" class="ta-error-icon" @click.stop="clickIcon('ERROR', col, item)" />
+								<fai icon="fas fa-triangle-exclamation" class="ta-warning-icon" @click.stop="clickIcon('WARNING', col, item)" />
+							</div>
 						</div>
 					</div>
 				</div>
-				<div v-if="paginatedItems.length === 0" class="ta-no-data">
+
+				<div v-if="paginatedItems.length === 0 && !config.functions?.rows?.draggable" class="ta-no-data">
 					{{ $t('taNoElementsFound') }}
 				</div>
 			</div>
@@ -108,6 +165,7 @@ import Pagination from '@/components/general/Pagination.vue';
 import { SORT_ORDER, TABLE_SELECTION, TABLE_SELECTION_AMOUNT } from '@/enums/enums';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import * as uuid from 'uuid';
+import draggable from 'vuedraggable';
 /**
  * @vuese
  * @group General
@@ -199,8 +257,18 @@ import * as uuid from 'uuid';
  */
 export default {
 	name: 'Table',
-	components: { Pagination },
-	emits: ['selectItem', 'deleteColumn', 'deleteRow', 'clickedErrorIcon', 'clickedWarningIcon'],
+	components: { Pagination, draggable },
+	emits: [
+		'selectItem',
+		'deleteColumn',
+		'deleteRow',
+		'clickedErrorIcon',
+		'clickedWarningIcon',
+		'editHeader',
+		'checkbox',
+		'updateRowsOrder',
+		'update:isDragging',
+	],
 	props: {
 		config: {
 			type: Object,
@@ -223,6 +291,8 @@ export default {
 						if (this.startValue != null && this.startValue != undefined && this.selectedItems.length == 0) this.setStartValue();
 						if (this.config?.functions?.selection?.mode == TABLE_SELECTION.DISABLED) this.disableHover();
 						// if (this.config?.styling?.customClasses) this.setupCustomClasses();
+						if (this.currentHeader && this.newHeaderName && this.newHeaderName.length > this.currentHeader.text.length);
+
 						this.setupMinWidths();
 					});
 				}
@@ -676,6 +746,25 @@ export default {
 			this.currentHeader = null;
 			this.newHeaderName = null;
 		},
+		onDragStart(evt) {
+			evt.item?.classList.add('dragging');
+			this.$emit('update:isDragging', true);
+		},
+		onDragChange(evt) {
+			const { newIndex } = evt;
+			const rows = this.$el.querySelectorAll('.ta-wrap-body > .ta-row');
+
+			rows.forEach((row, index) => {
+				row.classList.toggle('ta-row-hover', index === newIndex);
+			});
+		},
+		onDragEnd(evt) {
+			evt.item?.classList.remove('dragging');
+			this.$el.querySelectorAll('.ta-wrap-body > .ta-row').forEach((row) => row.classList.remove('ta-row-hover'));
+
+			this.$emit('updateRowsOrder', this.config.data.values);
+			this.$emit('update:isDragging', false);
+		},
 	},
 };
 </script>
@@ -751,6 +840,12 @@ export default {
 	overflow-x: hidden;
 }
 
+.ta-header-element input#edit {
+	width: 100%;
+	font-size: 15px;
+	margin-left: -4px;
+}
+
 .ta-header-spacer {
 	min-width: 30px;
 	border-bottom: 1px solid var(--main-color-light);
@@ -769,16 +864,23 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 5px;
+	gap: 10px;
 }
 
-.ta-wrap-row-icons {
+.ta-wrap-row-icons,
+.ta-wrap-checkbox {
 	min-width: 30px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-bottom: 1px solid var(--main-color-dark);
 	border-right: 1px solid var(--main-color-dark);
+}
+
+.ta-wrap-row-icons {
+	flex-flow: column;
+	padding: 5px 0px 5px 0px;
+	gap: 8px;
 }
 
 .ta-wrap-row-icons svg * {
@@ -794,9 +896,27 @@ export default {
 	color: var(--main-color-error);
 }
 
+.ta-edit-icon:hover *,
+.ta-save-icon:hover * {
+	color: var(--main-color-3);
+}
+
+.ta-drag-icon:hover * {
+	color: var(--main-color-2);
+	cursor: grab;
+}
+
+.ta-edit-icon,
+.ta-save-icon,
+p,
+input {
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+}
+
 .ta-header-element p {
 	margin: 0px;
-	padding: 0px;
+	padding: 3px;
 	color: var(--main-color-light) !important;
 }
 
@@ -875,7 +995,7 @@ export default {
 .ta-cell-icon-wrapper > svg {
 	/* width: 25px; */
 	font-size: 20px;
-	margin-left: 5px;
+	margin-left: 0px;
 	display: none;
 	cursor: pointer;
 }
@@ -899,5 +1019,13 @@ export default {
 
 .ta-warning-icon:hover * {
 	color: var(--main-color-warn-80) !important;
+}
+
+.ta-draggable-wrapper .dragging {
+	opacity: 0.5;
+	background-color: rgba(0, 0, 255, 0.1);
+	border: 3px dashed var(--main-color-2);
+	/* border: 3px dashed rgba(0, 0, 255, 0.5); */
+	cursor: grabbing;
 }
 </style>

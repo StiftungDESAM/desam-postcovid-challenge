@@ -82,7 +82,7 @@ export default {
 				FONT_WEIGHT: 'bold',
 			},
 			ontologyConfig: {
-				distance: 200,
+				distance: 300,
 				chargeStrength: -600,
 				collisionComputation: (d) => d.rectWidth / 2 + 20,
 			},
@@ -580,7 +580,7 @@ export default {
 		},
 		computeNodeText(d, that) {
 			const group = d3.select(that);
-			const words = d.name ? d.name.split(' ') : d.value != '' ? d.value.split(' ') : ['-'];
+			const words = d.name ? d.name.split(' ') : d.value ? d.value?.split(' ') : ['-'];
 			let lines = [];
 			let tempText = '';
 			let style = d.ONTOLOGY_ELEMENT == ONTOLOGY_ELEMENT.DATA ? this.dataStyle : this.baseStyle;

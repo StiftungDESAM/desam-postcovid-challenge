@@ -81,10 +81,10 @@ export const studyConfig = {
 			],
 			sortMapping: {
 				id: ['id'],
-				name: ['name'],
+				name: ['studyInfo.name'],
 				submitter: ['submitter.firstName', 'submitter.lastName'],
 				submissionDate: ['submissionDate'],
-				amountQuestionnaire: ['amountQuestionnaire'],
+				amountQuestionnaire: ['amountQuestionnaires'],
 				amountData: ['amountData'],
 			},
 		},
@@ -100,7 +100,7 @@ export const studyConfig = {
 				text: t('dvID'),
 			},
 			{
-				ref: ['name'],
+				ref: ['studyInfo.name'],
 				text: t('dvName'),
 			},
 			{
@@ -118,7 +118,7 @@ export const studyConfig = {
 				},
 			},
 			{
-				ref: ['amountQuestionnaire'],
+				ref: ['amountQuestionnaires'],
 				text: t('dvamountQuestionnaire'),
 			},
 			{

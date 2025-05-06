@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from neomodel.sync_.core import db
+from neomodel import db
 
 from knowledge.models import load_all_knowledge_node_classes
 

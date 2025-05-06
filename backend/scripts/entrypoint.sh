@@ -23,6 +23,7 @@ python manage.py migrate_graph_database
 
 # Makes sure all constants like roles&scopes are created in the database.
 python manage.py load_constants
+python manage.py init_ontology
 
 echo "Collecting static files for Django..."
 python manage.py collectstatic --no-input

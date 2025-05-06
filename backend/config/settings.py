@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+import logging.config
 import os
 from pathlib import Path
 from neomodel import config
 import sys
 from .utils import str_to_bool,str_to_list
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,23 +49,35 @@ LOGGING = {
             'backupCount': 5,
             'level': 'DEBUG',
             'formatter': 'detailed'
+        },
+        'rotating_file2': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOG_DIR, 'general_mw.log'),
+            'maxBytes': 5 * 1024 * 1024,
+            'backupCount': 5,
+            'level': 'INFO',
+            'formatter': 'detailed'
         }
     },
     'loggers': {
         'root': {
             'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-            'handlers': ['console', 'rotating_file']
+            'handlers': ['console', 'rotating_file', 'rotating_file2']
         }
     }
 }
-
-import logging.config
 logging.config.dictConfig(LOGGING)
+
+# Disables the annoying Neo4j DEBUG/INFO log spam.
+neo4j_log = logging.getLogger("neo4j")
+neo4j_log.setLevel(logging.WARNING)
+
 # For Django to find the apps in the custom subfolder "apps"
 sys.path.insert(0, os.path.join(BASE_DIR, "apps"))
 
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG = str_to_bool(os.environ.get("DJANGO_DEBUG_MODE", "False"))
+BASE_URL = os.environ.get("BASE_URL")
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "backend"]
 
@@ -84,11 +98,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ontology.apps.OntologyConfig',
     'knowledge.apps.KnowledgeConfig',
+    'graph_migrations.apps.GraphMigrationsConfig',
     'api.apps.ApiConfig',
-    #'apps.authentication',
     'authentication.apps.AuthenticationConfig',
+    'reviewer.apps.ReviewerConfig',
     # 'rest_framework',
     # 'rest_framework.authtoken',
+    'study.apps.StudyConfig'
 ]
 
 # set the custom user model
@@ -191,7 +207,7 @@ APPEND_SLASH = True
 
 
 CSRF_COOKIE_SECURE = str_to_bool(os.environ.get('CSRF_COOKIE_SECURE', 'False'))
-CSRF_TRUSTED_ORIGINS = [os.environ.get("DOMAIN", "http://localhost"), "http://localhost:8010", "http://172.12.0.1:8010"]
+CSRF_TRUSTED_ORIGINS = [os.environ.get("DOMAIN", "http://localhost"), "http://localhost:8010", "http://172.12.0.1:8010", "http://192.168.0.133:8010"]
 SESSION_COOKIE_SECURE = str_to_bool(os.environ.get('SESSION_COOKIE_SECURE', 'False'))
 
 
@@ -204,4 +220,4 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_USE_TLS = str_to_bool(os.environ.get('EMAIL_USE_TLS', "False"))
 EMAIL_USER_SSL = str_to_bool(os.environ.get('EMAIL_USE_SSL', "False"))
-#EMAIL_SENDERS = str_to_list(os.environ.get('EMAIL_SENDERS'), separator = ";")
+EMAIL_SENDER = os.environ.get("EMAIL_SENDER")

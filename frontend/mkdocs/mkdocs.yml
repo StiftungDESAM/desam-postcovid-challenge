@@ -1,4 +1,4 @@
-site_name: DESAM Post-Covid Challenge
+site_name: MEVODAT - Post-Covid Datenplattform
 site_url: https://postcovid-datamodel.reutlingen-university.de/docs
 nav:
     - Home: index.md

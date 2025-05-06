@@ -24,12 +24,12 @@ export const codebookTableConfig = {
 	},
 	header: {
 		searchbar: {
-			label: t('duSearchData'),
-			placeholder: t('duSearchData'),
+			label: t('cbSearchData'),
+			placeholder: t('cbSearchData'),
 		},
-		pagination: {
+		/*pagination: {
 			itemsPerPage: 10,
-		},
+		},*/
 	},
 	functions: {
 		selection: {
@@ -37,6 +37,7 @@ export const codebookTableConfig = {
 		},
 		rows: {
 			delete: true,
+			draggable: true,
 		},
 		columns: {
 			delete: true,

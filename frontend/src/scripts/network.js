@@ -11,12 +11,17 @@ export const network = {
 	handleResponse(err, route, cb) {
 		let status = this.getResponseStatus(err);
 
-		let msg = status == REQUEST_STATUS.UNAUTHORIZED ? MSG_TYPE.UNAUTHORIZED : status == REQUEST_STATUS.FORBIDDEN ? MSG_TYPE.FORBIDDEN : null;
+		let msg =
+			status == REQUEST_STATUS.UNAUTHORIZED
+				? MSG_TYPE.UNAUTHORIZED
+				: status == REQUEST_STATUS.FORBIDDEN && !this.getResponseMsg(err)
+					? MSG_TYPE.FORBIDDEN
+					: this.getResponseMsg(err);
 
 		const routeLogin = route.includes('login');
 		const routeLogout = route.includes('logout');
 
-		if (msg && !(routeLogin || routeLogout)) {
+		if ([MSG_TYPE.UNAUTHORIZED, MSG_TYPE.FORBIDDEN].includes(msg) && !(routeLogin || routeLogout)) {
 			store.setForceUserLogout(true);
 			if (router.currentRoute.value.name == ROUTE.HOME) {
 				router.replace({ name: ROUTE.HOME, query: { msg: msg } }).then(() => {
@@ -25,15 +30,19 @@ export const network = {
 			} else router.push({ name: ROUTE.HOME, query: { msg: msg } });
 		} else if (msg && routeLogin) cb({ msg: msg, status: status }, null);
 		else if (routeLogout) cb(null, null);
-		else cb({ msg: this.getResponseMsg(err), status: status }, null);
+		else cb({ msg: msg, status: status }, null);
 	},
 	getResponseStatus(err) {
 		return err.response && err.response.status ? err.response.status : REQUEST_STATUS.BAD_REQUEST;
 	},
 	getResponseMsg(err) {
-		return err.response.data && err.response.data.msg
-			? err.response.data.msg
-			: `${this.t('errUnexpectedError')} (${this.getResponseStatus(err)})`;
+		return err.response?.data?.message
+			? err.response.data.message
+			: err.response?.data?.msg
+				? err.response?.data?.msg
+				: err.response?.data?.detail
+					? err.response?.data?.detail
+					: `${this.t('errUnexpectedError')} (${this.getResponseStatus(err)})`;
 	},
 	getHeaders() {
 		return store.getToken() ? { headers: { Authorization: `Bearer ${store.getToken()}` } } : {};

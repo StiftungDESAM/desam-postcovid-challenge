@@ -39,14 +39,58 @@
 					:inputType="'email'"
 					@newValue="checkEmail"
 				/>
-				<InputField
-					v-model="newUser.credentials.password"
-					:placeholder="$t('rePassword')"
-					:labelText="$t('rePassword')"
-					:inputType="'password'"
-					:autocompleteType="'new-password'"
-					@newValue="checkPassword"
-				/>
+				<div class="re-wrap-password">
+					<transition name="fade">
+						<div v-if="showPasswordHint" class="re-wrap-password-hint">
+							<p>
+								<fai
+									v-if="!$global.checkPasswordLength(newUser.credentials.password)"
+									icon="fas fa-circle-xmark"
+									class="re-invalid"
+								/>
+								<fai v-else icon="fas fa-circle-check" class="re-valid" />
+								<span>{{ $t('rePasswordLength') }}</span>
+							</p>
+							<p>
+								<fai
+									v-if="!$global.checkPasswordUpperCase(newUser.credentials.password)"
+									icon="fas fa-circle-xmark"
+									class="re-invalid"
+								/>
+								<fai v-else icon="fas fa-circle-check" class="re-valid" />
+								<span>{{ $t('reUpperCaseLetter') }}</span>
+							</p>
+							<p>
+								<fai
+									v-if="!$global.checkPasswordLowerCase(newUser.credentials.password)"
+									icon="fas fa-circle-xmark"
+									class="re-invalid"
+								/>
+								<fai v-else icon="fas fa-circle-check" class="re-valid" />
+								<span>{{ $t('reLowerCaseLetter') }}</span>
+							</p>
+							<p>
+								<fai
+									v-if="!$global.checkPasswordSpecialLetter(newUser.credentials.password)"
+									icon="fas fa-circle-xmark"
+									class="re-invalid"
+								/>
+								<fai v-else icon="fas fa-circle-check" class="re-valid" />
+								<span>{{ $t('reSpecialLetter') }}</span>
+							</p>
+						</div>
+					</transition>
+					<InputField
+						v-model="newUser.credentials.password"
+						:placeholder="$t('rePassword')"
+						:labelText="$t('rePassword')"
+						:inputType="'password'"
+						:autocompleteType="'new-password'"
+						@newValue="checkPassword"
+						@focus="showPasswordHint = true"
+						@blur="showPasswordHint = false"
+					/>
+				</div>
 				<InputField
 					v-model="passwordRepeat"
 					:placeholder="$t('rePasswordRepeat')"
@@ -132,6 +176,7 @@ export default {
 			passwordRepeat: null,
 			acceptedLegalNotice: false,
 			isLoading: false,
+			showPasswordHint: false,
 		};
 	},
 	computed: {
@@ -210,6 +255,7 @@ export default {
 }
 
 .re-wrap-content h2 {
+	font-size: 30px;
 	text-align: center;
 	font-weight: normal;
 }
@@ -228,6 +274,7 @@ export default {
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-flow: wrap;
+	position: relative;
 }
 
 .re-wrap-general h3,
@@ -297,5 +344,66 @@ export default {
 	margin-top: 10px;
 	padding: 10px 20px;
 	font-size: 20px;
+}
+
+.re-wrap-password {
+	flex: 1 1 200px;
+	position: relative;
+}
+
+.re-wrap-password-hint {
+	width: calc(100% - 20px);
+	padding: 5px 10px;
+	position: absolute;
+	top: -110px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	white-space: nowrap;
+	border: 1px solid var(--main-color-light);
+	border-radius: 5px;
+	background-color: var(--main-color-1);
+}
+
+.re-wrap-password-hint p {
+	width: 100%;
+	margin: 5px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.re-wrap-password-hint p svg {
+	flex: 1 1 25px;
+	margin-right: 10px;
+	font-size: 20px;
+}
+
+.re-wrap-password-hint p span {
+	flex: 1 1 100%;
+	max-width: calc(100% - 25px);
+	white-space: wrap;
+}
+
+.re-invalid * {
+	color: var(--main-color-error);
+}
+
+.re-valid * {
+	color: var(--main-color-success);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+	opacity: 1;
 }
 </style>

@@ -4,12 +4,23 @@ const t = i18n.global.t;
 
 self.data = {};
 
+// delmiter detection for ',' or ';' over the first 5 lines
+function detectDelimiter(csvString) {
+	const lines = csvString.split('\n').slice(0, 5);
+	const commaCount = lines.map((line) => line.split(',').length).reduce((a, b) => a + b, 0);
+	const semicolonCount = lines.map((line) => line.split(';').length).reduce((a, b) => a + b, 0);
+
+	return commaCount >= semicolonCount ? ',' : ';';
+}
+
 self.onmessage = function (e) {
 	self.data = e.data;
 
-	// CSV Parsing
-	Papa.parse(self.data.fileData, {
-		delimiter: ',',
+	const fileData = self.data.fileData;
+	const delimiter = detectDelimiter(fileData);
+
+	Papa.parse(fileData, {
+		delimiter: delimiter,
 		header: true,
 		skipEmptyLines: false,
 		quoteChar: '"',

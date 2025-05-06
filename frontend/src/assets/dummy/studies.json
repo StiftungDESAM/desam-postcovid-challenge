@@ -5,7 +5,7 @@
 		"purpose": "DATA_COLLECTION",
 		"dateStart": "2024-05-01",
 		"dateEnd": "2025-01-01",
-		"drksID": 123,
+		"drksId": 123,
 		"submitter": {
 			"firstName": "Paul",
 			"lastName": "Richter",
@@ -20,7 +20,7 @@
 		"purpose": "DATA_COLLECTION",
 		"dateStart": "2020-11-01",
 		"dateEnd": "2024-12-31",
-		"drksID": 123,
+		"drksId": 123,
 		"submitter": {
 			"firstName": "Laura",
 			"lastName": "Schmidt",
@@ -35,7 +35,7 @@
 		"purpose": "DATA_COLLECTION",
 		"dateStart": "2022-02-01",
 		"dateEnd": "2025-01-30",
-		"drksID": 123,
+		"drksId": 123,
 		"submitter": {
 			"firstName": "Maximilian",
 			"lastName": "Schwarz",

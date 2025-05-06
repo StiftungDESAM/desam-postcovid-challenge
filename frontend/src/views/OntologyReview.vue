@@ -16,7 +16,7 @@
 			<OntologyViewer :rdfData="selectedReview.submissionDetails.modifiedOntology" :selectedElement="selectedElement" />
 		</div>
 		<div v-if="selectedReview" class="or-wrap-bottom">
-			<div class="or-wrap-migrations">
+			<div v-if="selectedReview.submissionDetails.migrationOperations.length > 0" class="or-wrap-migrations">
 				<h2>{{ $t('orMigrationOperations') }}</h2>
 				<MigrationOperations :migrations="selectedReview.submissionDetails.migrationOperations" @highlightMigration="highlightMigration" />
 			</div>
@@ -26,7 +26,8 @@
 					:reviewID="selectedReview.id"
 					:reviewer="selectedReview.reviewer"
 					:reviewDetails="selectedReview.review"
-					:userIsReviewerAndNotFinished="userIsReviewerAndNotFinished"
+					:reviewCanBeEdited="reviewCanBeEdited"
+					:reviewType="'ONTOLOGY_UPLOAD'"
 					@assignReview="assignReview"
 					@updateReview="selectedReview.review = $event"
 				/>
@@ -34,13 +35,13 @@
 		</div>
 		<div v-if="selectedReview" class="or-wrap-buttons">
 			<LoadingSpinner v-if="isUpdating" :positioning="'fixed'" />
-			<button :class="userIsReviewerAndNotFinished ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraft()">
+			<button :class="reviewCanBeEdited ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraft()">
 				{{ $t('orSaveAsDraft') }} <fai icon="fas fa-save" />
 			</button>
-			<button :class="userIsReviewerAndNotFinished ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraftAndClose">
+			<button :class="reviewCanBeEdited ? 'app-default-btn' : 'app-disabled-btn'" @click="saveAsDraftAndClose">
 				{{ $t('orSaveAsDraftAndClose') }} <fai icon="fas fa-save" />
 			</button>
-			<button :class="userIsReviewerAndNotFinished ? 'app-success-btn' : 'app-disabled-btn'" @click="confirmFinishReview">
+			<button :class="reviewCanBeSaved ? 'app-success-btn' : 'app-disabled-btn'" @click="confirmFinishReview">
 				{{ $t('orFinishReview') }} <fai icon="fas fa-paper-plane" />
 			</button>
 		</div>
@@ -94,10 +95,18 @@ export default {
 		};
 	},
 	computed: {
-		userIsReviewerAndNotFinished() {
+		reviewCanBeEdited() {
 			return (
 				this.selectedReview?.reviewer?.email == this.currentUser.credentials.email &&
 				this.selectedReview?.submissionStatus == REVIEW_STATUS.ASSIGNED
+			);
+		},
+		reviewCanBeSaved() {
+			return (
+				this.reviewCanBeEdited &&
+				this.selectedReview?.review?.status &&
+				(this.selectedReview?.review?.status == REVIEW_STATUS.ACCEPTED ||
+					(this.selectedReview?.review?.status != REVIEW_STATUS.ACCEPTED && this.selectedReview?.review?.comment.length > 0))
 			);
 		},
 	},
@@ -110,21 +119,17 @@ export default {
 		queryReviews() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.getData(`/api/review/ontology`, null, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) this.tableConfig.data.values = data;
-						if (err) this.tableConfig.data.values = this.ontologyReviews;
-						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 2000);
+			this.$network.getData(`/api/review/ontology`, null, null, (err, data) => {
+				try {
+					if (!err) this.tableConfig.data.values = data;
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 		selectReview(review) {
 			this.selectedReview = null;
@@ -132,27 +137,25 @@ export default {
 			if (review) {
 				this.isLoading = true;
 
-				window.setTimeout(() => {
-					this.$network.getData(`/api/review/ontology/${review.id}`, null, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.selectedReview = data;
-							if (err) {
-								this.selectedReview =
-									review.submissionStatus == REVIEW_STATUS.OPEN
-										? this.openReview
-										: review.submissionStatus == REVIEW_STATUS.ASSIGNED
-											? this.assignedReview
-											: this.closedReview;
-								this.selectedReview.submissionDetails.modifiedOntology = this.modifiedOntology;
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isLoading = false;
-						}
-					});
-				}, 1000);
+				this.$network.getData(`/api/review/ontology/${review.id}`, null, null, (err, data) => {
+					try {
+						if (!err) this.selectedReview = data;
+						// TODO: Remove mocked data
+						/*if (err) {
+							this.selectedReview =
+								review.submissionStatus == REVIEW_STATUS.OPEN
+									? this.openReview
+									: review.submissionStatus == REVIEW_STATUS.ASSIGNED
+										? this.assignedReview
+										: this.closedReview;
+							this.selectedReview.submissionDetails.modifiedOntology = this.modifiedOntology;
+						}*/ else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isLoading = false;
+					}
+				});
 			}
 		},
 		highlightMigration(migration) {
@@ -173,7 +176,7 @@ export default {
 			};
 		},
 		saveAsDraft(cb) {
-			this.updateReview({ submissionState: REVIEW_STATUS.ASSIGNED, review: this.selectedReview.review }, false, cb);
+			this.updateReview({ submissionStatus: REVIEW_STATUS.ASSIGNED, review: this.selectedReview.review }, false, cb);
 		},
 		saveAsDraftAndClose() {
 			this.saveAsDraft(() => {
@@ -204,7 +207,7 @@ export default {
 			};
 		},
 		finishReview() {
-			this.updateReview({ submissionState: this.selectedReview.review.status, review: this.selectedReview.review }, true, () => {
+			this.updateReview({ submissionStatus: this.selectedReview.review.status, review: this.selectedReview.review }, true, () => {
 				this.selectedReview = null;
 				this.resetSelected = !this.resetSelected;
 				this.queryReviews();
@@ -213,24 +216,20 @@ export default {
 		updateReview(update, isFinish, cb) {
 			this.isUpdating = true;
 
-			window.setTimeout(() => {
-				this.$network.patchData(`/api/review/ontology/${this.selectedReview.id}`, update, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) {
-						if (err) {
-							if (isFinish) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('orFinishedSuccessfully'));
-							else this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('orSavedSuccessfully'));
-							if (cb) cb();
-						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isUpdating = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 1000);
+			this.$network.patchData(`/api/review/ontology/${this.selectedReview.id}`, update, null, (err, data) => {
+				try {
+					if (!err) {
+						if (isFinish) this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('orFinishedSuccessfully'));
+						else this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('orSavedSuccessfully'));
+						if (cb) cb();
+					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isUpdating = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 	},
 };

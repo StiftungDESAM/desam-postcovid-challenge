@@ -80,11 +80,11 @@ export const submissionsConfig = {
 					text: t('pramountCodeBooksDescSort'),
 				},
 				{
-					value: 'uploadTyp-desc',
+					value: 'uploadType-desc',
 					text: t('prUploadTypDescSort'),
 				},
 				{
-					value: 'uploadTyp-asc',
+					value: 'uploadType-asc',
 					text: t('prUploadTypAscSort'),
 				},
 				{
@@ -111,7 +111,7 @@ export const submissionsConfig = {
 				timeframe: ['dateStart', 'dateEnd'],
 				submissionDate: ['submissionDate'],
 				amount: ['amountCodeBooks'],
-				uploadTyp: ['uploadTyp'],
+				uploadType: ['uploadType'],
 				reviewer: ['reviewer.firstName', 'reviewer.lastName'],
 				status: ['submissionStatus'],
 			},
@@ -140,14 +140,16 @@ export const submissionsConfig = {
 				ref: ['purpose'],
 				text: t('prPurpose'),
 				formatter: (purpose) => {
-					return t(purpose);
+					if (purpose) return t(purpose);
+					else return t('prOntologyUpload');
 				},
 			},
 			{
 				ref: ['dateStart', 'dateEnd'],
 				text: t('prTimeframe'),
 				formatter: (dateStart, dateEnd) => {
-					return `${global.formatDate(dateStart, 'de', true)} - ${global.formatDate(dateEnd, 'de', true)}`;
+					if (dateStart && dateEnd) return `${global.formatDate(dateStart, 'de', true)} - ${global.formatDate(dateEnd, 'de', true)}`;
+					else return '-';
 				},
 			},
 			{
@@ -162,10 +164,10 @@ export const submissionsConfig = {
 				text: t('pramountCodeBooks'),
 			},
 			{
-				ref: ['uploadTyp'],
-				text: t('uploadTyp'),
-				formatter: (uploadTyp) => {
-					switch (uploadTyp) {
+				ref: ['uploadType'],
+				text: t('uploadType'),
+				formatter: (uploadType) => {
+					switch (uploadType) {
 						case UPLOAD_TYP.UPLOAD_DATA:
 							return t('UPLOAD_DATA');
 						case UPLOAD_TYP.UPLOAD_ONTOLOGY:

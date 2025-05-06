@@ -24,6 +24,8 @@
 				:placeholder="placeholder"
 				:autocomplete="autocompleteType"
 				:value="modelValue"
+				@focus="$emit('focus')"
+				@blur="$emit('blur')"
 				@input="$emit('update:modelValue', $event.target.value)"
 				@change="$emit('newValue', $event.target.value)"
 			/>
@@ -64,7 +66,7 @@ import * as uuid from 'uuid';
 export default {
 	name: 'InputField',
 	components: {},
-	emits: ['newValue', 'update:modelValue'],
+	emits: ['newValue', 'update:modelValue', 'focus', 'blur'],
 	props: {
 		modelValue: {
 			required: false,

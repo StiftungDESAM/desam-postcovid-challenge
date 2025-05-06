@@ -1,0 +1,85 @@
+﻿Frage;Item;DB-Spalte;Typ;Einheit;Range;"Antwortoptionen
+(bei Auswahlfeldern)";Regel-Typ;Regelmeldung
+;Trustcenter Identifikator;trustCenterID;;;;;;
+;Studieninterner Identifikator1;mnppid;;;;;;
+;Studieninterner Identifikator2;mnpaid;;;;;;
+;Label Identifikator;mnplabid;;;;;;
+;Randomisierungsnummer;mnp_examrandom_no;;;;;;
+;Studienarm;mnp_examrandom_gr;;;;;;
+;Datum Randomisierung;mnp_examrandom_assigndate;;;;;;
+;Datum Entblindung;mnp_examrandom_unblinddate;;;;;;
+;Grund Entblindung;mnp_examrandom_unblindreason;;;;;;
+;Name Studienzentrum;mnpctrname;;;;;;
+;Dokumentations Identifikator;mnpdocid;;;;;;
+"Angst - PROMIS A
+Angst";fürchten;fear;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Angst - PROMIS A
+Angst";Angst im Fokus;fear_focus;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Angst - PROMIS A
+Angst";Sorgen überwältigt;worries_stunned;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Angst - PROMIS A
+Angst";unruhig;feel_restless;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Depressivität - PROMIS B
+Depressivität";wertlos;worthless;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Depressivität - PROMIS B
+Depressivität";hilflos;helpless;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Depressivität - PROMIS B
+Depressivität";niedergeschlagen;depressed;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Depressivität - PROMIS B
+Depressivität";hoffnungslos;hopeless;Horizontal-Radiobutton;;1-5;"1=Nie; 2=Selten; 3=Manchmal; 4=Oft; 5=Immer";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"PROMIS C
+Kognitive Funktionen";langsames Denken;slow_think;Horizontal-Radiobutton;;1-5;"5=Nie; 4=Selten (einmal); 3=Manchmal (zwei- oder dreimal); 2=Oft (ungefähr einmal täglich); 1=Sehr oft (mehrmals täglich)";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"PROMIS C
+Kognitive Funktionen";schlechtes Gehirn;brain_bad;Horizontal-Radiobutton;;1-5;"5=Nie; 4=Selten (einmal); 3=Manchmal (zwei- oder dreimal); 2=Oft (ungefähr einmal täglich); 1=Sehr oft (mehrmals täglich)";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"PROMIS C
+Kognitive Funktionen";Mühe beim Überblick;overview;Horizontal-Radiobutton;;1-5;"5=Nie; 4=Selten (einmal); 3=Manchmal (zwei- oder dreimal); 2=Oft (ungefähr einmal täglich); 1=Sehr oft (mehrmals täglich)";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"PROMIS C
+Kognitive Funktionen";Aktivitäten Schwierigkeiten;activ_probl;Horizontal-Radiobutton;;1-5;"5=Nie; 4=Selten (einmal); 3=Manchmal (zwei- oder dreimal); 2=Oft (ungefähr einmal täglich); 1=Sehr oft (mehrmals täglich)";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Erschöpfung - PROMIS D
+Erschöpfung";erschöpft;drained;Horizontal-Radiobutton;;1-5;"1=überhaupt nicht; 2=ein wenig; 3=mäßig; 4=ziemlich; 5=sehr";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Erschöpfung - PROMIS D
+Erschöpfung";zu müde;tired;Horizontal-Radiobutton;;1-5;"1=überhaupt nicht; 2=ein wenig; 3=mäßig; 4=ziemlich; 5=sehr";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Erschöpfung - PROMIS D
+Erschöpfung";ausgelaugt;exhausted;Horizontal-Radiobutton;;1-5;"1=überhaupt nicht; 2=ein wenig; 3=mäßig; 4=ziemlich; 5=sehr";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Erschöpfung - PROMIS D
+Erschöpfung";erschöpft allgemein;tired_general;Horizontal-Radiobutton;;1-5;"1=überhaupt nicht; 2=ein wenig; 3=mäßig; 4=ziemlich; 5=sehr";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";anziehen;dress;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot; 1=Leichte Atemnot; 2=Mäßige Atemnot; 3=Schwere Atemnot; 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";50 Schritte;steps50;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";20 Stufen;stairsteps;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Mahlzeiten zubereiten;meals;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Geschirr abwaschen;do_dishes;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Kehren/Wischen;sweep_wip;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Bett machen;make_bed;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Etwas heben;lifting;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";Etwas tragen;carry;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!
+"Dyspnoe - PROMIS E
+Dsypnoe";gehen ohne anzuhalten;walk_nostop;Horizontal-Radiobutton;;"0-3;99";"0=Keine Atemnot, 1=Leichte Atemnot, 2=Mäßige Atemnot, 3=Schwere Atemnot, 99=Ich habe dies in den
+vergangenen 7 Tagen
+nicht gemacht";Eingabe notwendig;Dateneingabe notwendig, bitte überprüfen!

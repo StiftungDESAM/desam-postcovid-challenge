@@ -7,7 +7,7 @@
 			"dateStart": "2020-11-01",
 			"dateEnd": "2024-12-31",
 			"description": "Die NAPKON-Studie ist eine überregionale Studie, die darauf abzielt, Inzidenzen von Long- und Post-Covid in der Hausarztpraxis retrospektiv zu erfassen. Dabei werden Versorgungsmerkmale von Patient:innen mit Long- und Post-Covid aus der Perspektive der Hausärzt:innen untersucht, um das Studiendesign für weitere groß angelegte Studien zu optimieren.",
-			"drksID": 3456
+			"drksId": 3456
 		},
 		"codeBooks": [
 			{
@@ -17,6 +17,13 @@
 				"dataItems": [
 					{
 						"id": 0,
+						"answers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+						"itemMeta": {
+							"Feldname": "trustCenterID"
+						}
+					},
+					{
+						"id": 1,
 						"answers": [120, 45, 0, 60, 10, 250, 30, 90, 5, 100],
 						"itemMeta": {
 							"Feldname": "teila_1_1",
@@ -28,7 +35,7 @@
 						}
 					},
 					{
-						"id": 1,
+						"id": 2,
 						"answers": [350, 200, 50, 150, 80, 600, 400, 500, 100, 700],
 						"itemMeta": {
 							"Feldname": "teila_1_2",
@@ -40,7 +47,7 @@
 						}
 					},
 					{
-						"id": 2,
+						"id": 3,
 						"answers": [800, 1200, 3500, 2000, 1800, 3200, 1500, 4200, 2300, 3800],
 						"itemMeta": {
 							"Feldname": "teila_1_3",
@@ -52,7 +59,7 @@
 						}
 					},
 					{
-						"id": 3,
+						"id": 4,
 						"answers": [1400, 1300, 1500, 1000, 2300, 2100, 2700, 1800, 2300, 2200],
 						"itemMeta": {
 							"Feldname": "teila_1_4",
@@ -64,7 +71,7 @@
 						}
 					},
 					{
-						"id": 4,
+						"id": 5,
 						"answers": [200, 300, 100, 50, 400, 350, 100, 600, 50, 450],
 						"itemMeta": {
 							"Feldname": "teila_1_5",
@@ -76,7 +83,7 @@
 						}
 					},
 					{
-						"id": 5,
+						"id": 6,
 						"answers": [1400, 1500, 2200, 1500, 2000, 3000, 2200, 3500, 2300, 3000],
 						"itemMeta": {
 							"Feldname": "teila_2_1",
@@ -87,7 +94,7 @@
 						}
 					},
 					{
-						"id": 6,
+						"id": 7,
 						"answers": [1300, 1200, 2200, 1500, 1700, 2900, 2400, 3200, 1700, 3800],
 						"itemMeta": {
 							"Feldname": "teila_2_2",
@@ -98,7 +105,7 @@
 						}
 					},
 					{
-						"id": 7,
+						"id": 8,
 						"answers": [170, 345, 750, 260, 890, 600, 130, 490, 890, 450],
 						"itemMeta": {
 							"Feldname": "teila_2_3",
@@ -109,7 +116,7 @@
 						}
 					},
 					{
-						"id": 8,
+						"id": 9,
 						"answers": [1000, 1200, 1400, 800, 950, 1100, 1200, 1500, 950, 1150],
 						"itemMeta": {
 							"Feldname": "teila_3_1",
@@ -121,7 +128,7 @@
 						}
 					},
 					{
-						"id": 9,
+						"id": 10,
 						"answers": [950, 1100, 1300, 500, 900, 800, 850, 1400, 900, 1050],
 						"itemMeta": {
 							"Feldname": "teila_3_2",
@@ -133,7 +140,7 @@
 						}
 					},
 					{
-						"id": 10,
+						"id": 11,
 						"answers": [800, 750, 1100, 600, 700, 650, 1000, 1200, 700, 900],
 						"itemMeta": {
 							"Feldname": "teila_3_3",
@@ -145,7 +152,7 @@
 						}
 					},
 					{
-						"id": 11,
+						"id": 12,
 						"answers": [600, 750, 900, 500, 600, 300, 850, 1000, 600, 700],
 						"itemMeta": {
 							"Feldname": "teila_3_4",
@@ -157,7 +164,7 @@
 						}
 					},
 					{
-						"id": 12,
+						"id": 13,
 						"answers": [200, 300, 400, 100, 250, 300, 400, 500, 250, 350],
 						"itemMeta": {
 							"Feldname": "teila_3_5",
@@ -169,7 +176,7 @@
 						}
 					},
 					{
-						"id": 13,
+						"id": 14,
 						"answers": [50, 150, 250, 50, 100, 200, 300, 350, 100, 200],
 						"itemMeta": {
 							"Feldname": "teila_3_6",
@@ -181,7 +188,7 @@
 						}
 					},
 					{
-						"id": 14,
+						"id": 15,
 						"answers": [3600, 4400, 5350, 2800, 3500, 4050, 5050, 5950, 3550, 4350],
 						"itemMeta": {
 							"Feldname": "teila_3_7",
@@ -193,7 +200,7 @@
 						}
 					},
 					{
-						"id": 15,
+						"id": 16,
 						"answers": [1174, 1772, 466, 1482, 1444, 1919, 1685, 1391, 1485, 1433],
 						"itemMeta": {
 							"Feldname": "teila_4_1",
@@ -205,7 +212,7 @@
 						}
 					},
 					{
-						"id": 16,
+						"id": 17,
 						"answers": [348, 20, 1426, 87, 35, 130, 769, 1515, 37, 1215],
 						"itemMeta": {
 							"Feldname": "teila_4_2",
@@ -217,7 +224,7 @@
 						}
 					},
 					{
-						"id": 17,
+						"id": 18,
 						"answers": [78, 608, 458, 1231, 21, 1001, 1596, 1044, 28, 702],
 						"itemMeta": {
 							"Feldname": "teila_4_3",
@@ -229,7 +236,7 @@
 						}
 					},
 					{
-						"id": 18,
+						"id": 19,
 						"answers": [320, 300, 310, 305, 325, 315, 330, 340, 325, 322],
 						"itemMeta": {
 							"Feldname": "teila_5_1",
@@ -241,7 +248,7 @@
 						}
 					},
 					{
-						"id": 19,
+						"id": 20,
 						"answers": [45, 50, 48, 46, 47, 44, 49, 42, 43, 41],
 						"itemMeta": {
 							"Feldname": "teila_5_2",
@@ -253,7 +260,7 @@
 						}
 					},
 					{
-						"id": 20,
+						"id": 21,
 						"answers": [180, 200, 190, 185, 195, 170, 205, 210, 175, 180],
 						"itemMeta": {
 							"Feldname": "teila_5_3",
@@ -265,7 +272,7 @@
 						}
 					},
 					{
-						"id": 21,
+						"id": 22,
 						"answers": [75, 70, 80, 78, 76, 72, 74, 73, 122, 79],
 						"itemMeta": {
 							"Feldname": "teila_5_4",
@@ -277,7 +284,7 @@
 						}
 					},
 					{
-						"id": 22,
+						"id": 23,
 						"answers": [120, 85, 110, 115, 125, 118, 130, 135, 91, 119],
 						"itemMeta": {
 							"Feldname": "teila_5_5",
@@ -289,7 +296,7 @@
 						}
 					},
 					{
-						"id": 23,
+						"id": 24,
 						"answers": [90, 85, 88, 92, 89, 86, 87, 93, 91, 84],
 						"itemMeta": {
 							"Feldname": "teila_5_6",
@@ -301,7 +308,7 @@
 						}
 					},
 					{
-						"id": 24,
+						"id": 25,
 						"answers": [298, 310, 305, 325, 315, 330, 320, 340, 335, 302],
 						"itemMeta": {
 							"Feldname": "teila_6_1",
@@ -313,7 +320,7 @@
 						}
 					},
 					{
-						"id": 25,
+						"id": 26,
 						"answers": [52, 56, 49, 54, 47, 50, 58, 53, 51, 55],
 						"itemMeta": {
 							"Feldname": "teila_6_2",
@@ -325,7 +332,7 @@
 						}
 					},
 					{
-						"id": 26,
+						"id": 27,
 						"answers": [170, 195, 180, 200, 185, 205, 190, 210, 175, 180],
 						"itemMeta": {
 							"Feldname": "teila_6_3",
@@ -337,7 +344,7 @@
 						}
 					},
 					{
-						"id": 27,
+						"id": 28,
 						"answers": [80, 75, 85, 79, 82, 78, 84, 77, 83, 81],
 						"itemMeta": {
 							"Feldname": "teila_6_4",
@@ -349,7 +356,7 @@
 						}
 					},
 					{
-						"id": 28,
+						"id": 29,
 						"answers": [140, 125, 110, 135, 120, 145, 130, 150, 128, 115],
 						"itemMeta": {
 							"Feldname": "teila_6_5",
@@ -361,7 +368,7 @@
 						}
 					},
 					{
-						"id": 29,
+						"id": 30,
 						"answers": [98, 90, 95, 87, 92, 89, 91, 93, 86, 88],
 						"itemMeta": {
 							"Feldname": "teila_6_6",
@@ -373,7 +380,7 @@
 						}
 					},
 					{
-						"id": 30,
+						"id": 31,
 						"answers": ["Ja", "Nein", "Nein", "Ja", "Nein", "Ja", "Nein", "Nein", "Ja", "Nein"],
 						"itemMeta": {
 							"Feldname": "teila_7",
@@ -384,7 +391,7 @@
 						}
 					},
 					{
-						"id": 31,
+						"id": 32,
 						"answers": ["", "J12.82", "R53.83", "", "M35.81", "", "Z86.16", "F45.41", "", "R09.2"],
 						"itemMeta": {
 							"Feldname": "teila_7_code",
@@ -394,7 +401,7 @@
 						}
 					},
 					{
-						"id": 32,
+						"id": 33,
 						"answers": ["4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden", "2 - eher nicht", "1 - gar nicht", "3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden"],
 						"itemMeta": {
 							"Feldname": "teila_8_1",
@@ -405,7 +412,7 @@
 						}
 					},
 					{
-						"id": 33,
+						"id": 34,
 						"answers": ["3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "1 - gar nicht", "5 - voll und ganz", "4 - eher ja", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "4 - eher ja"],
 						"itemMeta": {
 							"Feldname": "teila_8_2",
@@ -416,7 +423,7 @@
 						}
 					},
 					{
-						"id": 34,
+						"id": 35,
 						"answers": ["5 - voll und ganz", "2 - eher nicht", "2 - eher nicht", "3 - bin unentschieden", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "5 - voll und ganz", "5 - voll und ganz", "5 - voll und ganz"],
 						"itemMeta": {
 							"Feldname": "teila_8_3",
@@ -427,7 +434,7 @@
 						}
 					},
 					{
-						"id": 35,
+						"id": 36,
 						"answers": ["1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "2 - Ich bin mir unsicher"],
 						"itemMeta": {
 							"Feldname": "teila_9",
@@ -438,7 +445,7 @@
 						}
 					},
 					{
-						"id": 36,
+						"id": 37,
 						"answers": ["Ältere Patienten mit Vorerkrankungen", "Chronisches Fatigue-Syndrom", "Autoimmunerkrankungen", "Patienten mit bestehenden Atemwegserkrankungen", "Herz-Kreislauf-Erkrankungen", "Immungeschwächte Patienten", "Psychische Störungen", "Neurologische Erkrankungen", "Personen mit Adipositas", "Fibromyalgie"],
 						"itemMeta": {
 							"Feldname": "teila_9_pat",
@@ -448,7 +455,7 @@
 						}
 					},
 					{
-						"id": 37,
+						"id": 38,
 						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_10",
@@ -459,7 +466,7 @@
 						}
 					},
 					{
-						"id": 38,
+						"id": 39,
 						"answers": ["", "", "", "", "", "Geruchs-/ Geschmackstörungen", "Psychologische Symptome", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_10_pat",
@@ -469,7 +476,7 @@
 						}
 					},
 					{
-						"id": 39,
+						"id": 40,
 						"answers": ["", "", "Fibromyalgie", "", "", "", "", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_10_pat_2",
@@ -479,7 +486,7 @@
 						}
 					},
 					{
-						"id": 40,
+						"id": 41,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
 						"itemMeta": {
 							"Feldname": "teila_11",
@@ -490,7 +497,7 @@
 						}
 					},
 					{
-						"id": 41,
+						"id": 42,
 						"answers": ["Husten", "Übelkeit", "Schwindel", "Durchfall", "Müdigkeit", "Juckreiz", "Krämpfe", "Unruhe", "Herzklopfen", "Atemnot"],
 						"itemMeta": {
 							"Feldname": "teila_11_sonst",
@@ -500,7 +507,7 @@
 						}
 					},
 					{
-						"id": 42,
+						"id": 43,
 						"answers": ["1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "0 - Nein"],
 						"itemMeta": {
 							"Feldname": "teila_12",
@@ -511,7 +518,7 @@
 						}
 					},
 					{
-						"id": 43,
+						"id": 44,
 						"answers": ["", "Chronisches Erschöpfungssyndrom (CFS)", "", "Chronische Müdigkeit", "Langzeit-Durchfall", "", "Angststörung", "", "Schlafapnoe", "Migräne"],
 						"itemMeta": {
 							"Feldname": "teila_12_andere",
@@ -521,7 +528,7 @@
 						}
 					},
 					{
-						"id": 44,
+						"id": 45,
 						"answers": ["", "", "Chronische Müdigkeit", "", "", "", "", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_12_andere_2",
@@ -531,7 +538,7 @@
 						}
 					},
 					{
-						"id": 45,
+						"id": 46,
 						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_13",
@@ -542,7 +549,7 @@
 						}
 					},
 					{
-						"id": 46,
+						"id": 47,
 						"answers": [120, 45, "", 60, 10, 250, "", "", 5, 100],
 						"itemMeta": {
 							"Feldname": "teila_13_pat",
@@ -553,7 +560,7 @@
 						}
 					},
 					{
-						"id": 47,
+						"id": 48,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "", "", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
 						"itemMeta": {
 							"Feldname": "teila_13_anlass",
@@ -564,7 +571,7 @@
 						}
 					},
 					{
-						"id": 48,
+						"id": 49,
 						"answers": ["Schlafstörungen", "Schlafapnoe", "Unruhe", "Muskelschwäche", "Schwäche", "Schlafapnoe", "Schwäche", "Depression", "Muskelschwäche", "Muskelschwäche"],
 						"itemMeta": {
 							"Feldname": "teila_13_sonst",
@@ -574,7 +581,7 @@
 						}
 					},
 					{
-						"id": 49,
+						"id": 50,
 						"answers": ["1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_14",
@@ -585,7 +592,7 @@
 						}
 					},
 					{
-						"id": 50,
+						"id": 51,
 						"answers": [84, "", 30, "", "", "", "", 90, 5, 44],
 						"itemMeta": {
 							"Feldname": "teila_14_pat",
@@ -596,7 +603,7 @@
 						}
 					},
 					{
-						"id": 51,
+						"id": 52,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "", "", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen"],
 						"itemMeta": {
 							"Feldname": "teila_14_anlass",
@@ -607,7 +614,7 @@
 						}
 					},
 					{
-						"id": 52,
+						"id": 53,
 						"answers": ["Chronische Müdigkeit", "Chronisches Erschöpfungssyndrom (CFS)", "Fibromyalgie", "Chronische Müdigkeit", "Langzeit-Durchfall", "Langzeit-Hautausschlag", "Angststörung", "Depression", "Schlafapnoe", "Migräne"],
 						"itemMeta": {
 							"Feldname": "teila_14_sonst",
@@ -625,6 +632,13 @@
 				"dataItems": [
 					{
 						"id": 0,
+						"answers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+						"itemMeta": {
+							"Feldname": "trustCenterID"
+						}
+					},
+					{
+						"id": 1,
 						"answers": [120, 45, 0, 60, 10, 250, 30, 90, 5, 100],
 						"itemMeta": {
 							"Feldname": "teila_1_1",
@@ -636,7 +650,7 @@
 						}
 					},
 					{
-						"id": 1,
+						"id": 2,
 						"answers": [350, 200, 50, 150, 80, 600, 400, 500, 100, 700],
 						"itemMeta": {
 							"Feldname": "teila_1_2",
@@ -648,7 +662,7 @@
 						}
 					},
 					{
-						"id": 2,
+						"id": 3,
 						"answers": [800, 1200, 3500, 2000, 1800, 3200, 1500, 4200, 2300, 3800],
 						"itemMeta": {
 							"Feldname": "teila_1_3",
@@ -660,7 +674,7 @@
 						}
 					},
 					{
-						"id": 3,
+						"id": 4,
 						"answers": [1400, 1300, 1500, 1000, 2300, 2100, 2700, 1800, 2300, 2200],
 						"itemMeta": {
 							"Feldname": "teila_1_4",
@@ -672,7 +686,7 @@
 						}
 					},
 					{
-						"id": 4,
+						"id": 5,
 						"answers": [200, 300, 100, 50, 400, 350, 100, 600, 50, 450],
 						"itemMeta": {
 							"Feldname": "teila_1_5",
@@ -684,7 +698,7 @@
 						}
 					},
 					{
-						"id": 5,
+						"id": 6,
 						"answers": [1400, 1500, 2200, 1500, 2000, 3000, 2200, 3500, 2300, 3000],
 						"itemMeta": {
 							"Feldname": "teila_2_1",
@@ -695,7 +709,7 @@
 						}
 					},
 					{
-						"id": 6,
+						"id": 7,
 						"answers": [1300, 1200, 2200, 1500, 1700, 2900, 2400, 3200, 1700, 3800],
 						"itemMeta": {
 							"Feldname": "teila_2_2",
@@ -706,7 +720,7 @@
 						}
 					},
 					{
-						"id": 7,
+						"id": 8,
 						"answers": [170, 345, 750, 260, 890, 600, 130, 490, 890, 450],
 						"itemMeta": {
 							"Feldname": "teila_2_3",
@@ -717,7 +731,7 @@
 						}
 					},
 					{
-						"id": 8,
+						"id": 9,
 						"answers": [1000, 1200, 1400, 800, 950, 1100, 1200, 1500, 950, 1150],
 						"itemMeta": {
 							"Feldname": "teila_3_1",
@@ -729,7 +743,7 @@
 						}
 					},
 					{
-						"id": 9,
+						"id": 10,
 						"answers": [950, 1100, 1300, 500, 900, 800, 850, 1400, 900, 1050],
 						"itemMeta": {
 							"Feldname": "teila_3_2",
@@ -741,7 +755,7 @@
 						}
 					},
 					{
-						"id": 10,
+						"id": 11,
 						"answers": [800, 750, 1100, 600, 700, 650, 1000, 1200, 700, 900],
 						"itemMeta": {
 							"Feldname": "teila_3_3",
@@ -753,7 +767,7 @@
 						}
 					},
 					{
-						"id": 11,
+						"id": 12,
 						"answers": [600, 750, 900, 500, 600, 300, 850, 1000, 600, 700],
 						"itemMeta": {
 							"Feldname": "teila_3_4",
@@ -765,7 +779,7 @@
 						}
 					},
 					{
-						"id": 12,
+						"id": 13,
 						"answers": [200, 300, 400, 100, 250, 300, 400, 500, 250, 350],
 						"itemMeta": {
 							"Feldname": "teila_3_5",
@@ -777,7 +791,7 @@
 						}
 					},
 					{
-						"id": 13,
+						"id": 14,
 						"answers": [50, 150, 250, 50, 100, 200, 300, 350, 100, 200],
 						"itemMeta": {
 							"Feldname": "teila_3_6",
@@ -789,7 +803,7 @@
 						}
 					},
 					{
-						"id": 14,
+						"id": 15,
 						"answers": [3600, 4400, 5350, 2800, 3500, 4050, 5050, 5950, 3550, 4350],
 						"itemMeta": {
 							"Feldname": "teila_3_7",
@@ -801,7 +815,7 @@
 						}
 					},
 					{
-						"id": 15,
+						"id": 16,
 						"answers": [1174, 1772, 466, 1482, 1444, 1919, 1685, 1391, 1485, 1433],
 						"itemMeta": {
 							"Feldname": "teila_4_1",
@@ -813,7 +827,7 @@
 						}
 					},
 					{
-						"id": 16,
+						"id": 17,
 						"answers": [348, 20, 1426, 87, 35, 130, 769, 1515, 37, 1215],
 						"itemMeta": {
 							"Feldname": "teila_4_2",
@@ -825,7 +839,7 @@
 						}
 					},
 					{
-						"id": 17,
+						"id": 18,
 						"answers": [78, 608, 458, 1231, 21, 1001, 1596, 1044, 28, 702],
 						"itemMeta": {
 							"Feldname": "teila_4_3",
@@ -837,7 +851,7 @@
 						}
 					},
 					{
-						"id": 18,
+						"id": 19,
 						"answers": [320, 300, 310, 305, 325, 315, 330, 340, 325, 322],
 						"itemMeta": {
 							"Feldname": "teila_5_1",
@@ -849,7 +863,7 @@
 						}
 					},
 					{
-						"id": 19,
+						"id": 20,
 						"answers": [45, 50, 48, 46, 47, 44, 49, 42, 43, 41],
 						"itemMeta": {
 							"Feldname": "teila_5_2",
@@ -861,7 +875,7 @@
 						}
 					},
 					{
-						"id": 20,
+						"id": 21,
 						"answers": [180, 200, 190, 185, 195, 170, 205, 210, 175, 180],
 						"itemMeta": {
 							"Feldname": "teila_5_3",
@@ -873,7 +887,7 @@
 						}
 					},
 					{
-						"id": 21,
+						"id": 22,
 						"answers": [75, 70, 80, 78, 76, 72, 74, 73, 122, 79],
 						"itemMeta": {
 							"Feldname": "teila_5_4",
@@ -885,7 +899,7 @@
 						}
 					},
 					{
-						"id": 22,
+						"id": 23,
 						"answers": [120, 85, 110, 115, 125, 118, 130, 135, 91, 119],
 						"itemMeta": {
 							"Feldname": "teila_5_5",
@@ -897,7 +911,7 @@
 						}
 					},
 					{
-						"id": 23,
+						"id": 24,
 						"answers": [90, 85, 88, 92, 89, 86, 87, 93, 91, 84],
 						"itemMeta": {
 							"Feldname": "teila_5_6",
@@ -909,7 +923,7 @@
 						}
 					},
 					{
-						"id": 24,
+						"id": 25,
 						"answers": [298, 310, 305, 325, 315, 330, 320, 340, 335, 302],
 						"itemMeta": {
 							"Feldname": "teila_6_1",
@@ -921,7 +935,7 @@
 						}
 					},
 					{
-						"id": 25,
+						"id": 26,
 						"answers": [52, 56, 49, 54, 47, 50, 58, 53, 51, 55],
 						"itemMeta": {
 							"Feldname": "teila_6_2",
@@ -933,7 +947,7 @@
 						}
 					},
 					{
-						"id": 26,
+						"id": 27,
 						"answers": [170, 195, 180, 200, 185, 205, 190, 210, 175, 180],
 						"itemMeta": {
 							"Feldname": "teila_6_3",
@@ -945,7 +959,7 @@
 						}
 					},
 					{
-						"id": 27,
+						"id": 28,
 						"answers": [80, 75, 85, 79, 82, 78, 84, 77, 83, 81],
 						"itemMeta": {
 							"Feldname": "teila_6_4",
@@ -957,7 +971,7 @@
 						}
 					},
 					{
-						"id": 28,
+						"id": 29,
 						"answers": [140, 125, 110, 135, 120, 145, 130, 150, 128, 115],
 						"itemMeta": {
 							"Feldname": "teila_6_5",
@@ -969,7 +983,7 @@
 						}
 					},
 					{
-						"id": 29,
+						"id": 30,
 						"answers": [98, 90, 95, 87, 92, 89, 91, 93, 86, 88],
 						"itemMeta": {
 							"Feldname": "teila_6_6",
@@ -981,7 +995,7 @@
 						}
 					},
 					{
-						"id": 30,
+						"id": 31,
 						"answers": ["Ja", "Nein", "Nein", "Ja", "Nein", "Ja", "Nein", "Nein", "Ja", "Nein"],
 						"itemMeta": {
 							"Feldname": "teila_7",
@@ -992,7 +1006,7 @@
 						}
 					},
 					{
-						"id": 31,
+						"id": 32,
 						"answers": ["", "J12.82", "R53.83", "", "M35.81", "", "Z86.16", "F45.41", "", "R09.2"],
 						"itemMeta": {
 							"Feldname": "teila_7_code",
@@ -1002,7 +1016,7 @@
 						}
 					},
 					{
-						"id": 32,
+						"id": 33,
 						"answers": ["4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden", "2 - eher nicht", "1 - gar nicht", "3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "5 - voll und ganz", "3 - bin unentschieden"],
 						"itemMeta": {
 							"Feldname": "teila_8_1",
@@ -1013,7 +1027,7 @@
 						}
 					},
 					{
-						"id": 33,
+						"id": 34,
 						"answers": ["3 - bin unentschieden", "2 - eher nicht", "4 - eher ja", "1 - gar nicht", "5 - voll und ganz", "4 - eher ja", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "4 - eher ja"],
 						"itemMeta": {
 							"Feldname": "teila_8_2",
@@ -1024,7 +1038,7 @@
 						}
 					},
 					{
-						"id": 34,
+						"id": 35,
 						"answers": ["5 - voll und ganz", "2 - eher nicht", "2 - eher nicht", "3 - bin unentschieden", "1 - gar nicht", "1 - gar nicht", "2 - eher nicht", "5 - voll und ganz", "5 - voll und ganz", "5 - voll und ganz"],
 						"itemMeta": {
 							"Feldname": "teila_8_3",
@@ -1035,7 +1049,7 @@
 						}
 					},
 					{
-						"id": 35,
+						"id": 36,
 						"answers": ["1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "2 - Ich bin mir unsicher"],
 						"itemMeta": {
 							"Feldname": "teila_9",
@@ -1046,7 +1060,7 @@
 						}
 					},
 					{
-						"id": 36,
+						"id": 37,
 						"answers": ["Ältere Patienten mit Vorerkrankungen", "Chronisches Fatigue-Syndrom", "Autoimmunerkrankungen", "Patienten mit bestehenden Atemwegserkrankungen", "Herz-Kreislauf-Erkrankungen", "Immungeschwächte Patienten", "Psychische Störungen", "Neurologische Erkrankungen", "Personen mit Adipositas", "Fibromyalgie"],
 						"itemMeta": {
 							"Feldname": "teila_9_pat",
@@ -1056,7 +1070,7 @@
 						}
 					},
 					{
-						"id": 37,
+						"id": 38,
 						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_10",
@@ -1067,7 +1081,7 @@
 						}
 					},
 					{
-						"id": 38,
+						"id": 39,
 						"answers": ["", "", "", "", "", "Geruchs-/ Geschmackstörungen", "Psychologische Symptome", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_10_pat",
@@ -1077,7 +1091,7 @@
 						}
 					},
 					{
-						"id": 39,
+						"id": 40,
 						"answers": ["", "", "Fibromyalgie", "", "", "", "", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_10_pat_2",
@@ -1087,7 +1101,7 @@
 						}
 					},
 					{
-						"id": 40,
+						"id": 41,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "2 - Brustbeschwerden/ kardiale Beschwerden,3 - Muskuloskelettale Schmerzen,9 - Psychologische Symptome", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
 						"itemMeta": {
 							"Feldname": "teila_11",
@@ -1098,7 +1112,7 @@
 						}
 					},
 					{
-						"id": 41,
+						"id": 42,
 						"answers": ["Husten", "Übelkeit", "Schwindel", "Durchfall", "Müdigkeit", "Juckreiz", "Krämpfe", "Unruhe", "Herzklopfen", "Atemnot"],
 						"itemMeta": {
 							"Feldname": "teila_11_sonst",
@@ -1108,7 +1122,7 @@
 						}
 					},
 					{
-						"id": 42,
+						"id": 43,
 						"answers": ["1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "0 - Nein"],
 						"itemMeta": {
 							"Feldname": "teila_12",
@@ -1119,7 +1133,7 @@
 						}
 					},
 					{
-						"id": 43,
+						"id": 44,
 						"answers": ["", "Chronisches Erschöpfungssyndrom (CFS)", "", "Chronische Müdigkeit", "Langzeit-Durchfall", "", "Angststörung", "", "Schlafapnoe", "Migräne"],
 						"itemMeta": {
 							"Feldname": "teila_12_andere",
@@ -1129,7 +1143,7 @@
 						}
 					},
 					{
-						"id": 44,
+						"id": 45,
 						"answers": ["", "", "Chronische Müdigkeit", "", "", "", "", "", "", ""],
 						"itemMeta": {
 							"Feldname": "teila_12_andere_2",
@@ -1139,7 +1153,7 @@
 						}
 					},
 					{
-						"id": 45,
+						"id": 46,
 						"answers": ["1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "1 - Ja", "1 - Ja", "1 - Ja", "2 - Ich bin mir unsicher", "0 - Nein", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_13",
@@ -1150,7 +1164,7 @@
 						}
 					},
 					{
-						"id": 46,
+						"id": 47,
 						"answers": [120, 45, "", 60, 10, 250, "", "", 5, 100],
 						"itemMeta": {
 							"Feldname": "teila_13_pat",
@@ -1161,7 +1175,7 @@
 						}
 					},
 					{
-						"id": 47,
+						"id": 48,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen", "", "", "3 - Muskuloskelettale Schmerzen", "9 - Psychologische Symptome"],
 						"itemMeta": {
 							"Feldname": "teila_13_anlass",
@@ -1172,7 +1186,7 @@
 						}
 					},
 					{
-						"id": 48,
+						"id": 49,
 						"answers": ["Schlafstörungen", "Schlafapnoe", "Unruhe", "Muskelschwäche", "Schwäche", "Schlafapnoe", "Schwäche", "Depression", "Muskelschwäche", "Muskelschwäche"],
 						"itemMeta": {
 							"Feldname": "teila_13_sonst",
@@ -1182,7 +1196,7 @@
 						}
 					},
 					{
-						"id": 49,
+						"id": 50,
 						"answers": ["1 - Ja", "0 - Nein", "1 - Ja", "0 - Nein", "2 - Ich bin mir unsicher", "0 - Nein", "0 - Nein", "1 - Ja", "1 - Ja", "1 - Ja"],
 						"itemMeta": {
 							"Feldname": "teila_14",
@@ -1193,7 +1207,7 @@
 						}
 					},
 					{
-						"id": 50,
+						"id": 51,
 						"answers": [84, "", 30, "", "", "", "", 90, 5, 44],
 						"itemMeta": {
 							"Feldname": "teila_14_pat",
@@ -1204,7 +1218,7 @@
 						}
 					},
 					{
-						"id": 51,
+						"id": 52,
 						"answers": ["1 - Beschwerden der oberen Atemwege,3 - Muskuloskelettale Schmerzen,6 - Kopfschmerzen/ Schwindel", "", "4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen,9 - Psychologische Symptome", "", "", "", "", "3 - Muskuloskelettale Schmerzen,8 - Fatigue (ständige starke Müdigkeit),10 - Magen-Darm-Beschwerden", "2 - Brustbeschwerden/ kardiale Beschwerden,5 - Neurokognitive Beeinträchtigung,9 - Psychologische Symptome", "1 - Beschwerden der oberen Atemwege,4 - Fieber und Schüttelfrost,7 - Geruchs-/ Geschmackstörungen"],
 						"itemMeta": {
 							"Feldname": "teila_14_anlass",
@@ -1215,7 +1229,7 @@
 						}
 					},
 					{
-						"id": 52,
+						"id": 53,
 						"answers": ["Chronische Müdigkeit", "Chronisches Erschöpfungssyndrom (CFS)", "Fibromyalgie", "Chronische Müdigkeit", "Langzeit-Durchfall", "Langzeit-Hautausschlag", "Angststörung", "Depression", "Schlafapnoe", "Migräne"],
 						"itemMeta": {
 							"Feldname": "teila_14_sonst",

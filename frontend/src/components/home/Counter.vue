@@ -1,7 +1,7 @@
 <template>
 	<div class="co-wrap-content">
 		<p class="co-amount">{{ stat.amount }}</p>
-		<p class="co-translation">{{ $t(stat.translation) }}</p>
+		<p class="co-translation">{{ $t(stat.type) }}</p>
 	</div>
 </template>
 

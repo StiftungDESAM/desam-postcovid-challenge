@@ -14,15 +14,16 @@
 			"dateStart": "2023-01-10",
 			"dateEnd": "2024-01-10",
 			"description": "Mit der überregionalen Studie Covid_ShortForm_GP werden\n• Inzidenzen von Long-/Post-Covid in der Hausarztpraxis realitätsnah retrospektiv erfasst\n• Versorgungsmerkmale von Patient:innen mit Long-/Post-Covid aus der Perspektive der versorgenden\nHausärzt:innen beschrieben\nDie Studie dient der Machbarkeitsprüfung, um das\ngewählte Studiendesign (Erhebung von\nVersorgungs-merkmalen auf Basis von Abrechnungs- und Versorgungsdaten aus den Praxisverwaltungssystemen) für weitere überregionale\nStudien mit Hausarztpraxen zu optimieren.",
-			"drksID": 1234
+			"drksId": 1234
 		},
-		"uploadTyp": "UPLOAD_DATA",
+		"uploadType": "UPLOAD_DATA",
 		"codeBooks": [
 			{
 				"id": 0,
 				"name": "Covid_ShortForm_GP_firstSet",
 				"data": [
-					[
+					[	
+						"trustCenterID",
 						"teila_1_1",
 						"teila_1_2",
 						"teila_1_3",
@@ -78,6 +79,7 @@
 						"teila_14_sonst"
 					],
 					[
+						"1",
 						"120",
 						"350",
 						"800",
@@ -133,6 +135,7 @@
 						"Chronische Müdigkeit"
 					],
 					[
+						"2",
 						"45",
 						"200",
 						"1200",
@@ -188,6 +191,7 @@
 						"Unruhe"
 					],
 					[
+						"3",
 						"0",
 						"50",
 						"3500",
@@ -243,6 +247,7 @@
 						""
 					],
 					[
+						"4",
 						"60",
 						"150",
 						"2000",
@@ -298,6 +303,7 @@
 						""
 					],
 					[
+						"5",
 						"10",
 						"80",
 						"1800",
@@ -353,6 +359,7 @@
 						""
 					],
 					[
+						"6",
 						"250",
 						"600",
 						"3200",
@@ -408,6 +415,7 @@
 						"Langzeit-Durchfall"
 					],
 					[
+						"7",
 						"30",
 						"400",
 						"1500",
@@ -463,6 +471,7 @@
 						""
 					],
 					[
+						"7",
 						"90",
 						"500",
 						"4200",
@@ -518,6 +527,7 @@
 						""
 					],
 					[
+						"9",
 						"5",
 						"100",
 						"2300",
@@ -573,6 +583,7 @@
 						"Unklare Ursachen"
 					],
 					[
+						"10",
 						"100",
 						"700",
 						"3800",
@@ -634,6 +645,7 @@
 				"name": "Covid_ShortForm_GP_secondSet",
 				"data": [
 					[
+						"trustCenterID",
 						"teila_2_1",
 						"teila_2_2",
 						"teila_2_3",
@@ -684,6 +696,7 @@
 						"teila_14_sonst"
 					],
 					[
+						"1",
 						"1400",
 						"1300",
 						"170",
@@ -734,6 +747,7 @@
 						"Chronische Müdigkeit"
 					],
 					[
+						"2",
 						"1500",
 						"1200",
 						"345",
@@ -784,6 +798,7 @@
 						"Unruhe"
 					],
 					[
+						"3",
 						"2200",
 						"2200",
 						"750",
@@ -834,6 +849,7 @@
 						""
 					],
 					[
+						"4",
 						"1500",
 						"1500",
 						"260",
@@ -884,6 +900,7 @@
 						""
 					],
 					[
+						"5",
 						"2000",
 						"1700",
 						"890",
@@ -934,6 +951,7 @@
 						""
 					],
 					[
+						"6",
 						"3000",
 						"2900",
 						"600",
@@ -984,6 +1002,7 @@
 						"Langzeit-Durchfall"
 					],
 					[
+						"7",
 						"2200",
 						"2400",
 						"130",
@@ -1034,6 +1053,7 @@
 						""
 					],
 					[
+						"8",
 						"3500",
 						"3200",
 						"490",
@@ -1084,6 +1104,7 @@
 						""
 					],
 					[
+						"9",
 						"2300",
 						"3000",
 						"155",
@@ -1134,6 +1155,7 @@
 						"Unklare Ursachen"
 					],
 					[
+						"10",
 						"3000",
 						"3800",
 						"450",

@@ -4,4 +4,6 @@ django-ninja==1.3.0     # REST-framework for the API
 neomodel==5.4.2         # Mapper for accessing Neo4j from Django
 psycopg2-binary==2.9.10 # Adapter for PostgreSQL
 
+rdflib==7.1.3           # RDF Parsing
+pandas==2.2.3           # data manipulation
 pytest-django==4.8.0    # Unit tests

@@ -14,9 +14,9 @@
 			"dateStart": "2020-11-01",
 			"dateEnd": "2024-12-31",
 			"description": "Die NAPKON Studie ist eine überregionale Studie, die darauf abzielt, Inzidenzen von Long- und Post-Covid in der Hausarztpraxis retrospektiv zu erfassen. Dabei werden Versorgungsmerkmale von Patient:innen mit Long- und Post-Covid aus der Perspektive der Hausärzt:innen untersucht, um das Studiendesign für weitere groß angelegte Studien zu optimieren.",
-			"drksID": 3456
+			"drksId": 3456
 		},
-		"uploadTyp": "UPLOAD_ONTOLOGY",
+		"uploadType": "UPLOAD_ONTOLOGY",
 		"codeBooks": [
 			{
 				"id": 0,
@@ -26,6 +26,7 @@
 						"id": 0,
 						"name": "Variable / Field Name",
 						"rows": [
+							"trustCenterID",
 							"teila_1_1",
 							"teila_1_2",
 							"teila_1_3",
@@ -86,6 +87,7 @@
 						"id": 1,
 						"name": "Form Name",
 						"rows": [
+							"",
 							"datenerhebungsbogen",
 							"datenerhebungsbogen",
 							"datenerhebungsbogen",
@@ -178,6 +180,7 @@
 							"",
 							"",
 							"",
+							"",
 							"8.Inwieweit stimmen Sie den folgenden Aussagen zu:",
 							"",
 							"",
@@ -206,6 +209,7 @@
 						"id": 3,
 						"name": "Field Type",
 						"rows": [
+							"",
 							"text",
 							"text",
 							"text",
@@ -266,6 +270,7 @@
 						"id": 4,
 						"name": "Field Label",
 						"rows": [
+							"",
 							"≤ 4 Jahre (GOP 03001/04001) ",
 							"5 bis 18 Jahre (GOP 03002/04002)",
 							"19 bis 54 Jahre (GOP 03003/04003)",
@@ -358,6 +363,7 @@
 							"",
 							"",
 							"",
+							"",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
@@ -386,6 +392,7 @@
 						"id": 7,
 						"name": "Text Validation Type OR Show Slider Number",
 						"rows": [
+							"",
 							"number",
 							"number",
 							"number",
@@ -446,6 +453,7 @@
 						"id": 8,
 						"name": "Text Validation Min",
 						"rows": [
+							"",
 							0,
 							0,
 							0,
@@ -506,6 +514,7 @@
 						"id": 9,
 						"name": "Text Validation Max",
 						"rows": [
+							"",
 							1000,
 							2000,
 							5000,
@@ -597,6 +606,7 @@
 							"",
 							"",
 							"",
+							"",
 							"[teila_7] = '0'",
 							"",
 							"",
@@ -626,6 +636,7 @@
 						"id": 12,
 						"name": "Required Field?",
 						"rows": [
+							"",
 							"",
 							"",
 							"",
@@ -692,6 +703,7 @@
 						"id": 0,
 						"name": "Variable / Field Name",
 						"rows": [
+							"trustCenterID",
 							"teila_2_1",
 							"teila_2_2",
 							"teila_2_3",
@@ -747,6 +759,7 @@
 						"id": 3,
 						"name": "Field Type",
 						"rows": [
+							"",
 							"text",
 							"text",
 							"text",
@@ -802,6 +815,7 @@
 						"id": 4,
 						"name": "Field Label",
 						"rows": [
+							"",
 							"männlich",
 							"weiblich",
 							"divers",
@@ -884,6 +898,7 @@
 							"",
 							"",
 							"",
+							"",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
@@ -912,6 +927,7 @@
 						"id": 7,
 						"name": "Text Validation Type OR Show Slider Number",
 						"rows": [
+							"",
 							"number",
 							"number",
 							"number",
@@ -967,6 +983,7 @@
 						"id": 8,
 						"name": "Text Validation Min",
 						"rows": [
+							"",
 							0,
 							0,
 							0,
@@ -1022,6 +1039,7 @@
 						"id": 9,
 						"name": "Text Validation Max",
 						"rows": [
+							"",
 							"",
 							"",
 							"",
@@ -1103,6 +1121,7 @@
 							"",
 							"",
 							"",
+							"",
 							"[teila_7] = '0'",
 							"",
 							"",
@@ -1132,6 +1151,7 @@
 						"id": 12,
 						"name": "Required Field?",
 						"rows": [
+							"",
 							"",
 							"",
 							"",
@@ -1193,6 +1213,7 @@
 						"id": 0,
 						"name": "Variable / Field Name",
 						"rows": [
+							"trustCenterID",
 							"teila_2_1",
 							"teila_2_2",
 							"teila_2_3",
@@ -1248,6 +1269,7 @@
 						"id": 3,
 						"name": "Field Type",
 						"rows": [
+							"",
 							"text",
 							"text",
 							"text",
@@ -1303,6 +1325,7 @@
 						"id": 4,
 						"name": "Field Label",
 						"rows": [
+							"",
 							"männlich",
 							"weiblich",
 							"divers",
@@ -1385,6 +1408,7 @@
 							"",
 							"",
 							"",
+							"",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
 							"1, gar nicht|2, eher nicht|3, bin unentschieden|4, eher ja|5, voll und ganz",
@@ -1413,6 +1437,7 @@
 						"id": 7,
 						"name": "Text Validation Type OR Show Slider Number",
 						"rows": [
+							"",
 							"number",
 							"number",
 							"number",
@@ -1468,6 +1493,7 @@
 						"id": 8,
 						"name": "Text Validation Min",
 						"rows": [
+							"",
 							0,
 							0,
 							0,
@@ -1523,6 +1549,7 @@
 						"id": 9,
 						"name": "Text Validation Max",
 						"rows": [
+							"",
 							"",
 							"",
 							"",
@@ -1604,6 +1631,7 @@
 							"",
 							"",
 							"",
+							"",
 							"[teila_7] = '0'",
 							"",
 							"",
@@ -1633,6 +1661,7 @@
 						"id": 12,
 						"name": "Required Field?",
 						"rows": [
+							"",
 							"",
 							"",
 							"",

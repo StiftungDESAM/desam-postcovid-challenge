@@ -36,6 +36,8 @@ import {
 	faMagnifyingGlassChart,
 	faChevronDown,
 	faChevronUp,
+	faSync,
+	faVideo,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -74,5 +76,7 @@ library.add(
 	faCircleInfo,
 	faMagnifyingGlassChart,
 	faChevronDown,
-	faChevronUp
+	faChevronUp,
+	faSync,
+	faVideo
 );

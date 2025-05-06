@@ -13,7 +13,7 @@
 		<div class="rs-wrap-review">
 			<div class="rs-wrap-comment">
 				<label>{{ $t('rsReviewComment') }}</label>
-				<textarea v-model="reviewComment" :disabled="!userIsReviewerAndNotFinished" @change="updateReview"></textarea>
+				<textarea v-model="reviewComment" :disabled="!reviewCanBeEdited" @change="updateReview"></textarea>
 			</div>
 			<div class="rs-wrap-status">
 				<div class="rs-status">
@@ -22,7 +22,7 @@
 						type="radio"
 						:value="rsEnum.ACCEPTED"
 						v-model="reviewStatus"
-						:disabled="!userIsReviewerAndNotFinished"
+						:disabled="!reviewCanBeEdited"
 						@click="handleRadioClick(rsEnum.ACCEPTED)"
 					/>
 					<label for="accepted">{{ $t('rsAccepted') }}</label>
@@ -33,7 +33,7 @@
 						type="radio"
 						:value="rsEnum.MODIFICATION_NEEDED"
 						v-model="reviewStatus"
-						:disabled="!userIsReviewerAndNotFinished"
+						:disabled="!reviewCanBeEdited"
 						@click="handleRadioClick(rsEnum.MODIFICATION_NEEDED)"
 					/>
 					<label for="modification">{{ $t('rsModificationNeeded') }}</label>
@@ -44,7 +44,7 @@
 						type="radio"
 						:value="rsEnum.DECLINED"
 						v-model="reviewStatus"
-						:disabled="!userIsReviewerAndNotFinished"
+						:disabled="!reviewCanBeEdited"
 						@click="handleRadioClick(rsEnum.DECLINED)"
 					/>
 					<label for="declined">{{ $t('rsDeclined') }}</label>
@@ -79,7 +79,11 @@ export default {
 			type: Object,
 			required: true,
 		},
-		userIsReviewerAndNotFinished: {
+		reviewType: {
+			type: String,
+			required: true,
+		},
+		reviewCanBeEdited: {
 			type: Boolean,
 			required: true,
 		},
@@ -126,30 +130,29 @@ export default {
 		assignToReview() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.postData(
-					`/api/review/ontology/${this.reviewID}/assign-to-review`,
-					{ email: this.currentUser.credentials.email },
-					null,
-					(err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) {
-							// 	this.$emit('assignReview')
-							// 	this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('rsAssignedReviewSuccessfully'))
-							// }
-							if (err) {
-								this.$emit('assignReview');
-								this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('rsAssignedReviewSuccessfully'));
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isLoading = false;
-						}
+			const route =
+				this.reviewType == 'ONTOLOGY_UPLOAD'
+					? `/api/review/ontology/${this.reviewID}/assign-to-review`
+					: `/api/review/data/${this.reviewID}/assign-to-review`;
+			console.log(route);
+			this.$network.postData(route, { email: this.currentUser.credentials.email }, null, (err, data) => {
+				try {
+					// TODO: Remove mocked data
+					if (!err) {
+						this.$emit('assignReview');
+						this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('rsAssignedReviewSuccessfully'));
 					}
-				);
-			}, 1000);
+					// if (err) {
+					// 	this.$emit('assignReview');
+					// 	this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('rsAssignedReviewSuccessfully'));
+					// }
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+				}
+			});
 		},
 		handleRadioClick(status) {
 			this.reviewStatus = this.reviewStatus === status ? null : status;

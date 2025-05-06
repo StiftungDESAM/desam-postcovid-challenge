@@ -47,31 +47,29 @@ export default {
 		querySubmissions() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.getData(`/api/profile/submissions`, null, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) this.tableConfig.data.values = data;
-						if (err) this.submissionsConfig.data.values = this.submissions;
-						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 2000);
+			this.$network.getData(`/api/review/feedback`, null, null, (err, data) => {
+				try {
+					if (!err) this.submissionsConfig.data.values = data;
+					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 		selectItem(item) {
+			console.log(item);
+			this.$router.push({ name: ROUTE.FEEDBACK_VIEW, params: { feedbackID: item.id } });
 			// Check whether the status is not 'OPEN' or 'ASSIGNED'
-			if (['OPEN', 'ASSIGNED'].includes(item.submissionStatus)) {
-				// display warn because no feedback exists
-				this.$global.showToast(TOAST_TYPE.WARN, this.$t('pfFeedbackNotAvailable'));
-			} else {
-				// if feedback exists forwarding to the FeedbackView with feedbackID
-				this.$router.push({ name: ROUTE.FEEDBACK_VIEW, params: { feedbackID: item.id } });
-			}
+			// if (['OPEN', 'ASSIGNED'].includes(item.submissionStatus)) {
+			// 	// display warn because no feedback exists
+			// 	this.$global.showToast(TOAST_TYPE.WARN, this.$t('pfFeedbackNotAvailable'));
+			// } else {
+			// 	// if feedback exists forwarding to the FeedbackView with feedbackID
+			// 	this.$router.push({ name: ROUTE.FEEDBACK_VIEW, params: { feedbackID: item.id } });
+			// }
 		},
 	},
 };

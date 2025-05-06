@@ -24,20 +24,16 @@ export const global = {
 			let isValid = true;
 			let warnText = null;
 
-			const uppercasePattern = /[A-Z]/;
-			const digitPattern = /\d/;
-			const specialCharPattern = /[!@#$%^&*()_+{}\[\]:;"'<>,.?/\\|`~]/;
-
-			if (password.length < 9) {
+			if (!this.checkPasswordLength(password)) {
 				warnText = this.t('reInvalidPasswordLength');
 				isValid = false;
-			} else if (!uppercasePattern.test(password)) {
+			} else if (!this.checkPasswordUpperCase(password)) {
 				warnText = this.t('reInvalidPasswordUpperCase');
 				isValid = false;
-			} else if (!digitPattern.test(password)) {
+			} else if (!this.checkPasswordLowerCase(password)) {
 				warnText = this.t('reInvalidPasswordDigit');
 				isValid = false;
-			} else if (!specialCharPattern.test(password)) {
+			} else if (!this.checkPasswordSpecialLetter(password)) {
 				warnText = this.t('reInvalidPasswordSpecialChar');
 				isValid = false;
 			}
@@ -46,6 +42,21 @@ export const global = {
 
 			return isValid;
 		} else return false;
+	},
+	checkPasswordLength(password) {
+		return password && password.length >= 9;
+	},
+	checkPasswordUpperCase(password) {
+		const uppercasePattern = /[A-Z]/;
+		return password && uppercasePattern.test(password);
+	},
+	checkPasswordLowerCase(password) {
+		const digitPattern = /\d/;
+		return password && digitPattern.test(password);
+	},
+	checkPasswordSpecialLetter(password) {
+		const specialCharPattern = /[!@#$%^&*()_+{}\[\]:;"'<>,.?/\\|`~]/;
+		return password && specialCharPattern.test(password);
 	},
 	getNestedValue(obj, path) {
 		return path.split('.').reduce((acc, key) => acc?.[key], obj);
@@ -117,7 +128,7 @@ export const global = {
 		else return date.toISOString().split('.')[0];
 	},
 	valueIsNotAvailable(value, includeEmptyString = false, includeZero = false) {
-		const isNullOrUndefined = value == null;
+		const isNullOrUndefined = value == null || value == undefined;
 		const isEmpty = value === '';
 		const isZero = value === 0;
 

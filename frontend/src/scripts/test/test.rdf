@@ -1,24 +1,266 @@
-@prefix pro: <property#> .
-@prefix node: <node#> .
-@prefix rel: <relationship#> .
-@prefix data: <data#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix nod: <http://example.org/node> .
+@prefix pro: <http://example.org/property> .
+@prefix rel: <http://example.org/relationship> .
 
-node:25 a pro:Item;
-  pro:tag "254"^^xsd:long;
-  rel:8 node:35 .
+nod:21 a pro:Forschung ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "true" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Forschung" ;
+    pro:stakeholder_id "1" ;
+    pro:tag "101" ;
+    rel:17 nod:16 .
 
-rel:8 a pro:HAT;
-  pro:tag "1007"^^xsd:long;
-  pro:cardinality "n" .
+nod:6 a pro:Leistungserbringer ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "true" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Leistungserbringer" ;
+    pro:stakeholder_id "2" ;
+    pro:tag "102" ;
+    rel:4 nod:24 .
 
-node:35 a pro:Antwort;
-  pro:tag "256"^^xsd:long;
-  rel:17 data:117 .
+rel:1 a pro:BESTEHT_AUS ;
+    pro:cardinality "1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-02T10:32:39.194000+00:00" ;
+    pro:name "besteht aus" ;
+    pro:tag "1006" .
 
-rel:17 a pro:AKTUELL;
-  pro:tag "263"^^xsd:long.
+rel:10 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1011" .
 
-data:117 a pro:Data;
-  pro:value "4, eher ja".
+rel:12 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1014" .
 
+rel:17 a pro:ERSTELLT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "erstellt" ;
+    pro:tag "1001" .
+
+rel:2 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1012" .
+
+rel:20 a pro:HAT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1005" .
+
+rel:22 a pro:HAT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1002" .
+
+rel:23 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-02T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-02T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1015" .
+
+rel:25 a pro:HAT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1003" .
+
+rel:26 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1010" .
+
+rel:27 a pro:HAT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1004" .
+
+rel:4 a pro:IST ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "ist" ;
+    pro:tag "1000" .
+
+rel:7 a pro:HAT ;
+    pro:cardinality "0-1" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1013" .
+
+rel:9 a pro:HAT ;
+    pro:cardinality "n" ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "hat" ;
+    pro:tag "1007" .
+
+nod:0 a pro:Ben%C3%B6tigt ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Benötigt" ;
+    pro:tag "262" .
+
+nod:11 a pro:Metadaten ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Metadaten" ;
+    pro:tag "255" ;
+    rel:10 nod:8 ;
+    rel:12 nod:0 ;
+    rel:2 nod:18 ;
+    rel:23 nod:3 ;
+    rel:26 nod:28 ;
+    rel:7 nod:5 .
+
+nod:13 a pro:Datenerhebung ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Datenerhebung" ;
+    pro:tag "252" ;
+    rel:27 nod:15 .
+
+nod:14 a pro:Antwort ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Antwort" ;
+    pro:tag "256" .
+
+nod:15 a pro:Fragebogen ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Fragebogen" ;
+    pro:tag "253" ;
+    rel:20 nod:19 .
+
+nod:16 a pro:Studie ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Studie" ;
+    pro:tag "250" ;
+    rel:22 nod:24 ;
+    rel:25 nod:13 .
+
+nod:18 a pro:Frage ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Frage" ;
+    pro:tag "260" .
+
+nod:19 a pro:Item ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Item" ;
+    pro:tag "254" ;
+    rel:1 nod:11 ;
+    rel:9 nod:14 .
+
+nod:28 a pro:Sektion ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-02T10:32:39.194000+00:00" ;
+    pro:name "Sektion" ;
+    pro:tag "257" .
+
+nod:3 a pro:Einheit ;
+    pro:created "2025-03-02T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-02T10:32:39.194000+00:00" ;
+    pro:name "Einheit" ;
+    pro:tag "263" .
+
+nod:5 a pro:Mapping ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Mapping" ;
+    pro:tag "261" .
+
+nod:8 a pro:Feldtyp ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "true" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "false" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Feldtyp" ;
+    pro:tag "259" .
+
+nod:24 a pro:Teilnehmer ;
+    pro:created "2025-03-01T10:32:39.194000+00:00" ;
+    pro:is_leaf "false" ;
+    pro:is_stakeholder "false" ;
+    pro:is_verified "true" ;
+    pro:last_updated "2025-03-01T10:32:39.194000+00:00" ;
+    pro:name "Teilnehmer" ;
+    pro:tag "251" .

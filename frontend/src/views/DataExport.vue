@@ -78,6 +78,16 @@
 				</select>
 			</div>
 			<div class="de-wrap-export-option">
+				<label>{{ $t('deIdentificator') }}</label>
+				<select v-model="exportConfig.identificator" required>
+					<option value="" disabled selected hidden>{{ $t('deSelectIdentificator') }}</option>
+					<option v-if="validIdentificators.length == 0" :value="null" disabled>{{ $t('deNoIdentificatorsAvailable') }}</option>
+					<option v-for="identificator in validIdentificators" :key="identificator.tag" :value="identificator.tag">
+						{{ identificator.name }}
+					</option>
+				</select>
+			</div>
+			<div class="de-wrap-export-option">
 				<label>{{ $t('deSeparator') }}</label>
 				<select v-model="exportConfig.separator" required>
 					<option value="" disabled selected hidden>{{ $t('dqcSelectSplittingMethod') }}</option>
@@ -110,11 +120,6 @@ import LoadingSpinner from '@/components/general/LoadingSpinner.vue';
 import Table from '@/components/general/Table.vue';
 import Papa from 'papaparse';
 import JSZip from 'jszip';
-import jsonExportData from '@/assets/dummy/jsonExportData.json';
-import csvExportData from '@/assets/dummy/csvExportData.json';
-import ontologyMeta from '@/assets/dummy/ontologyMeta.json';
-import metaProperties from '@/assets/dummy/metaProperties.json';
-import dataToSearch from '@/assets/dummy/dataToSearch.json';
 import { searchedTableConfig } from '@/components/export/searchedTableConfig';
 import { selectedTableConfig } from '@/components/export/selectedTableConfig';
 import { FILE_TYPE, MAPPING_SPLIT, ONTOLOGY_ELEMENT, TOAST_TYPE } from '@/enums/enums';
@@ -136,11 +141,6 @@ export default {
 	},
 	data() {
 		return {
-			ontologyMeta: ontologyMeta.rdf,
-			metaProperties: metaProperties,
-			dataToSearch: dataToSearch,
-			jsonExportData: jsonExportData,
-			csvExportData: csvExportData.csv,
 			resetSelectedSearch: false,
 			resetSelectedSelected: false,
 			ontologyData: null,
@@ -150,6 +150,7 @@ export default {
 			searchText: null,
 			caseSensitive: false,
 			matchFullText: false,
+			uniqueMetaFields: {},
 			searchedTableConfig: searchedTableConfig,
 			selectedTableConfig: selectedTableConfig,
 			selectedSearchedItems: [],
@@ -157,6 +158,7 @@ export default {
 			exportConfig: {
 				fileName: '',
 				fileType: '',
+				identificator: '',
 				separator: '',
 				includeMeta: true,
 			},
@@ -166,10 +168,25 @@ export default {
 		canSearch() {
 			return this.selectedElement && !this.isSearching && this.searchText?.length > 0;
 		},
+		validIdentificators() {
+			let validIdentificators = [];
+
+			if (this.selectedTableConfig.data.values.length > 0) {
+				Object.keys(this.uniqueMetaFields).forEach((key) => {
+					if (!['amountAnswers'].includes(key)) {
+						const data = new Set(this.selectedTableConfig.data.values.map((it) => it[key]));
+						if (data.size == this.selectedTableConfig.data.values.length) validIdentificators.push({ ...this.uniqueMetaFields[key] });
+					}
+				});
+			}
+
+			return validIdentificators;
+		},
 		canExport() {
 			return (
 				this.exportConfig.fileName &&
 				this.exportConfig.fileType &&
+				this.exportConfig.identificator &&
 				(this.exportConfig.separator || this.exportConfig.fileType == FILE_TYPE.JSON) &&
 				this.selectedTableConfig.data.values.length > 0 &&
 				!this.isExporting
@@ -183,11 +200,9 @@ export default {
 	beforeDestroy() {},
 	methods: {
 		getMetaOntology() {
-			this.$network.getData(`/api/ontology/meta`, null, null, (err, data) => {
+			this.$network.getData(`/api/ontology/meta?query_type=rdf`, null, null, (err, data) => {
 				try {
-					// TODO: Remove mocked data
-					// if (!err) this.ontologyData = data;
-					if (err) this.ontologyData = this.ontologyMeta;
+					if (!err) this.ontologyData = data.rdf;
 					else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
 				} catch (error) {
 					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
@@ -207,49 +222,20 @@ export default {
 				this.selectedSearchedItems = [];
 				this.resetSelectedSearch = !this.resetSelectedSearch;
 
-				const searchConfig = {
-					tag: this.selectedElement.data.tag,
-					search: this.searchText,
-					caseSensitive: this.caseSensitive,
-					matchFullText: this.matchFullText,
-				};
+				const params = `tag=${this.selectedElement.data.tag}&search=${this.searchText}&case_sensitive=${this.caseSensitive}&match_full_text=${this.matchFullText}`;
 
-				window.setTimeout(() => {
-					this.$network.getData(`/api/data/search`, { params: { ...searchConfig } }, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.fillSearchedTable(data);
-							if (err) this.fillSearchedTable(this.searchDummyItems(searchConfig));
-							else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isSearching = false;
-						}
-					});
-				}, 1000);
+				this.$network.getData(`/api/data/search?${params}`, null, null, (err, data) => {
+					try {
+						if (!err) this.fillSearchedTable(data);
+						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						console.log(error);
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isSearching = false;
+					}
+				});
 			}
-		},
-		// This function is just for demonstration purposes and should be moved to the backend
-		searchDummyItems(searchConfig) {
-			let property = Object.keys(this.metaProperties).find((key) => this.metaProperties[key].tag == searchConfig.tag);
-			if (property) {
-				if (searchConfig.caseSensitive) {
-					const queryWords = searchConfig.matchFullText ? [searchConfig.search] : searchConfig.search.split(' ');
-					return this.dataToSearch.filter((data) => {
-						if (!data.itemMeta.hasOwnProperty(property)) return false;
-						else return queryWords.some((word) => data.itemMeta[property].includes(word));
-					});
-				} else {
-					const queryWords = searchConfig.matchFullText
-						? [searchConfig.search.toLowerCase()]
-						: searchConfig.search.toLowerCase().split(' ');
-					return this.dataToSearch.filter((data) => {
-						if (!data.itemMeta.hasOwnProperty(property)) return false;
-						else return queryWords.some((word) => data.itemMeta[property].toLowerCase().includes(word));
-					});
-				}
-			} else return [];
 		},
 		fillSearchedTable(data) {
 			this.searchedTableConfig.data.columns = [];
@@ -271,20 +257,25 @@ export default {
 			if (data.length > 0) {
 				let columns = [];
 				let rows = [];
-				let uniqueMetaFields = new Set(['id', 'amountAnswers']);
+				let uniqueMetaFields = {
+					id: { name: this.$t('deRowID'), tag: 'META_ROW_ID' },
+					amountAnswers: { name: this.$t('deAmountData') },
+				};
 
 				data.forEach((it) => {
 					Object.keys(it.itemMeta).forEach((key) => {
-						uniqueMetaFields.add(key);
+						if (!uniqueMetaFields[key]) uniqueMetaFields[key] = it.itemMeta[key];
 					});
 				});
 
-				const uniqueKeysArray = Array.from(uniqueMetaFields);
+				this.uniqueMetaFields = uniqueMetaFields;
 
-				uniqueKeysArray.forEach((key) => {
+				const keys = Object.keys(uniqueMetaFields);
+
+				keys.forEach((key) => {
 					columns.push({
 						ref: [key],
-						text: key == 'id' ? this.$t('deRowID') : key == 'amountAnswers' ? this.$t('deAmountData') : key,
+						text: uniqueMetaFields[key].name,
 						formatter: (value) => {
 							return this.$global.valueIsNotAvailable(value, true, false) ? '-' : value;
 						},
@@ -293,8 +284,8 @@ export default {
 
 				data.forEach((it) => {
 					let row = {};
-					uniqueKeysArray.forEach((key) => {
-						if (!this.$global.valueIsNotAvailable(it.itemMeta[key], true, false)) row[key] = it.itemMeta[key];
+					keys.forEach((key) => {
+						if (!this.$global.valueIsNotAvailable(it.itemMeta[key]?.value, true, false)) row[key] = it.itemMeta[key].value;
 						else row[key] = '';
 					});
 
@@ -338,7 +329,7 @@ export default {
 			existingKeys.forEach((key) => {
 				columns.push({
 					ref: [key],
-					text: key == 'id' ? this.$t('deRowID') : key == 'amountAnswers' ? this.$t('deAmountData') : key,
+					text: this.uniqueMetaFields[key].name,
 					formatter: (value) => {
 						return this.$global.valueIsNotAvailable(value, true, false) ? '-' : value;
 					},
@@ -373,6 +364,10 @@ export default {
 			this.selectedTableConfig.data.columns = [];
 			this.selectedTableConfig.data.values = [];
 
+			this.selectedSearchedItems = [];
+			this.resetSelectedSearch = !this.resetSelectedSearch;
+			this.resetSelectedSelected = !this.resetSelectedSelected;
+
 			this.$nextTick(() => {
 				this.selectedTableConfig.data.columns = columns;
 				this.selectedTableConfig.data.values = rows;
@@ -398,28 +393,17 @@ export default {
 			if (!this.isExporting) {
 				this.isExporting = true;
 
-				this.$network.getData(
-					`/api/data/export`,
-					{
-						params: {
-							...this.exportConfig,
-							itemIds: this.selectedTableConfig.data.values.map((it) => it.id).join(','),
-						},
-					},
-					null,
-					(err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.handleExportedData(data)
-							if (err) this.handleExportedData(this.exportConfig.fileType == FILE_TYPE.JSON ? this.jsonExportData : this.csvExportData);
-							else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isExporting = false;
-						}
+				const params = `file_name=${this.exportConfig.fileName}&file_type=${this.exportConfig.fileType}&separator=${this.exportConfig.separator}&identificator=${this.exportConfig.identificator}&items=${this.selectedTableConfig.data.values.map((it) => it.id).join(',')}`;
+				this.$network.getData(`/api/data/export?${params}`, null, null, (err, data) => {
+					try {
+						if (!err) this.handleExportedData(data);
+						else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isExporting = false;
 					}
-				);
+				});
 			}
 		},
 		async handleExportedData(data) {
@@ -438,8 +422,8 @@ export default {
 			this.$global.showToast(TOAST_TYPE.SUCCESS, this.$t('deDataExportSuccessfull'));
 		},
 		generateExportFile(data, zip) {
-			if (this.exportConfig.fileType == FILE_TYPE.CSV) zip.file(`${this.exportConfig.fileName}.csv`, data);
-			else if (this.exportConfig.fileType == FILE_TYPE.JSON) zip.file(`${this.exportConfig.fileName}.json`, JSON.stringify(data || {}));
+			if (this.exportConfig.fileType == FILE_TYPE.CSV) zip.file(`${this.exportConfig.fileName}.csv`, data.csv);
+			else if (this.exportConfig.fileType == FILE_TYPE.JSON) zip.file(`${this.exportConfig.fileName}.json`, JSON.stringify(data.data || {}));
 		},
 		generateMetaFile(zip) {
 			if (this.exportConfig.fileType == FILE_TYPE.CSV) {

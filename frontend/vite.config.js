@@ -8,7 +8,8 @@ const isDocker = process.env.DOCKER_ENV === 'true';
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-	plugins: [vue(), vueDevTools()],
+	plugins: [vue()],
+	// plugins: [vue(), vueDevTools()],
 	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url)),

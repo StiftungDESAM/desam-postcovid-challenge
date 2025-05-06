@@ -20,30 +20,45 @@
 							<div v-for="check in requiredChecks" :key="check" class="dqc-wrap-check">
 								<div v-if="mode == dqcmEnum.UPLOAD" class="dqc-wrap-select">
 									<label>{{ $t(check) }}</label>
-									<select @change="setMetaFieldForCheck($event, check)" v-model="checkConfig[check]" required>
+									<!--<select @change="setMetaFieldForCheck($event, check)" v-model="checkConfig[check]" required>-->
+									<select :value="stringifiedValue(checkConfig[check])" @change="setMetaFieldForCheck($event, check)" required>
 										<option value="" default selected hidden>{{ $t('dqcNoMetaSelected') }}</option>
 										<option value="REMOVE">{{ $t('dqcDeselectCurrentOption') }}</option>
+										<option value="NONE">{{ $t('dqcNoMetaAssignment') }}</option>
 										<option
-											v-for="meta in this.codeBook.data"
-											:key="meta.id"
-											:value="`${meta.id}`"
-											:disabled="optionAlreadyUsed(meta.id)"
+											v-for="meta in codeBook.data"
+											:key="meta.tag"
+											:value="meta.assignedMetaField?.tag || meta.tag"
+											:disabled="optionAlreadyUsed(meta.assignedMetaField?.tag || meta.tag)"
 										>
 											{{ meta.name }} <span v-if="meta.assignedMetaField">({{ meta.assignedMetaField.name }})</span>
 										</option>
 									</select>
 								</div>
 								<div v-else-if="mode == dqcmEnum.VIEW" class="dqc-wrap-select">
+									<!-- TODO: Check with actual data -->
 									<label>{{ $t(check) }}</label>
-									<select @change="setMetaFieldForCheck($event, check)" v-model="checkConfig[check]" :disabled="true">
+									<!--<select @change="setMetaFieldForCheck($event, check)" v-model="checkConfig[check]" :disabled="true">-->
+									<select
+										:value="stringifiedValue(checkConfig[check])"
+										@change="setMetaFieldForCheck($event, check)"
+										:disabled="true"
+									>
 										<option value="" default selected hidden>{{ $t('dqcNoMetaSelected') }}</option>
 										<option value="REMOVE">{{ $t('dqcDeselectCurrentOption') }}</option>
-										<option v-for="meta in this.codeBook.meta" :key="meta" :value="`${meta}`" :disabled="optionAlreadyUsed(meta)">
-											{{ meta }}
+										<option value="NONE">{{ $t('dqcNoMetaAssignment') }}</option>
+										<option value="NOT_AVAILABLE" disabled>{{ $t('dqcNotAvailable') }}</option>
+										<option
+											v-for="meta in codeBook.data"
+											:key="meta.tag"
+											:value="meta.tag"
+											:disabled="optionAlreadyUsed(meta.tag)"
+										>
+											{{ meta.name }} <span v-if="meta.assignedMetaField">({{ meta.assignedMetaField.name }})</span>
 										</option>
 									</select>
 								</div>
-								<div v-if="check == qcmEnum.VALUE_MAPPING" class="dqc-wrap-split">
+								<div v-if="check == qcmEnum.VALUE_MAPPING && checkConfig.VALUE_MAPPING !== null" class="dqc-wrap-split">
 									<label>{{ $t('dqcMappingSplitBy') }}</label>
 									<select v-model="mappingSeparator" @change="updateConfig" required :disabled="mode == dqcmEnum.VIEW">
 										<option value="" disabled selected hidden>{{ $t('dqcSelectSplittingMethod') }}</option>
@@ -57,7 +72,7 @@
 										<option :value="splitEnum.BAR">{{ $t('dqcSplitByBar') }} (|)</option>
 									</select>
 								</div>
-								<div v-if="check == qcmEnum.VALUE_MAPPING" class="dqc-wrap-split">
+								<div v-if="check == qcmEnum.VALUE_MAPPING && checkConfig.VALUE_MAPPING !== null" class="dqc-wrap-split">
 									<label>{{ $t('dqcAnswerSplitBy') }}</label>
 									<select v-model="answerSeparator" @change="updateConfig" required :disabled="mode == dqcmEnum.VIEW">
 										<option value="" disabled selected hidden>{{ $t('dqcSelectSplittingMethod') }}</option>
@@ -236,40 +251,57 @@ export default {
 			],
 			optionalChecks: [QUALITY_CHECK_METHOD.EMPTY_VALUES, QUALITY_CHECK_METHOD.EMPTY_ROWS, QUALITY_CHECK_METHOD.EMPTY_COLUMNS],
 			checkConfig: {
-				VALUE_TYPE: '7',
-				VALUE_RANGE_MIN: '8',
-				VALUE_RANGE_MAX: '9',
-				VALUE_MAPPING: '5',
-				VALUE_REQUIRED: '12',
-				// VALUE_TYPE: '',
-				// VALUE_RANGE_MIN: '',
-				// VALUE_RANGE_MAX: '',
-				// VALUE_MAPPING: '',
+				// VALUE_TYPE: 'TextValidationTypeORShowSliderNumber',
+				// VALUE_RANGE_MIN: 'TextValidationMin',
+				// VALUE_RANGE_MAX: 'TextValidationMax',
+				// VALUE_MAPPING: 'ChoicesCalculationsORSliderLabels',
+				// VALUE_REQUIRED: 'RequiredField',
+				VALUE_TYPE: '',
+				VALUE_RANGE_MIN: '',
+				VALUE_RANGE_MAX: '',
+				VALUE_MAPPING: '',
+				VALUE_REQUIRED: '',
 				// // Currently disabled
 				// // VALUE_BRANCHING: '',
-				// VALUE_REQUIRED: '',
 				EMPTY_VALUES: true,
 				EMPTY_ROWS: true,
 				EMPTY_COLUMNS: true,
 			},
-			mappingSeparator: 'BAR',
-			answerSeparator: 'COMMA',
-			branchIdentifier: 'ONLY_NUMBER',
-			// mappingSeparator: '',
-			// answerSeparator: '',
-			// branchIdentifier: '',
+			// mappingSeparator: 'BAR',
+			// answerSeparator: 'SEMICOLON',
+			// branchIdentifier: 'ONLY_NUMBER',
+			mappingSeparator: '',
+			answerSeparator: '',
+			branchIdentifier: '',
 			checkResult: null,
 			shownData: [],
 		};
 	},
 	computed: {
-		canPerformCheck() {
+		/*canPerformCheck() {
 			return (
-				Object.values(this.checkConfig).filter((it) => it.toString() != '').length == Object.keys(QUALITY_CHECK_METHOD).length &&
+				//Object.values(this.checkConfig).filter((it) => it.toString() != '').length == Object.keys(QUALITY_CHECK_METHOD).length &&
+				Object.values(this.checkConfig).filter((it) => it !== null && it !== '').length === Object.keys(QUALITY_CHECK_METHOD).length &&
 				// this.branchIdentifier &&
 				this.answerSeparator &&
 				this.mappingSeparator
 			);
+		},*/
+		canPerformCheck() {
+			const filledChecks = Object.values(this.checkConfig).filter((val) => {
+				if (val == null || val == 'NONE') return true;
+				if (val == '') return false;
+				return true;
+			});
+
+			const expectedChecks = Object.keys(QUALITY_CHECK_METHOD).length;
+
+			if (this.checkConfig.VALUE_MAPPING == null) {
+				this.mappingSeparator = null;
+				this.answerSeparator = null;
+				return filledChecks.length == expectedChecks;
+			}
+			return filledChecks.length == expectedChecks && this.mappingSeparator && this.answerSeparator;
 		},
 		groupedErrors() {
 			return this.checkResult?.errors?.reduce((acc, error) => {
@@ -338,11 +370,21 @@ export default {
 			if (value == 'REMOVE') {
 				this.checkConfig[check] = '';
 				e.target.value = '';
+			} else if (value === 'NONE') {
+				this.checkConfig[check] = null;
 			} else this.checkConfig[check] = value;
+			//console.log('checkConfig:', JSON.stringify(this.checkConfig, null, 2));
 			this.updateConfig();
 		},
-		optionAlreadyUsed(id) {
-			return Object.values(this.checkConfig).includes(id.toString());
+		stringifiedValue(value) {
+			if (value === null) {
+				return this.mode === this.dqcmEnum.UPLOAD ? 'NONE' : 'NOT_AVAILABLE';
+			}
+			if (value === '') return '';
+			return value.toString();
+		},
+		optionAlreadyUsed(tag) {
+			return Object.values(this.checkConfig).includes(tag);
 		},
 		performDataQualityCheck() {
 			this.isLoading = true;
@@ -376,6 +418,19 @@ export default {
 			);
 		},
 		updateConfig() {
+			/*console.log(
+				'Updating config with the following data:',
+				JSON.stringify(
+					{
+						checkConfig: this.checkConfig,
+						mappingSeparator: this.mappingSeparator,
+						answerSeparator: this.answerSeparator,
+					},
+					null,
+					2
+				)
+			);*/
+
 			this.$emit('setConfig', {
 				checkConfig: this.checkConfig,
 				// branchIdentifier: this.branchIdentifier,

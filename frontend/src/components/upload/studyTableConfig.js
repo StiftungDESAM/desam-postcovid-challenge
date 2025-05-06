@@ -90,12 +90,12 @@ export const studyTableConfig = {
 			],
 			sortMapping: {
 				id: ['id'],
-				name: ['name'],
-				purpose: ['purpose'],
-				timeframe: ['dateStart', 'dateEnd'],
+				name: ['studyInfo.name'],
+				purpose: ['studyInfo.purpose'],
+				timeframe: ['studyInfo.dateStart', 'studyInfo.dateEnd'],
 				submitter: ['submitter.firstName', 'submitter.lastName'],
 				submissionDate: ['submissionDate'],
-				amount: ['amountCodeBooks'],
+				amount: ['amountQuestionnaires'],
 			},
 		},
 		pagination: {
@@ -115,18 +115,18 @@ export const studyTableConfig = {
 				text: t('duID'),
 			},
 			{
-				ref: ['name'],
+				ref: ['studyInfo.name'],
 				text: t('duName'),
 			},
 			{
-				ref: ['purpose'],
+				ref: ['studyInfo.purpose'],
 				text: t('duPurpose'),
 				formatter: (purpose) => {
 					return t(purpose);
 				},
 			},
 			{
-				ref: ['dateStart', 'dateEnd'],
+				ref: ['studyInfo.dateStart', 'studyInfo.dateEnd'],
 				text: t('duTimeframe'),
 				formatter: (dateStart, dateEnd) => {
 					return `${global.formatDate(dateStart, 'de', true)} - ${global.formatDate(dateEnd, 'de', true)}`;
@@ -147,7 +147,7 @@ export const studyTableConfig = {
 				},
 			},
 			{
-				ref: ['amountCodeBooks'],
+				ref: ['amountQuestionnaires'],
 				text: t('duamountCodeBooks'),
 			},
 		],

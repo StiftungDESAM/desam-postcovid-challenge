@@ -7,9 +7,10 @@
 		</div>
 		<div v-if="selectedReview" class="fv-wrap-submission-details">
 			<h2>{{ $t('fvSubmissionDetails') }}</h2>
-			<StudyInfo v-if="selectedReview.submissionDetails.studyInfo" :disabled="true" :studyInfo="selectedReview.submissionDetails.studyInfo" />
+			<StudyInfo v-if="selectedReview?.submissionDetails?.studyInfo" :disabled="true" :studyInfo="selectedReview.submissionDetails.studyInfo" />
+			<div v-else class="or-no-submission-details">{{ $t('orNoSubmissionDetails') }}</div>
 		</div>
-		<div v-if="selectedReview" class="fv-wrap-data-table">
+		<div v-if="selectedReview?.submissionDetails?.studyInfo" class="fv-wrap-data-table">
 			<h2>{{ uploadTypeTitle }}</h2>
 			<div class="fv-tab-view">
 				<div
@@ -27,14 +28,17 @@
 		</div>
 		<div v-if="selectedReview" class="fv-wrap-review-section">
 			<div class="fv-place-holder"></div>
-			<div v-if="selectedReview" class="fv-review-section">
+			<div class="fv-review-section">
 				<h2>{{ $t('frReviewSection') }}</h2>
 				<ReviewSection
+					v-if="!['OPEN', 'ASSIGNED'].includes(selectedReview.submissionStatus)"
 					:reviewID="selectedReview.id"
 					:reviewer="selectedReview.reviewer"
 					:reviewDetails="selectedReview.review"
 					:userIsReviewerAndNotFinished="false"
+					:reviewType="selectedReview.submissionDetails.uploadType"
 				/>
+				<p v-else>{{ $t('fbNoReviewYet') }}</p>
 			</div>
 		</div>
 	</div>
@@ -48,7 +52,6 @@ import LoadingSpinner from '@/components/general/LoadingSpinner.vue';
 import { feedbackConfig } from '@/components/feedback/feedbackConfig.js';
 import { feedbackCodebookTableConfig } from '@/components/feedback/feedbackCodebookTableConfig.js';
 import { feedbackDataTableConfig } from '@/components/feedback/feedbackDataTableConfig';
-import feedback from '@/assets/dummy/allSubmissions.json';
 import reviewModification from '@/assets/dummy/reviewModification.json';
 import reviewAccepted from '@/assets/dummy/reviewAccepted.json';
 import reviewDeclined from '@/assets/dummy/reviewDeclined.json';
@@ -70,7 +73,6 @@ export default {
 		return {
 			isLoading: false,
 			feedbackID: this.$route.params.feedbackID,
-			feedback: feedback,
 			feedbackConfig: feedbackConfig,
 			selectedReview: null,
 			reviewModification: reviewModification,
@@ -93,36 +95,29 @@ export default {
 		queryFeedback() {
 			this.isLoading = true;
 
-			window.setTimeout(() => {
-				this.$network.getData(`/api/feedback`, null, null, (err, data) => {
-					try {
-						// TODO: Remove mocked data
-						// if (!err) this.feedbackConfig.data.values = data;
-						// else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg))
-						if (err) {
-							const filteredFeedback = this.feedback.filter((review) => review.submissionStatus !== 'OPEN');
-							this.feedbackConfig.data.values = filteredFeedback;
-							this.selectedFeedbackWithID(this.feedbackID);
-						} else {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						}
-					} catch (error) {
-						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-					} finally {
-						this.isLoading = false;
-						window.dispatchEvent(new Event('resize'));
-					}
-				});
-			}, 2000);
+			this.$network.getData(`/api/review/feedback`, null, null, (err, data) => {
+				try {
+					if (!err) {
+						this.feedbackConfig.data.values = data;
+						this.selectedFeedbackWithID(this.feedbackID);
+					} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+				} catch (error) {
+					this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+				} finally {
+					this.isLoading = false;
+					window.dispatchEvent(new Event('resize'));
+				}
+			});
 		},
 		selectedFeedbackWithID(feedbackID) {
-			const selectedFeedback = this.feedback.find((review) => review.id === parseInt(feedbackID));
+			const selectedFeedback = this.feedbackConfig.data.values.find((review) => review.id === parseInt(feedbackID));
 			if (selectedFeedback) {
 				this.$nextTick(() => {
 					this.selectReview(selectedFeedback);
 				});
 			} else {
-				this.$router.push({ name: ROUTE.NOT_FOUND });
+				this.$global.showToast(TOAST_TYPE.ERROR, this.$t('fbFeedbackNotFound'));
+				this.$router.go(-1);
 			}
 		},
 		selectReview(review) {
@@ -132,28 +127,19 @@ export default {
 				this.isLoading = true;
 
 				this.$router.push({ name: ROUTE.FEEDBACK_VIEW, params: { feedbackID: review.id } });
-
-				window.setTimeout(() => {
-					this.$network.getData(`/api/feedback/${this.feedbackID}`, null, null, (err, data) => {
-						try {
-							// TODO: Remove mocked data
-							// if (!err) this.selectedReview = data;
-							if (err) {
-								this.selectedReview =
-									review.submissionStatus == REVIEW_STATUS.MODIFICATION_NEEDED
-										? this.reviewModification
-										: review.submissionStatus == REVIEW_STATUS.ACCEPTED
-											? this.reviewAccepted
-											: this.reviewDeclined;
-								this.setupCodeBooks();
-							} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
-						} catch (error) {
-							this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
-						} finally {
-							this.isLoading = false;
-						}
-					});
-				}, 2000);
+				this.feedbackID = review.id;
+				this.$network.getData(`/api/review/feedback/${this.feedbackID}`, null, null, (err, data) => {
+					try {
+						if (!err) {
+							this.selectedReview = data;
+							this.setupCodeBooks();
+						} else this.$global.showToast(TOAST_TYPE.ERROR, this.$t(err.msg));
+					} catch (error) {
+						this.$global.showToast(TOAST_TYPE.ERROR, this.$t('errUnexpectedError'));
+					} finally {
+						this.isLoading = false;
+					}
+				});
 			}
 		},
 		setupCodeBooks() {
@@ -164,13 +150,13 @@ export default {
 			const tableConfig = {
 				[UPLOAD_TYP.UPLOAD_ONTOLOGY]: this.codebookTableConfig,
 				[UPLOAD_TYP.UPLOAD_DATA]: this.dataTableConfig,
-			}[this.selectedReview.submissionDetails.uploadTyp];
+			}[this.selectedReview.submissionDetails.uploadType];
 
 			// Set the title directly based on the uploadType
 			this.uploadTypeTitle =
-				this.selectedReview.submissionDetails.uploadTyp === UPLOAD_TYP.UPLOAD_ONTOLOGY
+				this.selectedReview.submissionDetails.uploadType === UPLOAD_TYP.UPLOAD_ONTOLOGY
 					? this.$t('fvUploadedCodebook')
-					: this.selectedReview.submissionDetails.uploadTyp === UPLOAD_TYP.UPLOAD_DATA
+					: this.selectedReview.submissionDetails.uploadType === UPLOAD_TYP.UPLOAD_DATA
 						? this.$t('fvUploadedData')
 						: '';
 
@@ -178,13 +164,46 @@ export default {
 			const createColumnsAndRows = (data) => {
 				const isStructuredData = Array.isArray(data[0]);
 				const columns = isStructuredData
-					? [{ ref: ['rowID'], text: this.$t('fvRowID') }, ...data[0].map((col) => ({ ref: [col], text: col }))] // Structured data
-					: [{ ref: ['rowID'], text: this.$t('fvRowID') }, ...data.map((col) => ({ ref: [col.name], text: col.name }))]; // Non-structured data
+					? [
+							{ ref: ['rowID'], text: this.$t('fvRowID') },
+							...data[0].map((col) => ({
+								ref: [col],
+								text: col,
+								formatter: (value) => {
+									return this.$global.valueIsNotAvailable(value, true, false) ? '-' : value;
+								},
+							})),
+						] // Structured data
+					: [
+							{ ref: ['rowID'], text: this.$t('fvRowID') },
+							...data.map((col) => ({
+								ref: [col.name],
+								text: col.name,
+								formatter: (value) => {
+									return this.$global.valueIsNotAvailable(value, true, false) ? '-' : value;
+								},
+							})),
+						]; // Non-structured data
 
 				const rows = isStructuredData
-					? data.slice(1).map((row, idx) => ({ rowID: idx + 1, ...row.reduce((acc, val, i) => ({ ...acc, [data[0][i]]: val }), {}) }))
+					? data.slice(1).map((row, idx) => ({
+							rowID: idx + 1,
+							...row.reduce(
+								(acc, val, i) => ({
+									...acc,
+									[data[0][i]]: this.$global.valueIsNotAvailable(val, true) ? '-' : val,
+								}),
+								{}
+							),
+						}))
 					: data[0].rows.map((_, idx) => {
-							const rowData = data.reduce((acc, col) => ({ ...acc, [col.name]: col.rows[idx] }), {});
+							const rowData = data.reduce(
+								(acc, col) => ({
+									...acc,
+									[col.name]: this.$global.valueIsNotAvailable(col.rows[idx], true) ? '-' : col.rows[idx],
+								}),
+								{}
+							);
 							return { rowID: idx + 1, ...rowData };
 						});
 
@@ -212,9 +231,6 @@ export default {
 		},
 		selectItem(item) {
 			this.selectedItem = item;
-		},
-		navigateTo(dest) {
-			this.$router.push({ name: dest });
 		},
 	},
 };
@@ -255,9 +271,16 @@ export default {
 	min-width: 600px;
 }
 .fv-review-section {
-	flex: 1 1 500px;
+	flex: 1 1 100%;
 	min-width: 300px;
 	margin-left: auto;
+}
+
+.fv-review-section p {
+	width: 100%;
+	margin: 20px 0px;
+	font-size: 20px;
+	text-align: center;
 }
 .fv-wrap-data-table {
 	width: 100%;

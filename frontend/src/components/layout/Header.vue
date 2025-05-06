@@ -6,7 +6,7 @@
 			</router-link>
 		</div>
 		<div class="he-wrap-title">
-			<p>DESAM Post-Covid Challenge</p>
+			<p>Modell für die evolutionäre Integration heterogener Daten-Quellen</p>
 		</div>
 		<div class="he-wrap-navigation">
 			<router-link :to="{ name: 'Home' }">
@@ -27,6 +27,7 @@
 
 <script>
 import logo from '@/assets/img/Logo.png';
+import logoMEVODAT from '@/assets/img/Logo_MEVODAT.png';
 import { TOAST_TYPE } from '@/enums/enums';
 
 /**
@@ -53,7 +54,7 @@ export default {
 	},
 	data() {
 		return {
-			logo: logo,
+			logo: logoMEVODAT,
 			currentUser: this.$store.getCurrentUser(),
 		};
 	},
@@ -94,12 +95,12 @@ export default {
 }
 
 .he-wrap-title {
-	flex: 1 1 300px;
+	flex: 1 1 400px;
 	font-size: 17px;
 }
 
 .he-wrap-navigation {
-	flex: 1 1 calc(100% - 360px);
+	flex: 1 1 calc(100% - 460px);
 	height: 50px;
 	padding-right: 10px;
 	display: flex;

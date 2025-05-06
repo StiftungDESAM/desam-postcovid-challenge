@@ -1,17 +1,15 @@
-from ninja import Router
-from api import schema
-from api.permissions import PermissionChecker
-from ninja.errors import HttpError
+from api.transactions import TransactionRouter
+
 from django.conf import settings
-from django.forms.models import model_to_dict
-from authentication.models import CustomUser, Role, Scope
+from ninja.errors import HttpError
+
+from authentication.models import Role, Scope
 from authentication.email import test_email
+
 import logging
-
-
 logger = logging.getLogger(__name__)
 
-router = Router()
+router = TransactionRouter()
 
 
 @router.get(
@@ -26,6 +24,7 @@ def hello(request):
 
 @router.post(
     "/test_email",
+    auth=None,
     summary = "Create email for testing",
     response = {201: None}
 )
@@ -58,3 +57,5 @@ def check_roles_and_scopes(request):
         "roles_count": len(roles),
         "scopes_count": len(scopes)
     }
+    
+  

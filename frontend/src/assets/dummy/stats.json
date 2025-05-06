@@ -1,18 +1,18 @@
 [
 	{
-		"translation": "hoStudies",
+		"type": "AMOUNT_STUDIES",
 		"amount": "3"
 	},
 	{
-		"translation": "hoDataPoints",
+		"type": "AMOUNT_DATAPOINTS",
 		"amount": "> 8 Mio."
 	},
 	{
-		"translation": "hoParticipants",
+		"type": "AMOUNT_PARTICIPANTS",
 		"amount": "3980"
 	},
 	{
-		"translation": "hoUsers",
+		"type": "AMOUNT_USERS",
 		"amount": "7"
 	}
 ]

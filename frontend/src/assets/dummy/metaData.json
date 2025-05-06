@@ -1,0 +1,82 @@
+[
+	{
+		"id": 0,
+		"tag": "Feldname",
+		"name": "Feldname",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 1,
+		"tag": "Sektionsüberschrift",
+		"name": "Sektionsüberschrift",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 2,
+		"tag": "Feldtyp",
+		"name": "Feldtyp",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 3,
+		"tag": "Frage",
+		"name": "Frage",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 4,
+		"tag": "Mapping",
+		"name": "Mapping",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 5,
+		"tag": "Datentyp",
+		"name": "Datentyp",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 6,
+		"tag": "Minimum",
+		"name": "Minimum",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	},
+	{
+		"id": 7,
+		"tag": "Maximum",
+		"name": "Maximum",
+		"isStakeholder": false,
+		"isLeaf": true,
+		"isVerified": true,
+		"created": "2025-03-01T10:32:39",
+		"lastUpdated": "2025-03-01T10:32:39"
+	}
+]

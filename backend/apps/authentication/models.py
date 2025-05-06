@@ -6,7 +6,10 @@ from django.contrib.auth.models import PermissionsMixin, BaseUserManager
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from .constants import ROLE_CHOICES, SCOPE_CHOICES
-from api.schema import UserData, AccessData
+from collections import namedtuple
+import uuid
+from datetime import timedelta
+from typing import Union
 import logging
 
 logger = logging.getLogger(__name__)
@@ -150,7 +153,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     )
     is_active = models.BooleanField(
         _("active"),
-        default=True,
+        default=False,
         help_text=_(
             "Designates whether this user should be treated as active. "
             "Unselect this instead of deleting accounts."
@@ -194,14 +197,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         default=False
     )
     
-    # TODO: Add a field for storing requested permissions
     permissions_requested = models.ManyToManyField(
         Scope,
         blank=True,
         related_name="users_requested",
     )
     
-    # TODO: Add a field for storing granted permissions (maybe with django permissions)
     permissions_granted = models.ManyToManyField(
         Scope,
         blank=True,
@@ -228,6 +229,23 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
     
+    def has_permission(self, permission_name: str) -> bool:
+        """
+        Check if the user has a specific permission.
+        """
+        return self.permissions_granted.filter(name=permission_name).exists()
+    
+    
+    def has_permissions(self, permission_names: Union[list[str], str]) -> bool:
+        """
+        Check if the user has all the specified permission.
+        """
+        required_permissions = [permission_names] if isinstance(permission_names, str) else permission_names
+        
+        return all(self.permissions_granted.filter(name=permission_name).exists() for permission_name in required_permissions)
+        
+        
+    
     # TODO: Add method for sending verification email
     def send_verification_email(self):
         pass
@@ -249,3 +267,102 @@ class Token(models.Model):
 
     def __str__(self):
         return self.key
+
+
+class CodeType(models.TextChoices):
+    VERIFICATION = "VERIFICATION"
+    PASSWORD_RESET = "PASSWORD_RESET"
+
+class UserCodeManager(models.Manager):
+    def generate(self, user, code_type):
+        from datetime import timedelta
+        from django.utils import timezone
+
+        expiration_times = {
+            CodeType.VERIFICATION: timedelta(days=7),
+            CodeType.PASSWORD_RESET: timedelta(minutes=30),
+        }
+        
+        created_at = timezone.now()
+        expires_at = created_at + expiration_times.get(code_type, timedelta(minutes=30))
+
+        # Check for existing code of same type
+        new_code, created = self.get_or_create(
+            user=user,
+            type=code_type,
+            defaults={
+                "expires_at": expires_at,
+                "created_at": created_at,
+                "code": uuid.uuid4(),
+            }
+        )
+
+        # Update the existing code
+        if not created:
+            new_code.code = uuid.uuid4()
+            new_code.expires_at = expires_at
+            new_code.created_at = created_at
+            new_code.save()
+
+        return new_code
+    
+class UserCode(models.Model):
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    code = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    type = models.CharField(max_length=30, choices=CodeType.choices)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    
+    objects = UserCodeManager()
+
+    def is_expired(self):
+        return timezone.now() > self.expires_at  
+
+
+    
+EmailTemplate = namedtuple("EmailTemplate", ["subject", "message"])
+
+class TemplateMail:
+    ACCOUNT_VERIFICATION = EmailTemplate(
+        subject="Verifikation Ihres MEVODAT - Post-Covid Datenplattform Accounts",
+        message=(
+            "Willkommen auf der MEVODAT - Post-Covid Datenplattform!<br/>"
+            "Bitte bestätigen Sie Ihre E-Mail-Adresse, indem Sie auf den folgenden Link klicken.<br/>"
+        )
+    )
+    ACCOUNT_VERIFICATION_SUCCESS = EmailTemplate(
+        subject="Ihr MEVODAT - Post-Covid Datenplattform Account wurde verifiziert",
+        message=(
+            "Willkommen auf der MEVODAT - Post-Covid Datenplattform!<br/>"
+            "Ihr Account ist nun verifiziert und Sie können sich ab sofort mit Ihren Zugangsdaten anmelden."
+        )
+    )
+    PASSWORD_RESET = EmailTemplate(
+        subject="Zurücksetzung des Passworts Ihres MEVODAT - Post-Covid Datenplattform Accounts",
+        message=(
+            "Sie haben eine Zurücksetzung Ihres Passworts für die MEVODAT - Post-Covid Datenplattform angefordert.<br/>"
+            "Bitte klicken Sie auf den folgenden Link, um ein neues Passwort festzulegen.<br/>"
+            "Wenn Sie diese Anfrage nicht gestellt haben, ignorieren Sie bitte diese E-Mail.<br/>"
+        )
+    )
+    PASSWORD_RESET_SUCCESS = EmailTemplate(
+        subject="Das Passwort Ihres MEVODAT - Post-Covid Datenplattform Accounts wurde geändert",
+        message=(
+            "Das Passwort Ihres Accounts wurde erfolgreich geändert.<br/>"
+            "Sollten Sie dies nicht veranlasst haben, dann kontaktieren Sie uns bitte."
+        )
+    )
+    PERMISSION_VERIFICATION = EmailTemplate(
+        subject="Ihre angefragten Funktionalitäten für die MEVODAT - Post-Covid Datenplattform wurden freigeschaltet",
+        message=(
+            "Ihre angefragten Funktionalitäten für die MEVODAT - Post-Covid Datenplattform wurden freigeschaltet.<br/>"
+            "Sie können diese nun nach der nächsten Anmeldung nutzen."
+        )
+    )
+    ACCOUNT_DELETION = EmailTemplate(
+        subject="Löschung Ihres MEVODAT - Post-Covid Datenplattform Accounts",
+        message=(
+            "Ihr Account wurde von einem Admin gelöscht.<br/>"
+            "Sollte es sich hierbei um einen Fehler handeln, dann kontaktieren Sie uns bitte."
+        )
+    )

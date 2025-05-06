@@ -32,7 +32,7 @@
 				@newValue="$emit('newStudyInfo', info)"
 			/>
 			<InputField
-				v-model="info.drksID"
+				v-model="info.drksId"
 				:placeholder="$t('ouStudyDrksId')"
 				:labelText="$t('ouStudyDrksId')"
 				:disabled="disabled"
